@@ -12,7 +12,7 @@ LegiSim is built on a modern, asynchronous Python stack:
 - **File Storage:** MinIO (S3-compatible)
 - **Authentication:** Keycloak (OIDC) / Auth.js
 - **Orchestration/LLM:** LangGraph + Langchain
-- **Observability:** Langfuse (LLM Tracing), GlitchTip (Error tracking)
+- **Observability:** Langfuse (LLM Tracing)
 - **Deployment:** Docker Compose + Traefik
 
 ## Directory Structure

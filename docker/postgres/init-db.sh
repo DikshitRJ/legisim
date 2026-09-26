@@ -34,4 +34,11 @@ EOSQL
 EOSQL
 fi
 
+# Create langfuse database
+echo "==> [init-db] Ensuring 'langfuse' database exists..."
+psql -v ON_ERROR_STOP=1 --username "$TARGET_USER" --dbname "$TARGET_DB" <<-EOSQL
+    SELECT 'CREATE DATABASE langfuse'
+    WHERE NOT EXISTS (SELECT FROM pg_database WHERE datname = 'langfuse')\gexec
+EOSQL
+
 echo "==> [init-db] Database initialization completed successfully. pgvector extension is active."

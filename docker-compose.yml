@@ -148,6 +148,9 @@ services:
       JEV_SERVICE_URL: http://localhost:8001/predict
       MAIL_SERVER: mailpit
       MAIL_PORT: 1025
+      LANGFUSE_PUBLIC_KEY: pk-lf-1234567890
+      LANGFUSE_SECRET_KEY: sk-lf-1234567890
+      LANGFUSE_HOST: http://langfuse:3000
     volumes:
       # Mount personas data so the engine population loader can find them
       - "./personas:/app/personas:ro"
@@ -232,6 +235,40 @@ services:
       - "traefik.http.routers.mailpit.rule=Host(`mail.${DOMAIN:-localhost}`)"
       - "traefik.http.routers.mailpit.entrypoints=web"
       - "traefik.http.services.mailpit.loadbalancer.server.port=8025"
+    networks:
+      - legisim-network
+    restart: unless-stopped
+
+  # ============================================================================
+  # 10. Observability: Langfuse
+  # ============================================================================
+  langfuse:
+    image: langfuse/langfuse:2
+    container_name: legisim-langfuse
+    depends_on:
+      postgres:
+        condition: service_healthy
+    ports:
+      - "${LANGFUSE_PORT:-3030}:3000"
+    environment:
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-legisim}:${POSTGRES_PASSWORD:-legisim_db_pass}@postgres:5432/langfuse
+      - NEXTAUTH_SECRET=legisim_langfuse_secret
+      - SALT=legisim_langfuse_salt
+      - NEXTAUTH_URL=http://localhost:${LANGFUSE_PORT:-3030}
+      - TELEMETRY_ENABLED=false
+      - LANGFUSE_INIT_ORG_ID=legisim
+      - LANGFUSE_INIT_ORG_NAME=Legisim
+      - LANGFUSE_INIT_PROJECT_ID=legisim
+      - LANGFUSE_INIT_PROJECT_NAME=Legisim
+      - LANGFUSE_INIT_PROJECT_PUBLIC_KEY=pk-lf-1234567890
+      - LANGFUSE_INIT_PROJECT_SECRET_KEY=sk-lf-1234567890
+      - LANGFUSE_INIT_USER_EMAIL=admin@legisim.local
+      - LANGFUSE_INIT_USER_PASSWORD=admin
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.langfuse.rule=Host(`langfuse.${DOMAIN:-localhost}`)"
+      - "traefik.http.routers.langfuse.entrypoints=web"
+      - "traefik.http.services.langfuse.loadbalancer.server.port=3000"
     networks:
       - legisim-network
     restart: unless-stopped

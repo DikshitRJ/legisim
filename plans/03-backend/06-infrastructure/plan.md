@@ -7,7 +7,7 @@ The architecture comprises 12 distinct services across four categories:
 - **Core Application**: `api`, `worker`, `frontend`
 - **Data Services**: `db`, `redis`, `minio`
 - **AI/ML Services**: `jev`, `searxng`
-- **Infrastructure**: `traefik`, `keycloak`, `langfuse`, `glitchtip`
+- **Infrastructure**: `traefik`, `keycloak`, `langfuse`, ``
 
 ## 2. Environment Variables (`.env.example`)
 ```env
@@ -51,7 +51,7 @@ JEV_SERVICE_URL=http://jev:8000/predict
 LANGFUSE_PUBLIC_KEY=pk-lf-...
 LANGFUSE_SECRET_KEY=sk-lf-...
 LANGFUSE_HOST=https://langfuse.${DOMAIN}
-GLITCHTIP_DSN=https://...@glitchtip.${DOMAIN}/1
+GLITCHTIP_DSN=https://...@.${DOMAIN}/1
 ```
 
 ## 3. Docker Compose Configuration (`docker-compose.yml`)
@@ -122,7 +122,7 @@ services:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
       POSTGRES_DB: ${POSTGRES_DB}
-      POSTGRES_MULTIPLE_DATABASES: "legisim,keycloak,glitchtip"
+      POSTGRES_MULTIPLE_DATABASES: "legisim,keycloak,"
     volumes:
       - pg-data:/var/lib/postgresql/data
       - ./init-db.sh:/docker-entrypoint-initdb.d/init-db.sh
@@ -277,23 +277,6 @@ services:
       - "traefik.http.routers.langfuse.tls.certresolver=myresolver"
     restart: unless-stopped
 
-  glitchtip:
-    image: glitchtip/glitchtip:latest
-    environment:
-      DATABASE_URL: postgresql://postgres:${POSTGRES_PASSWORD}@db:5432/postgres
-      REDIS_URL: ${REDIS_URL}
-      SECRET_KEY: ${SECRET_KEY}
-    depends_on:
-      db:
-        condition: service_healthy
-    networks:
-      - legisim-network
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.glitchtip.rule=Host(`glitchtip.${DOMAIN}`)"
-      - "traefik.http.routers.glitchtip.entrypoints=websecure"
-      - "traefik.http.routers.glitchtip.tls.certresolver=myresolver"
-    restart: unless-stopped
 
 networks:
   legisim-network:
@@ -420,7 +403,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 set -e
 psql -v ON_ERROR_STOP=1 --username "$POSTGRES_USER" --dbname "$POSTGRES_DB" <<-EOSQL
     CREATE DATABASE keycloak;
-    CREATE DATABASE glitchtip;
+    CREATE DATABASE ;
     \c legisim
     CREATE EXTENSION IF NOT EXISTS vector;
 EOSQL

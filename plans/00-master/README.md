@@ -93,7 +93,7 @@ flowchart TD
         AUTH["Keycloak (IAM)"]
         SEARCH["SearXNG (Web Context)"]
         JEV["JEV BERT Model (System 1)"]
-        OBSERV["Langfuse + GlitchTip"]
+        OBSERV["Langfuse"]
         PROXY["Traefik Reverse Proxy"]
     end
 

@@ -103,7 +103,6 @@ flowchart TD
      - `traefik` (Reverse proxy)
      - `keycloak` (Auth)
      - `langfuse` (LLM Observability)
-     - `glitchtip` (Error tracking)
   3. Write `/api/Dockerfile`, `/frontend/Dockerfile`, `/worker/Dockerfile`, and `/jev-service/Dockerfile`.
   4. Configure persistent volumes and internal Docker networks.
   5. Create `/.github/workflows/main.yml` for CI pipelines.
