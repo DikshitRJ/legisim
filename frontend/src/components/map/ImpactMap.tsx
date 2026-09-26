@@ -2,14 +2,7 @@
 
 import React, { useMemo, useState } from 'react';
 
-export interface StateImpactData {
-  code: string;
-  name: string;
-  incomeChange: number;
-  inflationImpact: number;
-  acceptance: number;
-  jobsAffected: number;
-}
+import type { StateData } from '@/lib/api/types';
 
 type Metric = 'incomeChange' | 'inflationImpact' | 'acceptance' | 'jobsAffected';
 
@@ -42,18 +35,20 @@ function colorFor(value: number, metric: Metric) {
   return `rgba(220, 38, 38, ${0.15 + intensity * 0.78})`;
 }
 
-function formatValue(data: StateImpactData, metric: Metric) {
+function formatValue(data: StateData, metric: Metric) {
   const value = data[metric];
   if (metric === 'jobsAffected') return new Intl.NumberFormat('en-IN', { notation: 'compact', maximumFractionDigits: 1 }).format(value);
   if (metric === 'inflationImpact') return `${value >= 0 ? '+' : ''}${value.toFixed(1)} pp`;
   return `${value >= 0 && metric !== 'acceptance' ? '+' : ''}${value.toFixed(1)}%`;
 }
 
-export function ImpactMap({ data }: { data?: StateImpactData[] }) {
+export function ImpactMap({ data }: { data?: StateData[] }) {
   const [metric, setMetric] = useState<Metric>('incomeChange');
   const [selectedCode, setSelectedCode] = useState<string | null>(null);
+  const [hoveredCode, setHoveredCode] = useState<string | null>(null);
   const states = useMemo(() => new Map((data ?? []).map((state) => [state.code.toUpperCase(), state])), [data]);
   const selected = selectedCode ? states.get(selectedCode) : undefined;
+  const hovered = hoveredCode ? states.get(hoveredCode) : undefined;
 
   if (!data?.length) return <div className="flex min-h-[480px] items-center justify-center rounded-lg border border-surface-3 bg-surface-2 text-sm text-text-muted">No regional impact data is available for this run.</div>;
 
@@ -64,12 +59,22 @@ export function ImpactMap({ data }: { data?: StateImpactData[] }) {
           <h1 className="text-base font-semibold text-white">Geographic impact</h1>
           <p className="mt-1 text-xs leading-5 text-text-muted">State-level comparison. Select a state for the complete run output.</p>
         </div>
-        <div aria-label="Map metric" className="flex flex-wrap gap-1 rounded border border-surface-3 bg-surface-1 p-1" role="group">
-          {(Object.keys(metricLabels) as Metric[]).map((key) => (
-            <button aria-pressed={metric === key} className={`rounded px-2.5 py-1.5 text-xs font-semibold transition-colors ${metric === key ? 'bg-saffron text-canvas' : 'text-text-secondary hover:bg-surface-4 hover:text-white'}`} key={key} onClick={() => setMetric(key)} type="button">
-              {metricLabels[key]}
-            </button>
-          ))}
+        <div className="relative">
+          <select
+            value={metric}
+            onChange={(e) => setMetric(e.target.value as Metric)}
+            className="appearance-none bg-surface-1 border border-surface-3 text-white text-sm rounded px-3 py-2 pr-8 focus:outline-none focus:ring-2 focus:ring-saffron cursor-pointer"
+            aria-label="Map metric"
+          >
+            {(Object.keys(metricLabels) as Metric[]).map((key) => (
+              <option key={key} value={key}>
+                {metricLabels[key]}
+              </option>
+            ))}
+          </select>
+          <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-text-muted">
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" /></svg>
+          </div>
         </div>
       </div>
       <div className="grid gap-6 py-6 lg:grid-cols-[minmax(0,1fr)_260px]">
@@ -80,19 +85,42 @@ export function ImpactMap({ data }: { data?: StateImpactData[] }) {
               if (!code) return <div aria-hidden="true" className="aspect-square" key={`${rowIndex}-${columnIndex}`} />;
               if (!state) return <div className="aspect-square rounded border border-dashed border-surface-3 bg-surface-1" key={code} title={`${code}: no data`} />;
               const chosen = selectedCode === code;
+              const isHovered = hoveredCode === code;
               return (
-                <button
-                  aria-label={`${state.name}, ${metricLabels[metric]} ${formatValue(state, metric)}`}
-                  aria-pressed={chosen}
-                  className={`aspect-square rounded border p-1 text-center shadow-sm transition hover:-translate-y-0.5 hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-saffron ${chosen ? 'border-white ring-2 ring-saffron' : 'border-white/15'}`}
-                  key={code}
-                  onClick={() => setSelectedCode(code)}
-                  style={{ backgroundColor: colorFor(state[metric], metric) }}
-                  type="button"
-                >
-                  <span className="block text-sm font-bold text-white drop-shadow">{code}</span>
-                  <span className="mt-1 block text-[10px] text-white/90 drop-shadow">{formatValue(state, metric)}</span>
-                </button>
+                <div key={code} className="relative z-0" onMouseEnter={() => setHoveredCode(code)} onMouseLeave={() => setHoveredCode(null)}>
+                  <button
+                    aria-label={`${state.name}, ${metricLabels[metric]} ${formatValue(state, metric)}`}
+                    aria-pressed={chosen}
+                    className={`h-full w-full aspect-square rounded border p-1 text-center shadow-sm transition hover:-translate-y-0.5 hover:brightness-125 focus:outline-none focus:ring-2 focus:ring-saffron ${chosen ? 'border-white ring-2 ring-saffron' : 'border-white/15'}`}
+                    onClick={() => setSelectedCode(code)}
+                    style={{ backgroundColor: colorFor(state[metric], metric) }}
+                    type="button"
+                  >
+                    <span className="block text-sm font-bold text-white drop-shadow">{code}</span>
+                    <span className="mt-1 block text-[10px] text-white/90 drop-shadow">{formatValue(state, metric)}</span>
+                  </button>
+                  {isHovered && (
+                    <div className="absolute left-1/2 top-full z-50 mt-2 w-48 -translate-x-1/2 rounded-lg border border-surface-3 bg-surface-1 p-3 shadow-xl pointer-events-none">
+                      <div className="mb-2 border-b border-surface-3 pb-1 font-bold text-white">{state.name}</div>
+                      <div className="mb-1 flex justify-between text-xs">
+                        <span className="text-text-secondary">Income:</span>
+                        <span className={state.incomeChange < 0 ? 'text-red-400' : 'text-india-green'}>{formatValue(state, 'incomeChange')}</span>
+                      </div>
+                      <div className="mb-1 flex justify-between text-xs">
+                        <span className="text-text-secondary">Inflation:</span>
+                        <span className={state.inflationImpact > 0 ? 'text-red-400' : 'text-india-green'}>{formatValue(state, 'inflationImpact')}</span>
+                      </div>
+                      <div className="mb-1 flex justify-between text-xs">
+                        <span className="text-text-secondary">Acceptance:</span>
+                        <span className="text-white">{formatValue(state, 'acceptance')}</span>
+                      </div>
+                      <div className="flex justify-between text-xs">
+                        <span className="text-text-secondary">Jobs:</span>
+                        <span className="text-white">{formatValue(state, 'jobsAffected')}</span>
+                      </div>
+                    </div>
+                  )}
+                </div>
               );
             }))}
           </div>
