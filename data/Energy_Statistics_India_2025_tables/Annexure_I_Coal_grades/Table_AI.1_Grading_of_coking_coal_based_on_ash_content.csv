@@ -1,0 +1,14 @@
+﻿Grading of coking coal based on ash content
+Publication pages: 131
+
+Grade,Ash content
+Steel Grade I,Ash content < 15%
+Steel Grade II,15% <= ash content < 18%
+Washery Grade I,18% <= ash content < 21%
+Washery Grade II,21% <= ash content < 24%
+Washery Grade III,24% <= ash content < 28%
+Washery Grade IV,28% <= ash content < 35%
+Washery Grade V,35% <= ash content < 42%
+Washery Grade VI,42% <= ash content < 49%
+
+"Note: Source: Coal Controller's Organisation, Ministry of Coal."

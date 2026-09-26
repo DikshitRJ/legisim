@@ -1,0 +1,49 @@
+﻿Table-7.1 : Energy Commodity Balance for 2022-23 (Final)
+Unit: (000 tonnes) | Publication pages: 73
+
+Supply,Coal Lignite LPG Naphtha Kerosene,Coal Lignite LPG Naphtha Kerosene (2),Coal Lignite LPG Naphtha Kerosene (3),Coal Lignite LPG Naphtha Kerosene (4),Diesel Coal Lignite LPG Naphtha Kerosene (HSD+ LDO),Diesel (HSD+ Fuel Oil LDO),Diesel Lubricant Fuel Oil LDO),Diesel Lubricant Fuel Oil Bitumin s LDO),Diesel Lubricant Petrol/Moto Bitumin s LDO),Diesel Petrol/Moto Bitumin ATF r Spirit LDO),Diesel Petrol/Moto Petroleum ATF r Spirit LDO),Diesel Petroleum ATF Petroleum Coke LDO) Products*,Other Petroleum Natural Petroleum Coke Products* MMSCM,Natural Petroleum Electricity Gas Products* MMSCM (GWh),Electricity (GWh)
+Production,893191,44029,12832,17036,948,114421,9242,1301,5144,42817,15000,16044,31756,34450,1617904
+From Other Sources,,,,,,,,,,,,,,,211932
+Imports,237668,23,18335,897,0,322,8563,2152,2797,1069,0,8664,1799,26304,7640
+Exports,-1166,-333,-540,-5714,-11,-28496,-1841,-14,-9,-13127,-7264,-284,-3717,0,-13792
+Stock changes,-15515,1833,,,,,,,,,,,,,
+Domestic Supply,1114178,45552,30627,12219,937,86248,15964,3440,7933,30759,7737,24424,29838,60755,1823684
+Statistical difference,1039,1293,-2124,-92,-448,378,-9006,298,108,4218,-359,-6081,-13995,3566,-18381
+Transformation,785396,38948,1,19,0,427,437,0,0,0,0,0,0,8153,0
+Electricity plants,785396,38948,1,19,,427,437,,,,,,,8153,
+Energy industry own use,0,0,0,0,0,0,0,0,0,0,0,0,0,17954,93429
+Oil and Gas extraction,,,,,,,,,,,,,,5511,
+Petroleum refineries,,,,,,,,,,,,,,3909,
+"Own use in electricity,",,,,,,,,,,,,,,,93429
+Other energy sector,,,,,,,,,,,,,,8534,
+Distribution losses,,,,,,,,,,,,,,108,271563
+Final Consumption,329821,7897,28503,12107,490,86200,6521,3737,8041,34976,7378,18343,15842,38106,1440311
+Industry Sector,329821,7897,2839,12107,0,1738,2311,0,0,0,0,18343,15842,865,593895
+Iron and steel,77528,122,,0,,158,871,,,,,,,,
+Chemical and petroleum,857,,,10402,,86,525,,,,,,,,
+Non-ferrous metals,,,,,,21,385,,,,,,,,
+Machinery,,,,,,64,18,,,,,,,,
+Mining & Quarrying,,,5,,,1066,94,,,,,,,,
+"Paper, pulp and print",1255,894,,,,,,,,,,,,,
+Construction,9418,1445,,,,179,193,,,,,,,,
+Textile and leather,92,1853,,,,127,24,,,,,,,,
+Non-specified,240671,3583,2835,1705,,39,200,,,,,18343,15842,865,593895
+Transport Sector,0,0,108,0,0,2615,1561,0,0,34976,7378,0,0,13792,30028
+Road,,,108,,,148,178,,,34976,,,,12028,
+Domestic Aviation,,,,,,1,,,,,,,,,
+Rail,,,,,,1716,0,,,,,,,,30028
+Pipeline transport,,,,,,,,,,,,,,1764,
+Domestic navigation,,,,,,750,1383,,,,7378,,,,
+Non-specified,,,,,,,0,,,,,,,,
+Other Sectors,0,0,25555,0,490,81846,2649,3737,8041,0,0,0,0,1131,816388
+Residential,,,25382,,308,,,,,,,,,,353156
+Comm. And public services,,,,,62,,,,,,,,,,117231
+Agriculture/forestry,,,22,,,312,54,,,,,,,154,243852
+Non-specified,,,152,,119,81533,2595,3737,8041,,,,,976,102149
+Non-Energy Use,,,,,,,,,,,,,,22319,
+
+Note: Transfer
+Note: CHP and heat plants
+Note: Statistical Difference is defined as final consumption + use for transformation processes and consumption by energy industry own use + losses - domestic supply
+Note: Final consumption = Total Consumption in Transport + Total Industrial Consumption+Consumption by Other sectors+Non energy Use
+"Note: * Incluse Paraffin waxes, petroleum jelly, LSWR, MTBE and reformate, BGO, Benzene, MTO, CBFS and Sulfur etc."
