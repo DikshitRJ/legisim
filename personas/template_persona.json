@@ -1,0 +1,27 @@
+{
+  "$schema": "../persona_schema.json",
+  "id": "urban_gig_worker_mh",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Gig Worker",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.45,
+    "housing": 0.25,
+    "transport": 0.15,
+    "healthcare": 0.05,
+    "education": 0.02,
+    "other": 0.08
+  },
+  "trust_in_govt": 0.4,
+  "ideological_lean": 0.1,
+  "agreeableness": 0.6,
+  "size": 1500000,
+  "weight": 1.0
+}
