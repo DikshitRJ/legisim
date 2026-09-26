@@ -74,6 +74,10 @@ from app.schemas.run import (
     TimelineDataPoint,
 )
 
+from app.schemas.sim_state import Policy, Cohort, Reaction, Metric, SimState
+from app.schemas.jev import PersonaInput, EvalRequest, JEVEvalResponse
+from app.schemas.viz import DataBinding, ChartSpec, VizPlannerOutput
+
 __all__: list[str] = [
     # Common
     "CamelModel",
@@ -134,4 +138,19 @@ __all__: list[str] = [
     # Ripple
     "RippleDomain",
     "ConfidenceLevel",
+
+    # Sim State
+    "Policy",
+    "Cohort",
+    "Reaction",
+    "Metric",
+    "SimState",
+    # JEV (exclusive of duplicates)
+    "PersonaInput",
+    "EvalRequest",
+    "JEVEvalResponse",
+    # Viz
+    "DataBinding",
+    "ChartSpec",
+    "VizPlannerOutput",
 ]
