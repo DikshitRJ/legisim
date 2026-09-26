@@ -1,19 +1,7 @@
 'use client';
 
 import React from 'react';
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Line,
-  LineChart,
-  ReferenceLine,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts';
+import ReactECharts from 'echarts-for-react';
 
 export interface IncomePoint {
   group: string;
@@ -44,21 +32,6 @@ export interface TimelinePoint {
 
 const numberFormatter = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 1 });
 
-function ChartTooltip({ active, payload, label }: { active?: boolean; payload?: Array<{ name?: string; value?: number; color?: string }>; label?: string }) {
-  if (!active || !payload?.length) return null;
-
-  return (
-    <div className="rounded border border-surface-3 bg-surface-1 px-3 py-2 shadow-xl">
-      <p className="mb-1 text-xs font-semibold text-white">{label}</p>
-      {payload.map((entry, index) => (
-        <p className="text-xs" key={`${entry.name}-${index}`} style={{ color: entry.color }}>
-          {entry.name}: {typeof entry.value === 'number' ? numberFormatter.format(entry.value) : '—'}
-        </p>
-      ))}
-    </div>
-  );
-}
-
 export function ChartPanel({ title, description, children }: { title: string; description?: string; children: React.ReactNode }) {
   return (
     <section className="flex min-h-[320px] flex-col rounded-lg border border-surface-3 bg-surface-2 p-5">
@@ -75,75 +48,238 @@ function EmptyChart({ label }: { label: string }) {
   return <div className="flex h-full min-h-48 items-center justify-center text-sm text-text-muted">No {label.toLowerCase()} data is available for this run.</div>;
 }
 
-const axisTick = { fill: '#A1A1AA', fontSize: 11 };
-const grid = <CartesianGrid stroke="#2A2A2A" strokeDasharray="3 3" vertical={false} />;
+const baseChartOptions = {
+  backgroundColor: 'transparent',
+  textStyle: {
+    fontFamily: 'Roboto Flex, sans-serif',
+  },
+  tooltip: {
+    trigger: 'axis',
+    backgroundColor: '#1E1E1E',
+    borderColor: '#2A2A2A',
+    textStyle: { color: '#E5E2E1', fontSize: 12 },
+    axisPointer: { type: 'shadow', shadowStyle: { color: 'rgba(42, 42, 42, 0.35)' } }
+  },
+  grid: {
+    top: 20,
+    right: 20,
+    bottom: 20,
+    left: 40,
+    containLabel: true
+  }
+};
 
 export function IncomeChart({ data }: { data?: IncomePoint[] }) {
   if (!data?.length) return <EmptyChart label="income" />;
-  return (
-    <ResponsiveContainer height="100%" width="100%">
-      <BarChart aria-label="Income change by population group" data={data} margin={{ top: 8, right: 8, left: -18, bottom: 8 }}>
-        {grid}
-        <XAxis dataKey="group" interval={0} stroke="#71717A" tick={axisTick} />
-        <YAxis stroke="#71717A" tick={axisTick} tickFormatter={(value) => `${value}%`} />
-        <Tooltip content={<ChartTooltip />} cursor={{ fill: '#2A2A2A', opacity: 0.35 }} />
-        <ReferenceLine stroke="#71717A" y={0} />
-        <Bar dataKey="change" name="Change (%)" radius={[3, 3, 3, 3]}>
-          {data.map((point) => <Cell fill={point.change < 0 ? '#EF4444' : '#138808'} key={point.group} />)}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  );
+  
+  const options = {
+    ...baseChartOptions,
+    xAxis: {
+      type: 'category',
+      data: data.map(d => d.group),
+      axisLabel: { color: '#A1A1AA', fontSize: 11 },
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      axisLabel: { color: '#A1A1AA', fontSize: 11, formatter: '{value}%' },
+      splitLine: { lineStyle: { color: '#2A2A2A', type: 'dashed' } }
+    },
+    series: [
+      {
+        name: 'Change (%)',
+        type: 'bar',
+        data: data.map(d => ({
+          value: d.change,
+          itemStyle: { color: d.change < 0 ? '#EF4444' : '#138808', borderRadius: [3, 3, 0, 0] }
+        }))
+      },
+      {
+        name: 'Error Margin',
+        type: 'custom',
+        itemStyle: { color: '#71717A', borderWidth: 1.5 },
+        renderItem: function (params: any, api: any) {
+          const xValue = api.value(0);
+          const highPoint = api.coord([xValue, api.value(1)]);
+          const lowPoint = api.coord([xValue, api.value(2)]);
+          const halfWidth = api.size([1, 0])[0] * 0.1;
+          const style = api.style({ stroke: api.visual('color'), fill: null });
+          
+          return {
+            type: 'group',
+            children: [
+              {
+                type: 'line',
+                transition: ['shape'],
+                shape: { x1: highPoint[0], y1: highPoint[1], x2: lowPoint[0], y2: lowPoint[1] },
+                style: style
+              },
+              {
+                type: 'line',
+                transition: ['shape'],
+                shape: { x1: highPoint[0] - halfWidth, y1: highPoint[1], x2: highPoint[0] + halfWidth, y2: highPoint[1] },
+                style: style
+              },
+              {
+                type: 'line',
+                transition: ['shape'],
+                shape: { x1: lowPoint[0] - halfWidth, y1: lowPoint[1], x2: lowPoint[0] + halfWidth, y2: lowPoint[1] },
+                style: style
+              }
+            ]
+          };
+        },
+        data: data.map((d, index) => [index, d.high, d.low]),
+        z: 100
+      }
+    ]
+  };
+
+  return <ReactECharts option={options} style={{ height: '100%', width: '100%' }} />;
 }
 
 export function CostOfLivingChart({ data }: { data?: CostOfLivingPoint[] }) {
   if (!data?.length) return <EmptyChart label="cost-of-living" />;
-  return (
-    <ResponsiveContainer height="100%" width="100%">
-      <BarChart aria-label="Cost of living change by category" data={data} layout="vertical" margin={{ top: 8, right: 12, left: 12, bottom: 8 }}>
-        <CartesianGrid stroke="#2A2A2A" strokeDasharray="3 3" horizontal={false} />
-        <XAxis type="number" stroke="#71717A" tick={axisTick} tickFormatter={(value) => `${value}%`} />
-        <YAxis dataKey="category" type="category" width={80} stroke="#71717A" tick={axisTick} />
-        <Tooltip content={<ChartTooltip />} cursor={{ fill: '#2A2A2A', opacity: 0.35 }} />
-        <Bar dataKey="change" fill="#FF671F" name="Change (%)" radius={[0, 3, 3, 0]} />
-      </BarChart>
-    </ResponsiveContainer>
-  );
+  
+  const options = {
+    ...baseChartOptions,
+    xAxis: {
+      type: 'value',
+      axisLabel: { color: '#A1A1AA', fontSize: 11, formatter: '{value}%' },
+      splitLine: { lineStyle: { color: '#2A2A2A', type: 'dashed' } }
+    },
+    yAxis: {
+      type: 'category',
+      data: data.map(d => d.category),
+      axisLabel: { color: '#A1A1AA', fontSize: 11 },
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    series: [
+      {
+        name: 'Change (%)',
+        type: 'bar',
+        data: data.map(d => ({
+          value: d.change,
+          itemStyle: { color: '#FF671F', borderRadius: [0, 3, 3, 0] }
+        }))
+      }
+    ]
+  };
+
+  return <ReactECharts option={options} style={{ height: '100%', width: '100%' }} />;
 }
 
 export function JobsChart({ data }: { data?: JobsPoint[] }) {
   if (!data?.length) return <EmptyChart label="employment" />;
-  return (
-    <ResponsiveContainer height="100%" width="100%">
-      <BarChart aria-label="Employment change by sector" data={data} layout="vertical" margin={{ top: 8, right: 12, left: 20, bottom: 8 }}>
-        <CartesianGrid stroke="#2A2A2A" strokeDasharray="3 3" horizontal={false} />
-        <XAxis type="number" stroke="#71717A" tick={axisTick} tickFormatter={(value) => numberFormatter.format(value)} />
-        <YAxis dataKey="sector" type="category" width={90} stroke="#71717A" tick={axisTick} />
-        <Tooltip content={<ChartTooltip />} cursor={{ fill: '#2A2A2A', opacity: 0.35 }} />
-        <ReferenceLine stroke="#71717A" x={0} />
-        <Bar dataKey="change" name="Jobs affected" radius={[0, 3, 3, 0]}>
-          {data.map((point) => <Cell fill={point.change < 0 ? '#EF4444' : '#138808'} key={point.sector} />)}
-        </Bar>
-      </BarChart>
-    </ResponsiveContainer>
-  );
+  
+  const options = {
+    ...baseChartOptions,
+    xAxis: [
+      {
+        type: 'value',
+        name: 'Jobs Affected',
+        axisLabel: { color: '#A1A1AA', fontSize: 11, formatter: (val: number) => numberFormatter.format(val) },
+        splitLine: { lineStyle: { color: '#2A2A2A', type: 'dashed' } }
+      },
+      {
+        type: 'value',
+        name: 'Percentage',
+        axisLabel: { color: '#A1A1AA', fontSize: 11, formatter: '{value}%' },
+        splitLine: { show: false }
+      }
+    ],
+    yAxis: {
+      type: 'category',
+      data: data.map(d => d.sector),
+      axisLabel: { color: '#A1A1AA', fontSize: 11 },
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    series: [
+      {
+        name: 'Jobs affected',
+        type: 'bar',
+        xAxisIndex: 0,
+        data: data.map(d => ({
+          value: d.change,
+          itemStyle: { color: d.change < 0 ? '#EF4444' : '#138808', borderRadius: [0, 3, 3, 0] }
+        }))
+      },
+      {
+        name: 'Percentage (%)',
+        type: 'bar',
+        xAxisIndex: 1,
+        data: data.map(d => ({
+          value: d.percentage,
+          itemStyle: { color: '#002868', borderRadius: [0, 3, 3, 0] }
+        }))
+      }
+    ]
+  };
+
+  return <ReactECharts option={options} style={{ height: '100%', width: '100%' }} />;
 }
 
 export function TimelineChart({ data, selectedMonth }: { data?: TimelinePoint[]; selectedMonth?: number }) {
   if (!data?.length) return <EmptyChart label="timeline" />;
+  
   const selected = data.find((point) => point.month === selectedMonth);
-  return (
-    <ResponsiveContainer height="100%" width="100%">
-      <LineChart aria-label="Projected trends by month" data={data} margin={{ top: 8, right: 12, left: -14, bottom: 8 }}>
-        {grid}
-        <XAxis dataKey="label" stroke="#71717A" tick={axisTick} />
-        <YAxis stroke="#71717A" tick={axisTick} />
-        <Tooltip content={<ChartTooltip />} />
-        {selected ? <ReferenceLine stroke="#FF671F" strokeDasharray="4 4" x={selected.label} /> : null}
-        <Line dataKey="incomeChange" dot={false} name="Income (%)" stroke="#EF4444" strokeWidth={2} type="monotone" />
-        <Line dataKey="inflationImpact" dot={false} name="Inflation (pp)" stroke="#FF671F" strokeWidth={2} type="monotone" />
-        <Line dataKey="acceptance" dot={false} name="Acceptance (%)" stroke="#138808" strokeWidth={2} type="monotone" />
-      </LineChart>
-    </ResponsiveContainer>
-  );
+  
+  const options = {
+    ...baseChartOptions,
+    tooltip: { ...baseChartOptions.tooltip, axisPointer: { type: 'line' } },
+    xAxis: {
+      type: 'category',
+      data: data.map(d => d.label),
+      axisLabel: { color: '#A1A1AA', fontSize: 11 },
+      axisLine: { show: false },
+      axisTick: { show: false }
+    },
+    yAxis: {
+      type: 'value',
+      axisLabel: { color: '#A1A1AA', fontSize: 11 },
+      splitLine: { lineStyle: { color: '#2A2A2A', type: 'dashed' } }
+    },
+    series: [
+      {
+        name: 'Income (%)',
+        type: 'line',
+        showSymbol: false,
+        lineStyle: { width: 2, color: '#EF4444' },
+        itemStyle: { color: '#EF4444' },
+        data: data.map(d => d.incomeChange)
+      },
+      {
+        name: 'Inflation (pp)',
+        type: 'line',
+        showSymbol: false,
+        lineStyle: { width: 2, color: '#FF671F' },
+        itemStyle: { color: '#FF671F' },
+        data: data.map(d => d.inflationImpact)
+      },
+      {
+        name: 'Acceptance (%)',
+        type: 'line',
+        showSymbol: false,
+        lineStyle: { width: 2, color: '#138808' },
+        itemStyle: { color: '#138808' },
+        data: data.map(d => d.acceptance)
+      }
+    ]
+  };
+  
+  if (selected) {
+    (options as any).series.push({
+      type: 'line',
+      markLine: {
+        symbol: ['none', 'none'],
+        lineStyle: { color: '#FF671F', type: 'dashed' },
+        data: [{ xAxis: selected.label }]
+      }
+    });
+  }
+
+  return <ReactECharts option={options} style={{ height: '100%', width: '100%' }} />;
 }
