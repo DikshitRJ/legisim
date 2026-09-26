@@ -41,7 +41,9 @@ from app.schemas.run import (
 from app.schemas.run import RunSummary as RunSummarySchema
 
 
-async def create_run(db: AsyncSession, notebook_id: uuid.UUID | None, policy_text: str, cohorts: list) -> SimulationRun:
+from fastapi import BackgroundTasks
+
+async def create_run(db: AsyncSession, background_tasks: BackgroundTasks, notebook_id: uuid.UUID | None, policy_text: str, cohorts: list) -> SimulationRun:
     run = SimulationRun(
         notebook_id=notebook_id,
         policy_text=policy_text,
@@ -52,7 +54,7 @@ async def create_run(db: AsyncSession, notebook_id: uuid.UUID | None, policy_tex
     db.add(run)
     await db.commit()
     await db.refresh(run)
-    await start_simulation(str(run.id))
+    background_tasks.add_task(start_simulation, str(run.id))
     return run
 
 
@@ -76,11 +78,11 @@ async def get_run_events(db: AsyncSession, run_id: uuid.UUID) -> list[RunEventRe
     ]
 
 
-async def resume_run(db: AsyncSession, run_id: uuid.UUID, approved: bool, feedback: str | None) -> None:
+async def resume_run(db: AsyncSession, background_tasks: BackgroundTasks, run_id: uuid.UUID, approved: bool, feedback: str | None) -> None:
     run = await db.get(SimulationRun, run_id)
     if not run:
         raise NotFoundError("Run not found")
-    await resume_simulation(str(run_id), approved, feedback)
+    background_tasks.add_task(resume_simulation, str(run_id), approved, feedback)
 
 
 async def get_run_summary(db: AsyncSession, run_id: uuid.UUID) -> RunSummarySchema:
@@ -106,13 +108,13 @@ async def get_run_dashboard(db: AsyncSession, run_id: uuid.UUID) -> RunDashboard
     )
     for chart in charts:
         if chart.chart_type == 'metric':
-            dashboard.metrics.append(DashboardMetric.model_validate(chart.data))
+            dashboard.metrics.append(DashboardMetric.model_validate(chart.data_payload))
         elif chart.chart_type == 'income':
-            dashboard.income_chart.append(IncomeChartDataPoint.model_validate(chart.data))
+            dashboard.income_chart.append(IncomeChartDataPoint.model_validate(chart.data_payload))
         elif chart.chart_type == 'costOfLiving':
-            dashboard.cost_of_living.append(CostOfLivingDataPoint.model_validate(chart.data))
+            dashboard.cost_of_living.append(CostOfLivingDataPoint.model_validate(chart.data_payload))
         elif chart.chart_type == 'jobs':
-            dashboard.jobs.append(JobsDataPoint.model_validate(chart.data))
+            dashboard.jobs.append(JobsDataPoint.model_validate(chart.data_payload))
     return dashboard
 
 

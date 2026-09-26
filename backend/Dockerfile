@@ -11,10 +11,10 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libpq-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Install python dependencies to a designated prefix directory
-COPY requirements.txt ./
+# Install python dependencies from pyproject.toml
+COPY pyproject.toml ./
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir --prefix=/install -r requirements.txt
+    && pip install --no-cache-dir --prefix=/install .
 
 # ==============================================================================
 # Stage 2: Production Runner
@@ -53,7 +53,7 @@ USER legisim
 EXPOSE 8000
 
 # Container healthcheck using FastAPI health endpoint
-HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+HEALTHCHECK --interval=30s --timeout=5s --start-period=15s --retries=3 \
     CMD curl -f http://localhost:8000/api/health || exit 1
 
 # Start the FastAPI application with Uvicorn

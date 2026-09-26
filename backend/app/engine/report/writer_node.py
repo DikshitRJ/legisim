@@ -9,13 +9,13 @@ from langchain_openai import ChatOpenAI
 from langchain_core.runnables import RunnableConfig
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from backend.app.engine.report.prompts import (
+from app.engine.report.prompts import (
     REPORT_WRITER_SYSTEM_PROMPT,
     REPORT_WRITER_USER_PROMPT
 )
-from backend.app.engine.report.context_builder import prepare_report_context
-from backend.app.engine.report.claim_processor import build_claim_registry
-from backend.app.engine.report.translator import translate_report
+from app.engine.report.context_builder import prepare_report_context
+from app.engine.report.claim_processor import build_claim_registry
+from app.engine.report.translator import translate_report
 
 class _ReportSectionOutput(BaseModel):
     id: str = Field(..., description="Section identifier (e.g., executive_summary)")

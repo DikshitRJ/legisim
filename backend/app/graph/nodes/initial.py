@@ -2,14 +2,17 @@
 from typing import Dict, Any
 from langchain_core.runnables.config import RunnableConfig
 from langgraph.types import interrupt, Command
-from langgraph.config import get_stream_writer
+try:
+    from langgraph.config import get_stream_writer
+except ImportError:
+    get_stream_writer = None  # type: ignore[assignment]
 from app.graph.state import SimState
 
 from app.engine.cohort.population import build_population
 
 async def intake(state: SimState, config: RunnableConfig = None) -> Dict[str, Any]:
     """Intake node."""
-    writer = get_stream_writer()
+    writer = get_stream_writer() if callable(get_stream_writer) else None
     if writer:
         writer({"event": "node_started", "node": "intake"})
         

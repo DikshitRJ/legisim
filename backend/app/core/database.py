@@ -55,15 +55,26 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
 
 
 async def init_db() -> None:
-    """Initialize database connection and verify connectivity.
+    """Initialize database connection, verify connectivity, and create tables.
 
     Executed during application startup lifespan.
     """
+    from app.models.base import Base
+    # Ensure all models are imported so metadata is populated
+    import app.models.officer  # noqa: F401
+    import app.models.notebook  # noqa: F401
+    import app.models.run  # noqa: F401
+
     logger.info("Initializing database connection to %s...", settings.DATABASE_URL.split("@")[-1])
     try:
         async with engine.begin() as conn:
             await conn.execute(text("SELECT 1"))
         logger.info("Database connectivity check passed.")
+
+        # Auto-create tables if they don't exist (safe for dev; use Alembic in prod)
+        async with engine.begin() as conn:
+            await conn.run_sync(Base.metadata.create_all)
+        logger.info("Database tables ensured.")
     except Exception as exc:
         logger.warning(
             "Could not connect to database at startup: %s. Continuing in disconnected state.",

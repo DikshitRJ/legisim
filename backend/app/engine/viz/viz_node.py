@@ -7,8 +7,8 @@ from langchain_core.prompts import PromptTemplate
 from langchain_core.runnables import RunnableConfig
 import json
 
-from backend.app.engine.viz.schemas import VizPlannerOutput
-from backend.app.engine.viz.prompts import VIZ_PLANNER_PROMPT
+from app.engine.viz.schemas import VizPlannerOutput
+from app.engine.viz.prompts import VIZ_PLANNER_PROMPT
 
 async def viz_planner(state: dict, config: RunnableConfig = None) -> dict:
     """Select optimal chart configurations based on simulation results."""

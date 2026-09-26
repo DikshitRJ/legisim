@@ -4,8 +4,8 @@ Critic node for the LangGraph pipeline.
 from typing import Any, Dict
 from langchain_core.runnables import RunnableConfig
 
-from backend.app.engine.critic.hard_limits import check_hard_limits
-from backend.app.engine.critic.claim_auditor import audit_claims
+from app.engine.critic.hard_limits import check_hard_limits
+from app.engine.critic.claim_auditor import audit_claims
 
 async def critic(state: dict, config: RunnableConfig = None) -> dict:
     """Critic node: validates report, routes to revision or end."""

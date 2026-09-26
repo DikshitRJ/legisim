@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import uuid
 
-from fastapi import APIRouter, Depends
+from fastapi import APIRouter, Depends, BackgroundTasks
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.api.deps import get_current_user, get_db
@@ -31,11 +31,12 @@ router = APIRouter()
 @router.post("/", response_model=RunStartResponse)
 async def create_run(
     request: RunStartRequest,
+    background_tasks: BackgroundTasks,
     notebook_id: uuid.UUID | None = None,
     db: AsyncSession = Depends(get_db),
     current_user = Depends(get_current_user)
 ):
-    run = await run_service.create_run(db, notebook_id, request.policy_text, request.cohorts)
+    run = await run_service.create_run(db, background_tasks, notebook_id, request.policy_text, request.cohorts)
     return RunStartResponse(run_id=str(run.id), status=run.status)
 
 @router.get("/{run_id}/status", response_model=RunStatus)
@@ -46,22 +47,30 @@ async def get_run_status(
 ):
     return await run_service.get_run_status(db, run_id)
 
-@router.get("/{run_id}/events", response_model=list[RunEventResponse])
+from app.services.streaming_service import sse_event_generator
+from app.api.deps import get_redis
+from sse_starlette.sse import EventSourceResponse
+from fastapi import Request, HTTPException
+
+@router.get("/{run_id}/events")
 async def get_run_events(
-    run_id: uuid.UUID,
-    db: AsyncSession = Depends(get_db),
-    current_user = Depends(get_current_user)
+    run_id: str,
+    request: Request,
+    redis = Depends(get_redis)
 ):
-    return await run_service.get_run_events(db, run_id)
+    if redis is None:
+        raise HTTPException(status_code=503, detail='Redis not available')
+    return EventSourceResponse(sse_event_generator(redis, run_id))
 
 @router.post("/{run_id}/resume")
 async def resume_run(
     run_id: uuid.UUID,
     request: ResumeRequest,
+    background_tasks: BackgroundTasks,
     db: AsyncSession = Depends(get_db),
     current_user = Depends(get_current_user)
 ):
-    await run_service.resume_run(db, run_id, request.approved, request.feedback)
+    await run_service.resume_run(db, background_tasks, run_id, request.approved, request.feedback)
     return {"status": "resumed"}
 
 @router.get("/{run_id}/summary", response_model=RunSummary)

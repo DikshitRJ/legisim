@@ -1,7 +1,7 @@
 """
 Prompts for the Viz Planner node.
 """
-from backend.app.engine.viz.schemas import CHART_TYPES
+from app.engine.viz.schemas import CHART_TYPES
 
 VIZ_PLANNER_PROMPT = f"""You are an expert data visualization planner for a policy simulation platform.
 Your task is to select optimal chart configurations based on the simulation results.

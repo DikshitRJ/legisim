@@ -1,3 +1,10 @@
+# ==============================================================================
+# LegiSim – Single Docker Compose
+# ==============================================================================
+# Boot the entire stack:  docker compose up --build
+# Tear down:              docker compose down -v
+# ==============================================================================
+
 services:
   # ============================================================================
   # 1. Reverse Proxy: Traefik
@@ -11,14 +18,11 @@ services:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
       - "--entrypoints.web.address=:80"
-      - "--entrypoints.websecure.address=:443"
     ports:
       - "${TRAEFIK_HTTP_PORT:-80}:80"
-      - "${TRAEFIK_HTTPS_PORT:-443}:443"
       - "${TRAEFIK_DASHBOARD_PORT:-8088}:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "traefik-certs:/letsencrypt"
     networks:
       - legisim-network
     restart: unless-stopped
@@ -44,7 +48,7 @@ services:
       test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-legisim} -d ${POSTGRES_DB:-legisim}"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
     restart: unless-stopped
 
   # ============================================================================
@@ -64,7 +68,7 @@ services:
       test: ["CMD", "redis-cli", "-a", "${REDIS_PASSWORD:-redis_secure_pass}", "ping"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
     restart: unless-stopped
 
   # ============================================================================
@@ -88,7 +92,7 @@ services:
       test: ["CMD-SHELL", "curl -f http://localhost:9000/minio/health/live || exit 1"]
       interval: 5s
       timeout: 5s
-      retries: 5
+      retries: 10
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.minio.rule=Host(`s3.${DOMAIN:-localhost}`)"
@@ -100,7 +104,7 @@ services:
     restart: unless-stopped
 
   # ============================================================================
-  # 5. MinIO Bucket Initialization
+  # 5. MinIO Bucket Initialization (one-shot init container)
   # ============================================================================
   minio-create-bucket:
     image: minio/mc:RELEASE.2023-11-20T16-30-59Z
@@ -119,7 +123,7 @@ services:
       - legisim-network
 
   # ============================================================================
-  # 6. Core Application: FastAPI Backend
+  # 6. Core Application: FastAPI Backend (+ LangGraph engine in-process)
   # ============================================================================
   fastapi-backend:
     build:
@@ -128,9 +132,10 @@ services:
     container_name: legisim-backend
     ports:
       - "${BACKEND_PORT:-8000}:8000"
+    env_file:
+      - path: .env
+        required: false
     environment:
-      ENVIRONMENT: ${ENVIRONMENT:-development}
-      SECRET_KEY: ${SECRET_KEY:-legisim-secret-key-change-me-in-production-12345}
       DOMAIN: ${DOMAIN:-localhost}
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-legisim}:${POSTGRES_PASSWORD:-legisim_db_pass}@postgres:5432/${POSTGRES_DB:-legisim}
       REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_pass}@redis:6379/0
@@ -139,14 +144,14 @@ services:
       S3_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minio_admin_pass}
       S3_BUCKET_NAME: ${S3_BUCKET_NAME:-legisim-data}
       S3_USE_SSL: "false"
-      JWT_SECRET_KEY: ${JWT_SECRET_KEY:-legisim-jwt-secret-key-replace-in-production-token}
-      JWT_ALGORITHM: ${JWT_ALGORITHM:-HS256}
-      JWT_EXPIRATION_MINUTES: ${JWT_EXPIRATION_MINUTES:-1440}
-      ZAI_API_KEY: ${ZAI_API_KEY:-}
       SEARXNG_URL: http://searxng:8080
-      JEV_SERVICE_URL: http://langgraph-engine:8001/predict
+      JEV_SERVICE_URL: http://localhost:8001/predict
       MAIL_SERVER: mailpit
       MAIL_PORT: 1025
+    volumes:
+      # Mount personas data so the engine population loader can find them
+      - "./personas:/app/personas:ro"
+      - "./data:/app/data:ro"
     depends_on:
       postgres:
         condition: service_healthy
@@ -165,29 +170,12 @@ services:
       test: ["CMD-SHELL", "curl -f http://localhost:8000/api/health || exit 1"]
       interval: 10s
       timeout: 5s
-      retries: 5
+      retries: 10
+      start_period: 30s
     restart: unless-stopped
 
   # ============================================================================
-  # 7. AI Engine: LangGraph Engine (Stub/Placeholder Port 8001)
-  # ============================================================================
-  langgraph-engine:
-    image: python:3.12-slim
-    container_name: legisim-langgraph-engine
-    command: python -m http.server 8001
-    ports:
-      - "${LANGGRAPH_PORT:-8001}:8001"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.langgraph.rule=Host(`engine.${DOMAIN:-localhost}`)"
-      - "traefik.http.routers.langgraph.entrypoints=web"
-      - "traefik.http.services.langgraph.loadbalancer.server.port=8001"
-    networks:
-      - legisim-network
-    restart: unless-stopped
-
-  # ============================================================================
-  # 8. Web Search: SearXNG (Stub/Placeholder Port 8080)
+  # 7. Web Search: SearXNG
   # ============================================================================
   searxng:
     image: searxng/searxng:latest
@@ -207,32 +195,20 @@ services:
     restart: unless-stopped
 
   # ============================================================================
-  # 9. LLM Gateway: Z.ai Proxy (Stub/Placeholder Port 8002)
-  # ============================================================================
-  zai-proxy:
-    image: python:3.12-slim
-    container_name: legisim-zai-proxy
-    command: python -m http.server 8002
-    ports:
-      - "${ZAI_PROXY_PORT:-8002}:8002"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.zai-proxy.rule=Host(`zai.${DOMAIN:-localhost}`)"
-      - "traefik.http.routers.zai-proxy.entrypoints=web"
-      - "traefik.http.services.zai-proxy.loadbalancer.server.port=8002"
-    networks:
-      - legisim-network
-    restart: unless-stopped
-
-  # ============================================================================
-  # 10. Web Client: Frontend (Stub/Placeholder Port 3000)
+  # 8. Web Client: Next.js Frontend
   # ============================================================================
   frontend:
-    image: python:3.12-slim
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
     container_name: legisim-frontend
-    command: python -m http.server 3000
     ports:
       - "${FRONTEND_PORT:-3000}:3000"
+    environment:
+      NEXT_PUBLIC_API_BASE_URL: http://fastapi-backend:8000
+    depends_on:
+      fastapi-backend:
+        condition: service_healthy
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.frontend.rule=Host(`${DOMAIN:-localhost}`) || Host(`app.${DOMAIN:-localhost}`)"
@@ -243,25 +219,7 @@ services:
     restart: unless-stopped
 
   # ============================================================================
-  # 11. Administration: Admin Dashboard (Stub/Placeholder Port 3001)
-  # ============================================================================
-  admin-dashboard:
-    image: python:3.12-slim
-    container_name: legisim-admin-dashboard
-    command: python -m http.server 3001
-    ports:
-      - "${ADMIN_PORT:-3001}:3001"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.admin.rule=Host(`admin.${DOMAIN:-localhost}`)"
-      - "traefik.http.routers.admin.entrypoints=web"
-      - "traefik.http.services.admin.loadbalancer.server.port=3001"
-    networks:
-      - legisim-network
-    restart: unless-stopped
-
-  # ============================================================================
-  # 12. Email Testing: Mailpit (Port 8025 / 1025)
+  # 9. Email Testing: Mailpit
   # ============================================================================
   mailpit:
     image: axllent/mailpit:latest
@@ -290,8 +248,6 @@ networks:
 # Volumes
 # ==============================================================================
 volumes:
-  traefik-certs:
-    name: legisim-traefik-certs
   pg-data:
     name: legisim-pg-data
   redis-data:

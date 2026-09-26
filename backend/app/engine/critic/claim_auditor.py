@@ -6,7 +6,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 import json
 
-from backend.app.engine.critic.prompts import CRITIC_AUDIT_PROMPT
+from app.engine.critic.prompts import CRITIC_AUDIT_PROMPT
 
 class CriticFeedback(BaseModel):
     """Structured output for the claim auditor."""

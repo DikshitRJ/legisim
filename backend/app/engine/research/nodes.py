@@ -7,9 +7,9 @@ from typing import Dict, Any
 from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 
-from backend.app.engine.research.state import ResearchState
-from backend.app.schemas.jev import TargetingProfile
-from backend.app.engine.research.prompts import (
+from app.engine.research.state import ResearchState
+from app.schemas.jev import TargetingProfile
+from app.engine.research.prompts import (
     SEARCH_PLANNING_PROMPT,
     FACT_EXTRACTION_PROMPT,
     CONFLICT_RESOLUTION_PROMPT,

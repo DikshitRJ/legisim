@@ -4,7 +4,7 @@ Translation module for the LegiSim Report Writer.
 from typing import Any, Dict
 from langchain_core.messages import SystemMessage, HumanMessage
 
-from backend.app.engine.report.prompts import TRANSLATION_SYSTEM_PROMPT
+from app.engine.report.prompts import TRANSLATION_SYSTEM_PROMPT
 
 LANGUAGE_MAP = {
     "hi": "Hindi",

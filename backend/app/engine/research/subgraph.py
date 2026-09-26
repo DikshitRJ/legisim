@@ -3,8 +3,8 @@
 from langgraph.graph import StateGraph, START, END
 from langgraph.graph.state import CompiledStateGraph
 
-from backend.app.engine.research.state import ResearchState
-from backend.app.engine.research.nodes import (
+from app.engine.research.state import ResearchState
+from app.engine.research.nodes import (
     check_cache,
     plan_searches,
     execute_searches,
