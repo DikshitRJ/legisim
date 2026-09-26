@@ -96,3 +96,10 @@ Detailed implementations of specific subsystems and agents within this graph are
 - `07-viz-planner/` - AI chart selection
 - `08-report-writer/` - AI report generation
 - `09-jev-system/` - JEV System One selection engine (NEW)
+
+## Parallel Development Instructions (Integration with 03-Backend)
+
+When implementing this plan concurrently with the `03-backend` API plan, adhere to the following rules to avoid conflicts:
+
+1. **Rely on the Specs:** Both agents must treat the `docs/specs/` folder we generated as the absolute source of truth for data structures.
+2. **Use Stubs/Mocks at the Boundary:** Build the internal `TypedDict` states and isolated LangGraph logic first. Do not assume the SQLAlchemy database models are fully ready during initial execution. Wire the graph up to the real SQLAlchemy models from `03-backend` as a final integration step.

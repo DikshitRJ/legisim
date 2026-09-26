@@ -61,3 +61,10 @@ Key Python packages:
 4. [Data Cube (Precomputation)](04-data-cube/plan.md)
 5. [Streaming & SSE](05-streaming/plan.md)
 6. [Infrastructure & Deployment](06-infrastructure/plan.md)
+
+## Parallel Development Instructions (Integration with 02-LangGraph-Engines)
+
+When implementing this plan concurrently with the `02-langgraph-engines` plan, adhere to the following rules to avoid conflicts:
+
+1. **Rely on the Specs:** Both agents must treat the `docs/specs/` folder we generated as the absolute source of truth for data structures.
+2. **Use Stubs/Mocks at the Boundary:** Create placeholder functions for the simulation triggers (e.g., `async def start_simulation_graph(run_id: str): pass`) when building endpoints. This ensures your API routes and dependency injections won't crash while waiting for the engine implementation to finish.
