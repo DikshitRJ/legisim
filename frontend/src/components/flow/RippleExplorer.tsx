@@ -43,7 +43,7 @@ export interface RippleGraphData {
   edges: RippleEdgeData[];
 }
 
-type FlowNodeData = RippleNodeData & { selected?: boolean };
+type FlowNodeData = Record<string, unknown> & RippleNodeData & { selected?: boolean };
 
 const DOMAIN_COLORS: Record<string, string> = {
   policy: '#FF671F',

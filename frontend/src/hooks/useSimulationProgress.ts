@@ -81,7 +81,7 @@ export function useSimulationProgress(runId: string | null | undefined): Simulat
         if (eventProgress.stage && eventProgress.progress !== undefined) {
           applyStatus(eventProgress.stage, eventProgress.progress, eventProgress.message);
         } else if (active && eventProgress.message) {
-          setState((current) => ({ ...current, message: eventProgress.message }));
+          setState((current) => ({ ...current, message: eventProgress.message ?? null }));
         }
       };
       source.onerror = () => {
