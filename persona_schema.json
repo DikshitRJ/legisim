@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Unique identifier for the persona (e.g., 'urban_middle_class_clerk').",
+      "pattern": "^[a-z0-9_]+$"
+    },
+    "demographics": {
+      "type": "object",
+      "description": "Demographic attributes of the cohort.",
+      "properties": {
+        "region": {
+          "type": "string",
+          "description": "Geographic region or state (e.g., 'Maharashtra', 'UP', 'Karnataka')."
+        },
+        "age_band": {
+          "type": "string",
+          "description": "Age bracket (e.g., '18-25', '26-40', '41-60', '60+')."
+        },
+        "gender": {
+          "type": "string",
+          "enum": ["Male", "Female", "Other", "Mixed"]
+        },
+        "income_band": {
+          "type": "string",
+          "description": "Income classification (e.g., 'BPL', 'Low', 'Lower-Middle', 'Middle', 'High')."
+        },
+        "occupation": {
+          "type": "string",
+          "description": "Primary occupation (e.g., 'Farmer', 'Gig Worker', 'IT Professional', 'Retail')."
+        },
+        "urban_rural": {
+          "type": "string",
+          "enum": ["Urban", "Rural", "Semi-Urban"]
+        },
+        "education": {
+          "type": "string",
+          "description": "Highest education level (e.g., 'Primary', 'Secondary', 'Graduate', 'Post-Graduate', 'None')."
+        },
+        "literacy": {
+          "type": "string",
+          "enum": ["Literate", "Illiterate"]
+        }
+      },
+      "required": [
+        "region",
+        "age_band",
+        "gender",
+        "income_band",
+        "occupation",
+        "urban_rural",
+        "education",
+        "literacy"
+      ],
+      "additionalProperties": false
+    },
+    "spend_mix": {
+      "type": "object",
+      "description": "Proportional breakdown of monthly expenditure (must sum to roughly 1.0).",
+      "properties": {
+        "food": { "type": "number", "minimum": 0, "maximum": 1 },
+        "housing": { "type": "number", "minimum": 0, "maximum": 1 },
+        "transport": { "type": "number", "minimum": 0, "maximum": 1 },
+        "healthcare": { "type": "number", "minimum": 0, "maximum": 1 },
+        "education": { "type": "number", "minimum": 0, "maximum": 1 },
+        "other": { "type": "number", "minimum": 0, "maximum": 1 }
+      },
+      "required": [
+        "food",
+        "housing",
+        "transport",
+        "healthcare",
+        "education",
+        "other"
+      ],
+      "additionalProperties": false
+    },
+    "trust_in_govt": {
+      "type": "number",
+      "description": "Level of trust in the government, ranging from 0.0 (no trust) to 1.0 (high trust).",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "ideological_lean": {
+      "type": "number",
+      "description": "Political ideological lean, typically -1.0 (left/opposition) to 1.0 (right/ruling), or 0.0 to 1.0 depending on scale.",
+      "minimum": -1,
+      "maximum": 1
+    },
+    "agreeableness": {
+      "type": "number",
+      "description": "Propensity to accept policy changes smoothly without protest (0.0 to 1.0).",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "size": {
+      "type": "integer",
+      "description": "Absolute number of individuals represented by this persona.",
+      "minimum": 1
+    },
+    "weight": {
+      "type": "number",
+      "description": "Statistical weight for aggregation (e.g., multiplier in the population).",
+      "minimum": 0
+    }
+  },
+  "required": [
+    "id",
+    "demographics",
+    "spend_mix",
+    "trust_in_govt",
+    "ideological_lean",
+    "agreeableness",
+    "size",
+    "weight"
+  ],
+  "additionalProperties": false
+}
