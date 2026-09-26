@@ -1,0 +1,189 @@
+openapi: 3.0.0
+info:
+  title: LegiSim Cohorts API
+  version: 1.0.0
+  description: API for Cohort configuration, demographics, reactions, and JEV models.
+paths:
+  /api/cohort-categories:
+    get:
+      summary: Get cohort categories
+      operationId: getCohortCategories
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CohortCategory'
+  /api/cohorts/personas:
+    get:
+      summary: List baseline personas
+      operationId: listPersonas
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/PersonaSchema'
+  /api/cohorts/jev/targeting-profile:
+    post:
+      summary: Generate targeting profile
+      operationId: generateTargetingProfile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PolicyInput'
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/TargetingProfile'
+  /api/cohorts/jev/select:
+    post:
+      summary: Run JEV Selection
+      operationId: runJevSelection
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                policy_id:
+                  type: string
+                targeting_profile:
+                  $ref: '#/components/schemas/TargetingProfile'
+                threshold:
+                  type: number
+                  default: 0.65
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/JEVSelectionResult'
+components:
+  schemas:
+    CohortCategory:
+      type: object
+      required: [id, number, title, options]
+      properties:
+        id:
+          type: string
+        number:
+          type: string
+        title:
+          type: string
+        options:
+          type: array
+          items:
+            type: string
+    PersonaDemographics:
+      type: object
+      required: [age, income, location]
+      properties:
+        age:
+          type: string
+        income:
+          type: string
+        location:
+          type: string
+        education:
+          type: string
+        occupation:
+          type: string
+        region:
+          type: string
+    PersonaSchema:
+      type: object
+      required: [id, demographics, assets_and_vulnerabilities, economic_dependency]
+      properties:
+        id:
+          type: string
+        demographics:
+          $ref: '#/components/schemas/PersonaDemographics'
+        assets_and_vulnerabilities:
+          type: array
+          items:
+            type: string
+        economic_dependency:
+          type: array
+          items:
+            type: string
+    PolicyInput:
+      type: object
+      required: [what_changes, size_of_change, change_type, target_group, geographic_coverage]
+      properties:
+        what_changes:
+          type: string
+        size_of_change:
+          type: string
+        change_type:
+          type: string
+        target_group:
+          type: string
+        geographic_coverage:
+          type: string
+        start_date:
+          type: string
+          format: date
+        rollout_phases:
+          type: array
+          items:
+            type: string
+    TargetingProfile:
+      type: object
+      required: [policy_id, summary, direct_impact_criteria, indirect_impact_criteria, geographic_focus]
+      properties:
+        policy_id:
+          type: string
+        summary:
+          type: string
+        direct_impact_criteria:
+          type: string
+        indirect_impact_criteria:
+          type: string
+        geographic_focus:
+          type: string
+        economic_channels:
+          type: array
+          items:
+            type: string
+    JEVPersonaScore:
+      type: object
+      required: [id, score, relevant]
+      properties:
+        id:
+          type: string
+        score:
+          type: number
+        relevant:
+          type: boolean
+    JEVSelectionResult:
+      type: object
+      required: [policy_id, threshold, total_evaluated, total_selected, results, execution_time_ms]
+      properties:
+        policy_id:
+          type: string
+        threshold:
+          type: number
+        total_evaluated:
+          type: integer
+        total_selected:
+          type: integer
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/JEVPersonaScore'
+        execution_time_ms:
+          type: integer

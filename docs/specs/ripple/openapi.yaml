@@ -1,0 +1,142 @@
+openapi: 3.0.3
+info:
+  title: LegiSim Ripple Graph API
+  version: 1.0.0
+  description: API specification for the causal ripple graph domain of LegiSim.
+paths:
+  /api/runs/{runId}/ripple:
+    get:
+      summary: Get Ripple Graph
+      description: Retrieves the complete causal ripple graph (nodes and edges) for a specific simulation run.
+      operationId: getRippleGraph
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          description: Unique identifier of the simulation run.
+          schema:
+            type: string
+            format: uuid
+      responses:
+        '200':
+          description: Successful response containing nodes and edges.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RippleGraphResponse'
+        '404':
+          description: Simulation run not found.
+        '500':
+          description: Internal server error.
+
+components:
+  schemas:
+    RippleDomain:
+      type: string
+      description: Domains for the causal ripple graph.
+      enum:
+        - policy
+        - transport
+        - agriculture
+        - business
+        - consumer
+        - income
+        - economy
+        - social
+        - political
+        - fiscal
+        - health
+        - education
+        - energy
+        - employment
+
+    ConfidenceLevel:
+      type: string
+      description: Three-tier confidence used across ripple nodes.
+      enum:
+        - high
+        - medium
+        - low
+
+    EvidenceKind:
+      type: string
+      description: Provenance tag for nodes.
+      enum:
+        - measured
+        - modelled
+        - judged
+
+    RippleNode:
+      type: object
+      required:
+        - id
+        - label
+        - layer
+        - domain
+        - magnitude
+        - confidence
+        - kind
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the node.
+        label:
+          type: string
+          description: Human-readable label for the impact or state change.
+        layer:
+          type: integer
+          description: Causal depth layer (0 for direct impact).
+        domain:
+          $ref: '#/components/schemas/RippleDomain'
+        magnitude:
+          type: string
+          description: Natural language description of the magnitude of change.
+        confidence:
+          $ref: '#/components/schemas/ConfidenceLevel'
+        kind:
+          $ref: '#/components/schemas/EvidenceKind'
+
+    RippleEdge:
+      type: object
+      required:
+        - id
+        - source
+        - target
+        - strength
+        - lagMonths
+        - mechanism
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the edge.
+        source:
+          type: string
+          description: ID of the source RippleNode.
+        target:
+          type: string
+          description: ID of the target RippleNode.
+        strength:
+          type: number
+          format: float
+          description: Causal strength score.
+        lagMonths:
+          type: integer
+          description: Time delay in months for the effect to manifest.
+        mechanism:
+          type: string
+          description: Explanation of the transmission mechanism.
+
+    RippleGraphResponse:
+      type: object
+      required:
+        - nodes
+        - edges
+      properties:
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/RippleNode'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/RippleEdge'

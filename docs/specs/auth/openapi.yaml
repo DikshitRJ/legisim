@@ -1,0 +1,134 @@
+openapi: 3.0.3
+info:
+  title: LegiSim Auth API
+  description: Authentication and Officer management API for LegiSim
+  version: 1.0.0
+servers:
+  - url: /api
+paths:
+  /auth/login:
+    post:
+      summary: Authenticate an officer
+      description: Login to get an authentication token and user profile.
+      operationId: loginOfficer
+      tags:
+        - Auth
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LoginRequest'
+      responses:
+        '200':
+          description: Successful login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/LoginResponse'
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+  /auth/logout:
+    post:
+      summary: Invalidate current session
+      description: Logs out the authenticated officer.
+      operationId: logoutOfficer
+      tags:
+        - Auth
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Successfully logged out
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SuccessResponse'
+        '401':
+          description: Unauthorized
+  /auth/me:
+    get:
+      summary: Get current authenticated user info
+      description: Retrieves the profile of the currently authenticated officer.
+      operationId: getCurrentUser
+      tags:
+        - Auth
+      security:
+        - BearerAuth: []
+      responses:
+        '200':
+          description: Officer profile
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OfficerProfile'
+        '401':
+          description: Unauthorized
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    LoginRequest:
+      type: object
+      required:
+        - officerId
+        - password
+      properties:
+        officerId:
+          type: string
+          description: ID, username, or email of the officer
+        password:
+          type: string
+          format: password
+          description: Officer's password
+    LoginResponse:
+      type: object
+      required:
+        - token
+        - user
+      properties:
+        token:
+          type: string
+          description: Authentication token (e.g., JWT)
+        user:
+          $ref: '#/components/schemas/OfficerProfile'
+    OfficerProfile:
+      type: object
+      required:
+        - id
+        - name
+        - role
+      properties:
+        id:
+          type: string
+          format: uuid
+          description: Unique identifier of the officer
+        name:
+          type: string
+          description: Full name of the officer
+        role:
+          type: string
+          description: Role of the user
+    SuccessResponse:
+      type: object
+      required:
+        - success
+      properties:
+        success:
+          type: boolean
+          description: Indicates successful operation
+    ErrorResponse:
+      type: object
+      required:
+        - message
+      properties:
+        message:
+          type: string
+          description: Error message details

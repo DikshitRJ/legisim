@@ -1,0 +1,583 @@
+openapi: 3.0.0
+info:
+  title: LegiSim Runs API
+  version: 1.0.0
+  description: Endpoints for simulation runs, predictions, reports, dashboard metrics, and timeline data.
+paths:
+  /api/runs:
+    post:
+      summary: Start new simulation
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                policyText:
+                  type: string
+                cohorts:
+                  type: object
+                  additionalProperties:
+                    type: array
+                    items:
+                      type: string
+      responses:
+        '200':
+          description: Simulation started
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunStartResponse'
+  /api/runs/{runId}/status:
+    get:
+      summary: Polling for loading screen
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Status retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunStatus'
+  /api/runs/{runId}/events:
+    get:
+      summary: SSE stream for live progress
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: SSE Stream
+          content:
+            text/event-stream:
+              schema:
+                type: string
+  /api/runs/{runId}/resume:
+    post:
+      summary: Resume after human review checkpoint
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                feedback:
+                  type: string
+                approved:
+                  type: boolean
+              required:
+                - approved
+      responses:
+        '200':
+          description: Resumed successfully
+  /api/runs/{runId}/summary:
+    get:
+      summary: Executive summary
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Summary retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunSummary'
+  /api/runs/{runId}/dashboard:
+    get:
+      summary: Chart data
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Dashboard data retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RunDashboard'
+  /api/runs/{runId}/groups:
+    get:
+      summary: Cohort group impacts
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Cohort groups retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/CohortGroup'
+  /api/runs/{runId}/map:
+    get:
+      summary: State-level geographic data
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Map data retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/StateData'
+  /api/runs/{runId}/ripple:
+    get:
+      summary: Ripple graph nodes + edges
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Ripple graph retrieved
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/RippleGraph'
+  /api/runs/{runId}/timeline:
+    get:
+      summary: 12-month temporal evolution data
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Timeline data retrieved
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/TimelineDataPoint'
+  /api/runs/{runId}/cube:
+    get:
+      summary: Precomputed data cube
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Data cube retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+  /api/runs/{runId}/report:
+    get:
+      summary: AI-written report
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Report retrieved
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  markdown:
+                    type: string
+  /api/runs/{runId}/chat:
+    post:
+      summary: Ask AI about the simulation
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+      responses:
+        '200':
+          description: AI reply
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  reply:
+                    type: string
+  /api/compare:
+    post:
+      summary: Compare multiple run scenarios
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                runIds:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Comparison data
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  comparison:
+                    type: object
+  /api/runs/{runId}/export/{format}:
+    get:
+      summary: Export data
+      parameters:
+        - name: runId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: format
+          in: path
+          required: true
+          schema:
+            type: string
+            enum: [pdf, csv, pptx]
+      responses:
+        '200':
+          description: Binary file stream
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+components:
+  schemas:
+    RunStartResponse:
+      type: object
+      required:
+        - runId
+        - status
+      properties:
+        runId:
+          type: string
+        status:
+          type: string
+          enum: [loading]
+    RunStatus:
+      type: object
+      required:
+        - stage
+        - progress
+      properties:
+        stage:
+          type: string
+          enum: [research, simulation, analysis, complete]
+        progress:
+          type: number
+    RunSummary:
+      type: object
+      required:
+        - sections
+        - metrics
+      properties:
+        sections:
+          type: array
+          items:
+            $ref: '#/components/schemas/SummarySection'
+        metrics:
+          type: array
+          items:
+            $ref: '#/components/schemas/DashboardMetric'
+    SummarySection:
+      type: object
+      required:
+        - title
+        - content
+        - confidence
+        - kind
+      properties:
+        title:
+          type: string
+        content:
+          type: string
+        confidence:
+          type: string
+          enum: [High, Medium, Low]
+        kind:
+          type: string
+          enum: [measured, modelled, judged]
+    DashboardMetric:
+      type: object
+      required:
+        - label
+        - value
+        - range
+        - direction
+        - kind
+      properties:
+        label:
+          type: string
+        value:
+          type: string
+        range:
+          type: string
+        direction:
+          type: string
+          enum: [positive, negative]
+        kind:
+          type: string
+          enum: [modelled, measured, judged]
+    CohortGroup:
+      type: object
+      required:
+        - id
+        - name
+        - population
+        - description
+        - stance
+        - incomeChange
+        - behaviors
+        - confidence
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        population:
+          type: string
+        description:
+          type: string
+        stance:
+          type: object
+          required:
+            - support
+            - neutral
+            - oppose
+          properties:
+            support:
+              type: number
+            neutral:
+              type: number
+            oppose:
+              type: number
+        incomeChange:
+          type: number
+        behaviors:
+          type: array
+          items:
+            type: string
+        confidence:
+          type: string
+          enum: [High, Medium, Low]
+    StateData:
+      type: object
+      required:
+        - code
+        - name
+        - incomeChange
+        - inflationImpact
+        - acceptance
+        - jobsAffected
+      properties:
+        code:
+          type: string
+        name:
+          type: string
+        incomeChange:
+          type: number
+        inflationImpact:
+          type: number
+        acceptance:
+          type: number
+        jobsAffected:
+          type: number
+    RippleGraph:
+      type: object
+      required:
+        - nodes
+        - edges
+      properties:
+        nodes:
+          type: array
+          items:
+            $ref: '#/components/schemas/RippleNode'
+        edges:
+          type: array
+          items:
+            $ref: '#/components/schemas/RippleEdge'
+    RippleNode:
+      type: object
+      required:
+        - id
+        - label
+        - layer
+        - domain
+        - magnitude
+        - confidence
+        - kind
+      properties:
+        id:
+          type: string
+        label:
+          type: string
+        layer:
+          type: number
+        domain:
+          type: string
+        magnitude:
+          type: string
+        confidence:
+          type: string
+          enum: [High, Medium, Low]
+        kind:
+          type: string
+          enum: [measured, modelled, judged]
+    RippleEdge:
+      type: object
+      required:
+        - id
+        - source
+        - target
+        - strength
+        - lagMonths
+        - mechanism
+      properties:
+        id:
+          type: string
+        source:
+          type: string
+        target:
+          type: string
+        strength:
+          type: number
+        lagMonths:
+          type: number
+        mechanism:
+          type: string
+    TimelineDataPoint:
+      type: object
+      required:
+        - month
+        - label
+        - incomeChange
+        - inflationImpact
+        - acceptance
+        - employment
+      properties:
+        month:
+          type: number
+        label:
+          type: string
+        incomeChange:
+          type: number
+        inflationImpact:
+          type: number
+        acceptance:
+          type: number
+        employment:
+          type: number
+    RunDashboard:
+      type: object
+      required:
+        - income
+        - costOfLiving
+        - jobs
+      properties:
+        income:
+          type: array
+          items:
+            $ref: '#/components/schemas/IncomeChartDataPoint'
+        costOfLiving:
+          type: array
+          items:
+            $ref: '#/components/schemas/CostOfLivingDataPoint'
+        jobs:
+          type: array
+          items:
+            $ref: '#/components/schemas/JobsDataPoint'
+    IncomeChartDataPoint:
+      type: object
+      required:
+        - group
+        - change
+        - low
+        - high
+      properties:
+        group:
+          type: string
+        change:
+          type: number
+        low:
+          type: number
+        high:
+          type: number
+    CostOfLivingDataPoint:
+      type: object
+      required:
+        - category
+        - change
+      properties:
+        category:
+          type: string
+        change:
+          type: number
+    JobsDataPoint:
+      type: object
+      required:
+        - sector
+        - change
+        - percentage
+      properties:
+        sector:
+          type: string
+        change:
+          type: number
+        percentage:
+          type: number
