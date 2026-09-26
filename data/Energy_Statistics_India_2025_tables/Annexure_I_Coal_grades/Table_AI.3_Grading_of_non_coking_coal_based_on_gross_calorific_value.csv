@@ -1,0 +1,23 @@
+﻿Grading of non-coking coal based on gross calorific value
+Publication pages: 131
+
+Grade,GCV range (kcal/kg)
+G1,GCV exceeding 7000
+G2,GCV between 6701 and 7000
+G3,GCV between 6401 and 6700
+G4,GCV between 6101 and 6400
+G5,GCV between 5801 and 6100
+G6,GCV between 5501 and 5800
+G7,GCV between 5201 and 5500
+G8,GCV between 4901 and 5200
+G9,GCV between 4601 and 4900
+G10,GCV between 4301 and 4600
+G11,GCV between 4001 and 4300
+G12,GCV between 3700 and 4000
+G13,GCV between 3400 and 3700
+G14,GCV between 3101 and 3400
+G15,GCV between 2801 and 3100
+G16,GCV between 2501 and 2800
+G17,GCV between 2201 and 2500
+
+"Note: Source: Coal Controller's Organisation, Ministry of Coal."

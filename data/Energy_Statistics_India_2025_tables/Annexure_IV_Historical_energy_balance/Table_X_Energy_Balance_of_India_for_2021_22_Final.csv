@@ -1,0 +1,47 @@
+﻿Table-X: Energy Balance of India for 2021-22 ( Final )
+Unit: All figures in KToE | Publication pages: 148
+
+Item,Coal,Lignite Crude Oil Oil Products Natural Gas,Crude Oil Oil Products Natural Gas,Crude Oil Oil Products Natural Gas (2),Crude Oil Oil Products Natural Gas (3),Nuclear,"Solar, Wind, Hydro","Solar, Wind, Hydro Electricity Others",Electricity,Total
+Production,312681,10828,30344,0,31471,12278,13071,15284,0,425957
+Imports,115989,3,217054,39912,28701,0,0,0,686,402343
+Exports,-886,-4,0,-65588,0,0,0,0,-795,-67274
+Stock changes,16917,363,0,0,0,0,0,0,0,17280
+Total primary energy supply,444701,11190,247397,-25677,60172,12278,13071,15284,-110,778307
+Statistical differences,688,2,24500,-26525,2128,0,0,0,-1424,-632
+Main activity producer electricity plants,-285689,-8837,0,-863,-9395,-12278,-13040,-14698,127664,-217136
+Autoproducer electricity plants,0,0,0,0,0,0,-31,-586,18001,17384
+Oil refineries,0,0,-247021,259358,0,0,0,0,0,12337
+Energy industry own use,0,0,0,0,-18784,0,0,0,-7461,-26246
+Losses,0,0,-24876,0,-87,0,0,0,-23428,-48392
+Final consumption,159700,2355,0,206293,34033,0,0,0,113242,515623
+Industry,159700,2355,0,45286,767,0,0,0,47857,255964
+Iron and steel,37820,60,0,1136,0,0,0,0,0,39016
+Chemical and petrochemical,656,0,0,13507,0,0,0,0,0,14163
+Non-ferrous metals,0,0,0,413,0,0,0,0,0,413
+Machinery,0,0,0,164,0,0,0,0,0,164
+Mining and quarrying,0,0,0,1731,0,0,0,0,0,1731
+"Paper, pulp and print",625,480,0,0,0,0,0,0,0,1105
+Construction,3681,612,0,965,0,0,0,0,0,5258
+Textile and leather,40,474,0,280,0,0,0,0,0,794
+Non-specified (industry),116877,729,0,27091,767,0,0,0,47857,193321
+Transport,0,0,0,43912,11712,0,0,0,1886,57510
+Road,0,0,0,35073,11262,0,0,0,0,46335
+Domestic aviation,0,0,0,5338,0,0,0,0,0,5338
+Rail,0,0,0,1810,0,0,0,0,1886,3696
+Pipeline transport,0,0,0,0,450,0,0,0,0,450
+Domestic navigation,0,0,0,1691,0,0,0,0,0,1691
+Non-specified (transport),0,0,0,0,0,0,0,0,0,0
+Other,0,0,0,117096,1134,0,0,0,63498,181728
+Residential,0,0,0,30160,0,0,0,0,29221,59381
+Commercial and public services,0,0,0,67,0,0,0,0,8352,8419
+Agriculture/forestry,0,0,0,671,144,0,0,0,19647,20462
+Non-specified (other),0,0,0,86198,990,0,0,0,6278,93466
+Non-energy use,0,0,0,0,20421,0,0,0,0,20421
+Non-energy use industry/transformation/energy,0,0,0,0,20421,0,0,0,0,20421
+Non-energy use in transport,0,0,0,0,0,0,0,0,0,0
+Non-energy use in other,0,0,0,0,0,0,0,0,0,0
+Elect. output in GWh,0,0,0,0,0,47112,151984,177725,0,376821
+Elec output-main activity producer ele plants,0,0,0,0,0,47112,151627,170912,0,369652
+Elec output-autoproducer electricity plants,0,0,0,0,0,0,357,6813,0,7170
+
+Note: Final consumption refers to End Use Consumption
