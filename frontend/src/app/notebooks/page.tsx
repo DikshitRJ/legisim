@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { FolderOpen, Plus, Search } from 'lucide-react';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
+import ProtectedRoute from '@/components/layout/ProtectedRoute';
 
 type NotebookPreview = { id: string; title: string; sources: number; description: string; updated: string };
 
@@ -20,6 +21,7 @@ export default function NotebooksPage() {
   const filtered = useMemo(() => previewNotebooks.filter((notebook) => notebook.title.toLowerCase().includes(query.toLowerCase())), [query]);
 
   return (
+    <ProtectedRoute>
     <div className="flex h-[calc(100vh-3px)] min-h-[620px] flex-col overflow-hidden bg-[#0a0a0a]">
       <Header />
       <main className="flex min-h-0 flex-1">
@@ -67,5 +69,6 @@ export default function NotebooksPage() {
       </main>
       <Footer />
     </div>
+    </ProtectedRoute>
   );
 }

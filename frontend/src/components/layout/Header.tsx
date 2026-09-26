@@ -3,8 +3,9 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Settings, LogOut } from 'lucide-react';
+import { useLogout } from '@/hooks/useMutations';
 
 export interface HeaderProps {
   showNav?: boolean;
@@ -13,6 +14,16 @@ export interface HeaderProps {
 export default function Header({ showNav = false }: HeaderProps) {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
+  const logoutMutation = useLogout();
+
+  const handleLogout = () => {
+    logoutMutation.mutate(undefined, {
+      onSuccess: () => {
+        router.push('/login');
+      }
+    });
+  };
 
   return (
     <header className="relative z-50 flex w-full flex-col border-b border-[#1d1d1d] bg-[#101010]">
@@ -65,10 +76,10 @@ export default function Header({ showNav = false }: HeaderProps) {
                 <Settings className="w-4 h-4 mr-3" />
                 Settings
               </Link>
-              <Link href="/login" role="menuitem" className="flex items-center px-4 py-2.5 text-sm text-[#ffb4ab] transition-colors hover:bg-[#2a2a2a]">
+              <button onClick={handleLogout} role="menuitem" className="w-full flex items-center px-4 py-2.5 text-sm text-[#ffb4ab] transition-colors hover:bg-[#2a2a2a] text-left">
                 <LogOut className="w-4 h-4 mr-3" />
                 Log Out
-              </Link>
+              </button>
             </div>
           )}
         </div>

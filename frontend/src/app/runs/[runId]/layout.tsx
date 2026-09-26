@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { usePathname, useParams } from 'next/navigation';
 import Link from 'next/link';
 import Header from '@/components/layout/Header';
+import ProtectedRoute from '@/components/layout/ProtectedRoute';
 import { Filter, Calendar, MapPin, Briefcase } from 'lucide-react';
 
 export default function RunLayout({ children }: { children: React.ReactNode }) {
@@ -12,12 +13,13 @@ export default function RunLayout({ children }: { children: React.ReactNode }) {
   const runId = params.runId as string;
   const [timeValue, setTimeValue] = useState(6); // Default month 6
 
-  // If we are on the loading page, don't show the tabs/filters, just render children
   if (pathname.includes('/loading')) {
     return (
+      <ProtectedRoute>
       <div className="min-h-screen bg-canvas text-text-body flex flex-col font-sans">
         {children}
       </div>
+      </ProtectedRoute>
     );
   }
 
@@ -31,6 +33,7 @@ export default function RunLayout({ children }: { children: React.ReactNode }) {
   ];
 
   return (
+    <ProtectedRoute>
     <div className="min-h-screen bg-canvas text-text-body flex flex-col font-sans overflow-hidden">
       <Header />
       
@@ -94,5 +97,6 @@ export default function RunLayout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
     </div>
+    </ProtectedRoute>
   );
 }

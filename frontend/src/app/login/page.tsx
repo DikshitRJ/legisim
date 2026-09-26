@@ -2,19 +2,25 @@
 
 import { FormEvent, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useLogin } from '@/hooks/useMutations';
 
 export default function LoginPage() {
   const router = useRouter();
   const [officerId, setOfficerId] = useState('');
   const [password, setPassword] = useState('');
-  const [submitting, setSubmitting] = useState(false);
+  
+  const loginMutation = useLogin();
 
   async function handleSignIn(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    setSubmitting(true);
-
-    // TODO(api): replace this UI hand-off with POST /api/auth/login and route only after the session is established.
-    router.push('/notebooks');
+    loginMutation.mutate(
+      { officerId, password },
+      {
+        onSuccess: () => {
+          router.push('/notebooks');
+        },
+      }
+    );
   }
 
   return (
@@ -32,6 +38,11 @@ export default function LoginPage() {
           <div aria-hidden="true" className="flex h-[3px] w-full"><span className="flex-1 bg-[#ff671f]" /><span className="flex-1 bg-[#e5e2e1]" /><span className="flex-1 bg-[#006836]" /></div>
           <div className="p-8 sm:p-10">
             <h1 id="login-title" className="mb-8 text-center text-[30px] font-bold tracking-[0.22em] text-[#e5e2e1] sm:text-[32px]">LEGISIM</h1>
+            {loginMutation.isError && (
+              <div className="mb-4 rounded border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400">
+                {loginMutation.error instanceof Error ? loginMutation.error.message : 'Invalid credentials. Please try again.'}
+              </div>
+            )}
             <form className="flex flex-col gap-5" onSubmit={handleSignIn}>
               <label className="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.055em] text-[#e5e2e1]">
                 Officer ID / Login ID
@@ -41,8 +52,8 @@ export default function LoginPage() {
                 Password
                 <input autoComplete="current-password" required type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="••••••••••••" className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none" />
               </label>
-              <button type="submit" disabled={submitting} className="mt-4 h-12 rounded bg-[#ff671f] text-sm font-bold uppercase tracking-[0.15em] text-[#591b00] transition hover:bg-[#e05a1b] disabled:cursor-wait disabled:opacity-80">
-                {submitting ? 'Signing in…' : 'Sign In'}
+              <button type="submit" disabled={loginMutation.isPending} className="mt-4 h-12 rounded bg-[#ff671f] text-sm font-bold uppercase tracking-[0.15em] text-[#591b00] transition hover:bg-[#e05a1b] disabled:cursor-wait disabled:opacity-80">
+                {loginMutation.isPending ? 'Signing in…' : 'Sign In'}
               </button>
             </form>
           </div>
