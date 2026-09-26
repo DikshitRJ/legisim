@@ -111,7 +111,7 @@ export interface RunStartResponse {
   status: "loading";
 }
 
-export type RunStage = "research" | "simulation" | "analysis" | "complete";
+export type RunStage = "research" | "simulation" | "analysis" | "complete" | "paused";
 
 export interface RunStatus {
   stage: RunStage;
