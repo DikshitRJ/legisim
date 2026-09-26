@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_sericulture_far_mid_mf",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Sericulture farmer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.251,
+    "housing": 0.201,
+    "transport": 0.115,
+    "healthcare": 0.075,
+    "education": 0.131,
+    "other": 0.227
+  },
+  "trust_in_govt": 0.492,
+  "ideological_lean": 0.033,
+  "agreeableness": 0.665,
+  "size": 2729024,
+  "weight": 0.0019493
+}

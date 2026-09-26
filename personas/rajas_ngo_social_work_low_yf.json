@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_ngo_social_work_low_yf",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "NGO/social worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.463,
+    "housing": 0.153,
+    "transport": 0.077,
+    "healthcare": 0.125,
+    "education": 0.047,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.475,
+  "ideological_lean": -0.236,
+  "agreeableness": 0.645,
+  "size": 2451718,
+  "weight": 0.0017512
+}

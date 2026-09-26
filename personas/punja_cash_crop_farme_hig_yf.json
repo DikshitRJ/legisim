@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_cash_crop_farme_hig_yf",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "High",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "Professional",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.118,
+    "housing": 0.255,
+    "transport": 0.102,
+    "healthcare": 0.063,
+    "education": 0.095,
+    "other": 0.367
+  },
+  "trust_in_govt": 0.544,
+  "ideological_lean": -0.437,
+  "agreeableness": 0.684,
+  "size": 37728,
+  "weight": 2.69e-05
+}

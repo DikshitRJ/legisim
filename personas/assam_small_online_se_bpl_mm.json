@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_small_online_se_bpl_mm",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Small online seller",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.571,
+    "housing": 0.091,
+    "transport": 0.06,
+    "healthcare": 0.147,
+    "education": 0.035,
+    "other": 0.096
+  },
+  "trust_in_govt": 0.31,
+  "ideological_lean": 0.386,
+  "agreeableness": 0.639,
+  "size": 3895353,
+  "weight": 0.0027824
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_salt_pan_worker_low_yf",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Salt-pan worker",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.448,
+    "housing": 0.148,
+    "transport": 0.083,
+    "healthcare": 0.126,
+    "education": 0.048,
+    "other": 0.147
+  },
+  "trust_in_govt": 0.33,
+  "ideological_lean": 0.317,
+  "agreeableness": 0.571,
+  "size": 835427,
+  "weight": 0.0005967
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_traditional_hea_mid_mf",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Traditional healer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.252,
+    "housing": 0.207,
+    "transport": 0.107,
+    "healthcare": 0.072,
+    "education": 0.133,
+    "other": 0.229
+  },
+  "trust_in_govt": 0.422,
+  "ideological_lean": 0.377,
+  "agreeableness": 0.752,
+  "size": 2356714,
+  "weight": 0.0016834
+}

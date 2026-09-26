@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "nagal_rural_kirana_sh_bpl_mm",
+  "demographics": {
+    "region": "Nagaland",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.554,
+    "housing": 0.104,
+    "transport": 0.042,
+    "healthcare": 0.146,
+    "education": 0.037,
+    "other": 0.117
+  },
+  "trust_in_govt": 0.422,
+  "ideological_lean": -0.843,
+  "agreeableness": 0.644,
+  "size": 4599790,
+  "weight": 0.0032856
+}

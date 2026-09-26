@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_sericulture_far_low_mf",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Sericulture farmer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.468,
+    "housing": 0.144,
+    "transport": 0.082,
+    "healthcare": 0.113,
+    "education": 0.062,
+    "other": 0.131
+  },
+  "trust_in_govt": 0.427,
+  "ideological_lean": 0.425,
+  "agreeableness": 0.646,
+  "size": 315406,
+  "weight": 0.0002253
+}

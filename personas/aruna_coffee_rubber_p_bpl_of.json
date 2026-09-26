@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "aruna_coffee_rubber_p_bpl_of",
+  "demographics": {
+    "region": "Arunachal Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.573,
+    "housing": 0.091,
+    "transport": 0.062,
+    "healthcare": 0.126,
+    "education": 0.032,
+    "other": 0.116
+  },
+  "trust_in_govt": 0.249,
+  "ideological_lean": -0.443,
+  "agreeableness": 0.572,
+  "size": 931027,
+  "weight": 0.000665
+}

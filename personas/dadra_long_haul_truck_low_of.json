@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "dadra_long_haul_truck_low_of",
+  "demographics": {
+    "region": "Dadra & Nagar Haveli and Daman & Diu",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Long-haul truck driver",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.493,
+    "housing": 0.139,
+    "transport": 0.074,
+    "healthcare": 0.114,
+    "education": 0.045,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.269,
+  "ideological_lean": 0.153,
+  "agreeableness": 0.653,
+  "size": 2282968,
+  "weight": 0.0016307
+}

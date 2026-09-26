@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_app_based_cab_d_mid_ym",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.244,
+    "housing": 0.19,
+    "transport": 0.111,
+    "healthcare": 0.076,
+    "education": 0.133,
+    "other": 0.246
+  },
+  "trust_in_govt": 0.504,
+  "ideological_lean": 0.913,
+  "agreeableness": 0.562,
+  "size": 4176244,
+  "weight": 0.002983
+}

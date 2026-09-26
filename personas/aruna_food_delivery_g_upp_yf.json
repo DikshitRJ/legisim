@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "aruna_food_delivery_g_upp_yf",
+  "demographics": {
+    "region": "Arunachal Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Food-delivery gig worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.174,
+    "housing": 0.225,
+    "transport": 0.12,
+    "healthcare": 0.078,
+    "education": 0.135,
+    "other": 0.268
+  },
+  "trust_in_govt": 0.743,
+  "ideological_lean": 0.841,
+  "agreeableness": 0.744,
+  "size": 1244444,
+  "weight": 0.0008889
+}

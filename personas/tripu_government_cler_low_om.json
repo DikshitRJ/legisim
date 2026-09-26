@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tripu_government_cler_low_om",
+  "demographics": {
+    "region": "Tripura",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Government clerk",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.438,
+    "housing": 0.153,
+    "transport": 0.074,
+    "healthcare": 0.127,
+    "education": 0.046,
+    "other": 0.162
+  },
+  "trust_in_govt": 0.393,
+  "ideological_lean": 0.411,
+  "agreeableness": 0.406,
+  "size": 948845,
+  "weight": 0.0006777
+}

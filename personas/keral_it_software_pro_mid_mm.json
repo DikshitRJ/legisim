@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_it_software_pro_mid_mm",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "IT software professional",
+    "urban_rural": "Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.256,
+    "housing": 0.196,
+    "transport": 0.11,
+    "healthcare": 0.096,
+    "education": 0.114,
+    "other": 0.228
+  },
+  "trust_in_govt": 0.43,
+  "ideological_lean": 0.725,
+  "agreeableness": 0.7,
+  "size": 2603509,
+  "weight": 0.0018596
+}

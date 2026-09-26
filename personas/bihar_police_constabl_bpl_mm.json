@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_police_constabl_bpl_mm",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.552,
+    "housing": 0.099,
+    "transport": 0.05,
+    "healthcare": 0.144,
+    "education": 0.046,
+    "other": 0.109
+  },
+  "trust_in_govt": 0.254,
+  "ideological_lean": 0.037,
+  "agreeableness": 0.428,
+  "size": 3255747,
+  "weight": 0.0023255
+}

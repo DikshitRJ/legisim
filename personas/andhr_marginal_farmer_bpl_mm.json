@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_marginal_farmer_bpl_mm",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Marginal farmer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.545,
+    "housing": 0.108,
+    "transport": 0.054,
+    "healthcare": 0.139,
+    "education": 0.053,
+    "other": 0.101
+  },
+  "trust_in_govt": 0.171,
+  "ideological_lean": -0.312,
+  "agreeableness": 0.475,
+  "size": 2227625,
+  "weight": 0.0015912
+}

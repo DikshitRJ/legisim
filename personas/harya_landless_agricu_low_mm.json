@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_landless_agricu_low_mm",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.357,
+    "housing": 0.179,
+    "transport": 0.101,
+    "healthcare": 0.084,
+    "education": 0.103,
+    "other": 0.176
+  },
+  "trust_in_govt": 0.248,
+  "ideological_lean": 0.455,
+  "agreeableness": 0.689,
+  "size": 1315606,
+  "weight": 0.0009397
+}

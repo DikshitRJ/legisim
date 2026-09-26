@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_beekeeper_low_yf",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.448,
+    "housing": 0.139,
+    "transport": 0.085,
+    "healthcare": 0.116,
+    "education": 0.062,
+    "other": 0.15
+  },
+  "trust_in_govt": 0.144,
+  "ideological_lean": 0.05,
+  "agreeableness": 0.411,
+  "size": 3617924,
+  "weight": 0.0025842
+}

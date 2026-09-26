@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_boat_builder_low_mm",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Boat builder",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.363,
+    "housing": 0.172,
+    "transport": 0.103,
+    "healthcare": 0.093,
+    "education": 0.084,
+    "other": 0.185
+  },
+  "trust_in_govt": 0.575,
+  "ideological_lean": -0.525,
+  "agreeableness": 0.621,
+  "size": 1258319,
+  "weight": 0.0008988
+}

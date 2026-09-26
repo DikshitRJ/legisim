@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_shifting_cultiv_low_ym",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Shifting cultivator",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.457,
+    "housing": 0.157,
+    "transport": 0.071,
+    "healthcare": 0.11,
+    "education": 0.063,
+    "other": 0.142
+  },
+  "trust_in_govt": 0.281,
+  "ideological_lean": 0.051,
+  "agreeableness": 0.669,
+  "size": 1084954,
+  "weight": 0.000775
+}

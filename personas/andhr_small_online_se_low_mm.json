@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_small_online_se_low_mm",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Small online seller",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.456,
+    "housing": 0.14,
+    "transport": 0.078,
+    "healthcare": 0.118,
+    "education": 0.064,
+    "other": 0.144
+  },
+  "trust_in_govt": 0.391,
+  "ideological_lean": -0.179,
+  "agreeableness": 0.631,
+  "size": 4932851,
+  "weight": 0.0035235
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_lawyer_bpl_om",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Lawyer",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.583,
+    "housing": 0.099,
+    "transport": 0.059,
+    "healthcare": 0.129,
+    "education": 0.026,
+    "other": 0.104
+  },
+  "trust_in_govt": 0.327,
+  "ideological_lean": -0.579,
+  "agreeableness": 0.559,
+  "size": 134593,
+  "weight": 9.61e-05
+}

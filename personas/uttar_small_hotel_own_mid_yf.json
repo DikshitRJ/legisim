@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_small_hotel_own_mid_yf",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Small hotel owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.245,
+    "housing": 0.213,
+    "transport": 0.122,
+    "healthcare": 0.068,
+    "education": 0.125,
+    "other": 0.227
+  },
+  "trust_in_govt": 0.558,
+  "ideological_lean": -0.142,
+  "agreeableness": 0.633,
+  "size": 4026287,
+  "weight": 0.0028759
+}

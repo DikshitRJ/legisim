@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_lawyer_bpl_yo",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "18-25",
+    "gender": "Other",
+    "income_band": "BPL",
+    "occupation": "Lawyer",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.566,
+    "housing": 0.12,
+    "transport": 0.05,
+    "healthcare": 0.128,
+    "education": 0.047,
+    "other": 0.089
+  },
+  "trust_in_govt": 0.432,
+  "ideological_lean": -0.253,
+  "agreeableness": 0.468,
+  "size": 769343,
+  "weight": 0.0005495
+}

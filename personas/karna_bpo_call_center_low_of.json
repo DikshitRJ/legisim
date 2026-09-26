@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_bpo_call_center_low_of",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "BPO/call-center employee",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.378,
+    "housing": 0.175,
+    "transport": 0.088,
+    "healthcare": 0.086,
+    "education": 0.095,
+    "other": 0.178
+  },
+  "trust_in_govt": 0.461,
+  "ideological_lean": -0.202,
+  "agreeableness": 0.636,
+  "size": 2285729,
+  "weight": 0.0016327
+}

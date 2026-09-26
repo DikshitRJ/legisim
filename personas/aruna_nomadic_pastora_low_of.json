@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "aruna_nomadic_pastora_low_of",
+  "demographics": {
+    "region": "Arunachal Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.353,
+    "housing": 0.18,
+    "transport": 0.092,
+    "healthcare": 0.106,
+    "education": 0.096,
+    "other": 0.173
+  },
+  "trust_in_govt": 0.452,
+  "ideological_lean": 0.256,
+  "agreeableness": 0.606,
+  "size": 1160054,
+  "weight": 0.0008286
+}

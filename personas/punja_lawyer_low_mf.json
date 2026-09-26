@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_lawyer_low_mf",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Lawyer",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.359,
+    "housing": 0.171,
+    "transport": 0.106,
+    "healthcare": 0.104,
+    "education": 0.077,
+    "other": 0.183
+  },
+  "trust_in_govt": 0.543,
+  "ideological_lean": -0.137,
+  "agreeableness": 0.528,
+  "size": 202263,
+  "weight": 0.0001445
+}

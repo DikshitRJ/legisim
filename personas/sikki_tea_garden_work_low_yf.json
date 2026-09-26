@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "sikki_tea_garden_work_low_yf",
+  "demographics": {
+    "region": "Sikkim",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Tea garden worker",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.448,
+    "housing": 0.146,
+    "transport": 0.081,
+    "healthcare": 0.12,
+    "education": 0.047,
+    "other": 0.158
+  },
+  "trust_in_govt": 0.196,
+  "ideological_lean": -0.648,
+  "agreeableness": 0.593,
+  "size": 8614,
+  "weight": 6.2e-06
+}

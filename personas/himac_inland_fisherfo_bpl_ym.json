@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "himac_inland_fisherfo_bpl_ym",
+  "demographics": {
+    "region": "Himachal Pradesh",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Inland fisherfolk",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.544,
+    "housing": 0.116,
+    "transport": 0.047,
+    "healthcare": 0.143,
+    "education": 0.04,
+    "other": 0.11
+  },
+  "trust_in_govt": 0.331,
+  "ideological_lean": -0.123,
+  "agreeableness": 0.629,
+  "size": 817517,
+  "weight": 0.0005839
+}

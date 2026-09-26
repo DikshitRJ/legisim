@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andam_marine_fisherfo_mid_mf",
+  "demographics": {
+    "region": "Andaman & Nicobar Islands",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Marine fisherfolk",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.258,
+    "housing": 0.179,
+    "transport": 0.121,
+    "healthcare": 0.078,
+    "education": 0.134,
+    "other": 0.23
+  },
+  "trust_in_govt": 0.521,
+  "ideological_lean": 0.593,
+  "agreeableness": 0.844,
+  "size": 917101,
+  "weight": 0.0006551
+}

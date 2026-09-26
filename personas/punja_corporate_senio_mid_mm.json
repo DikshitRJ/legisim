@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_corporate_senio_mid_mm",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "Middle",
+    "occupation": "Corporate senior executive",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.279,
+    "housing": 0.183,
+    "transport": 0.129,
+    "healthcare": 0.085,
+    "education": 0.104,
+    "other": 0.22
+  },
+  "trust_in_govt": 0.483,
+  "ideological_lean": -0.237,
+  "agreeableness": 0.81,
+  "size": 4506544,
+  "weight": 0.003219
+}

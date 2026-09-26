@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_street_vendor_bpl_mm",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Street vendor",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.586,
+    "housing": 0.089,
+    "transport": 0.063,
+    "healthcare": 0.109,
+    "education": 0.035,
+    "other": 0.118
+  },
+  "trust_in_govt": 0.407,
+  "ideological_lean": -0.523,
+  "agreeableness": 0.503,
+  "size": 605460,
+  "weight": 0.0004325
+}

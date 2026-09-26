@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_chartered_accou_upp_mo",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "26-40",
+    "gender": "Other",
+    "income_band": "Upper-Middle",
+    "occupation": "Chartered accountant",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.185,
+    "housing": 0.203,
+    "transport": 0.119,
+    "healthcare": 0.073,
+    "education": 0.148,
+    "other": 0.272
+  },
+  "trust_in_govt": 0.703,
+  "ideological_lean": 0.242,
+  "agreeableness": 0.596,
+  "size": 4548088,
+  "weight": 0.0032486
+}

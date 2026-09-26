@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_auto_rickshaw_d_low_mf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Auto-rickshaw driver",
+    "urban_rural": "Semi-Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.449,
+    "housing": 0.138,
+    "transport": 0.073,
+    "healthcare": 0.126,
+    "education": 0.052,
+    "other": 0.162
+  },
+  "trust_in_govt": 0.225,
+  "ideological_lean": 0.398,
+  "agreeableness": 0.66,
+  "size": 4446155,
+  "weight": 0.0031758
+}

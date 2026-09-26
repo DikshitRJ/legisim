@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_nurse_upp_mf",
+  "demographics": {
+    "region": "Uttarakhand",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Nurse",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.154,
+    "housing": 0.24,
+    "transport": 0.116,
+    "healthcare": 0.061,
+    "education": 0.127,
+    "other": 0.302
+  },
+  "trust_in_govt": 0.837,
+  "ideological_lean": -0.051,
+  "agreeableness": 0.648,
+  "size": 2855299,
+  "weight": 0.0020395
+}

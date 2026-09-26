@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_marine_fisherfo_low_mf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Marine fisherfolk",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.441,
+    "housing": 0.143,
+    "transport": 0.068,
+    "healthcare": 0.127,
+    "education": 0.064,
+    "other": 0.157
+  },
+  "trust_in_govt": 0.175,
+  "ideological_lean": -0.633,
+  "agreeableness": 0.536,
+  "size": 1065405,
+  "weight": 0.000761
+}

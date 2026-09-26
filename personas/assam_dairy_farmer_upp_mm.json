@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_dairy_farmer_upp_mm",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Dairy farmer",
+    "urban_rural": "Rural",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.171,
+    "housing": 0.218,
+    "transport": 0.117,
+    "healthcare": 0.065,
+    "education": 0.125,
+    "other": 0.304
+  },
+  "trust_in_govt": 0.64,
+  "ideological_lean": -0.097,
+  "agreeableness": 0.778,
+  "size": 4778413,
+  "weight": 0.0034132
+}

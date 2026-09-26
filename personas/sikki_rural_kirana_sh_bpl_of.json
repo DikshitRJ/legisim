@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "sikki_rural_kirana_sh_bpl_of",
+  "demographics": {
+    "region": "Sikkim",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.56,
+    "housing": 0.12,
+    "transport": 0.062,
+    "healthcare": 0.113,
+    "education": 0.045,
+    "other": 0.1
+  },
+  "trust_in_govt": 0.167,
+  "ideological_lean": 0.41,
+  "agreeableness": 0.418,
+  "size": 33442,
+  "weight": 2.39e-05
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "megha_cash_crop_farme_low_mf",
+  "demographics": {
+    "region": "Meghalaya",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.363,
+    "housing": 0.184,
+    "transport": 0.102,
+    "healthcare": 0.093,
+    "education": 0.08,
+    "other": 0.178
+  },
+  "trust_in_govt": 0.458,
+  "ideological_lean": -0.052,
+  "agreeableness": 0.664,
+  "size": 2595180,
+  "weight": 0.0018537
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_panchayat_funct_low_mf",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.371,
+    "housing": 0.171,
+    "transport": 0.087,
+    "healthcare": 0.105,
+    "education": 0.089,
+    "other": 0.177
+  },
+  "trust_in_govt": 0.574,
+  "ideological_lean": -0.527,
+  "agreeableness": 0.47,
+  "size": 259548,
+  "weight": 0.0001854
+}

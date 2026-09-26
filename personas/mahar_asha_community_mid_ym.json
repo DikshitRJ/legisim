@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_asha_community_mid_ym",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "ASHA/community health worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.26,
+    "housing": 0.192,
+    "transport": 0.116,
+    "healthcare": 0.088,
+    "education": 0.123,
+    "other": 0.221
+  },
+  "trust_in_govt": 0.547,
+  "ideological_lean": -0.014,
+  "agreeableness": 0.83,
+  "size": 2389547,
+  "weight": 0.0017068
+}

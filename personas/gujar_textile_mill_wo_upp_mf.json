@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_textile_mill_wo_upp_mf",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Textile mill worker",
+    "urban_rural": "Urban",
+    "education": "Professional",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.165,
+    "housing": 0.241,
+    "transport": 0.111,
+    "healthcare": 0.07,
+    "education": 0.143,
+    "other": 0.27
+  },
+  "trust_in_govt": 0.707,
+  "ideological_lean": -0.368,
+  "agreeableness": 0.732,
+  "size": 2316602,
+  "weight": 0.0016547
+}

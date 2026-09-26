@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "odish_marine_fisherfo_mid_om",
+  "demographics": {
+    "region": "Odisha",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Marine fisherfolk",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.251,
+    "housing": 0.189,
+    "transport": 0.122,
+    "healthcare": 0.079,
+    "education": 0.121,
+    "other": 0.238
+  },
+  "trust_in_govt": 0.531,
+  "ideological_lean": 0.07,
+  "agreeableness": 0.766,
+  "size": 4782031,
+  "weight": 0.0034157
+}

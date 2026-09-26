@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_asha_community_low_mm",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "ASHA/community health worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.471,
+    "housing": 0.144,
+    "transport": 0.078,
+    "healthcare": 0.114,
+    "education": 0.063,
+    "other": 0.13
+  },
+  "trust_in_govt": 0.113,
+  "ideological_lean": -0.488,
+  "agreeableness": 0.613,
+  "size": 2041732,
+  "weight": 0.0014584
+}

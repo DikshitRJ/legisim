@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_app_based_cab_d_low_yf",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.45,
+    "housing": 0.158,
+    "transport": 0.064,
+    "healthcare": 0.114,
+    "education": 0.058,
+    "other": 0.156
+  },
+  "trust_in_govt": 0.225,
+  "ideological_lean": 0.595,
+  "agreeableness": 0.413,
+  "size": 4451193,
+  "weight": 0.0031794
+}

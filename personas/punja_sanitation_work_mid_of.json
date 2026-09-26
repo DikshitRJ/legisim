@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_sanitation_work_mid_of",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Sanitation worker",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.265,
+    "housing": 0.21,
+    "transport": 0.104,
+    "healthcare": 0.083,
+    "education": 0.135,
+    "other": 0.203
+  },
+  "trust_in_govt": 0.433,
+  "ideological_lean": 0.754,
+  "agreeableness": 0.628,
+  "size": 2377162,
+  "weight": 0.001698
+}

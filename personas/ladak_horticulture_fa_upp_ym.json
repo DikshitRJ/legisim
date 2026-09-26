@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "ladak_horticulture_fa_upp_ym",
+  "demographics": {
+    "region": "Ladakh",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Horticulture farmer",
+    "urban_rural": "Rural",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.189,
+    "housing": 0.208,
+    "transport": 0.115,
+    "healthcare": 0.063,
+    "education": 0.138,
+    "other": 0.287
+  },
+  "trust_in_govt": 0.777,
+  "ideological_lean": -0.347,
+  "agreeableness": 0.822,
+  "size": 4661,
+  "weight": 3.3e-06
+}

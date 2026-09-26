@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_kirana_shop_own_low_mf",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Kirana shop owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.175,
+    "transport": 0.099,
+    "healthcare": 0.095,
+    "education": 0.076,
+    "other": 0.176
+  },
+  "trust_in_govt": 0.41,
+  "ideological_lean": 0.407,
+  "agreeableness": 0.681,
+  "size": 4151126,
+  "weight": 0.0029651
+}

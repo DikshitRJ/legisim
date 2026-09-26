@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_nomadic_pastora_low_ym",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "18-25",
+    "gender": "Mixed",
+    "income_band": "Low",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.477,
+    "housing": 0.162,
+    "transport": 0.07,
+    "healthcare": 0.109,
+    "education": 0.047,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.208,
+  "ideological_lean": -0.154,
+  "agreeableness": 0.505,
+  "size": 437709,
+  "weight": 0.0003126
+}

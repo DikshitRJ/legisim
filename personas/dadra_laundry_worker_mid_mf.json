@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "dadra_laundry_worker_mid_mf",
+  "demographics": {
+    "region": "Dadra & Nagar Haveli and Daman & Diu",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Laundry worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.267,
+    "housing": 0.202,
+    "transport": 0.103,
+    "healthcare": 0.082,
+    "education": 0.138,
+    "other": 0.208
+  },
+  "trust_in_govt": 0.599,
+  "ideological_lean": -0.075,
+  "agreeableness": 0.67,
+  "size": 532692,
+  "weight": 0.0003805
+}

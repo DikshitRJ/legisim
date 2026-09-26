@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_civil_engineer_mid_mf_1",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Civil engineer/architect",
+    "urban_rural": "Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.273,
+    "housing": 0.192,
+    "transport": 0.126,
+    "healthcare": 0.087,
+    "education": 0.104,
+    "other": 0.218
+  },
+  "trust_in_govt": 0.586,
+  "ideological_lean": 0.819,
+  "agreeableness": 0.593,
+  "size": 1206567,
+  "weight": 0.0008618
+}

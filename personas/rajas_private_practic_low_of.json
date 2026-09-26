@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_private_practic_low_of",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Private-practice doctor",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.449,
+    "housing": 0.15,
+    "transport": 0.084,
+    "healthcare": 0.126,
+    "education": 0.044,
+    "other": 0.147
+  },
+  "trust_in_govt": 0.144,
+  "ideological_lean": 0.37,
+  "agreeableness": 0.484,
+  "size": 4056775,
+  "weight": 0.0028977
+}

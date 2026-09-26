@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_chartered_accou_mid_mf",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Chartered accountant",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.271,
+    "housing": 0.203,
+    "transport": 0.105,
+    "healthcare": 0.084,
+    "education": 0.104,
+    "other": 0.233
+  },
+  "trust_in_govt": 0.577,
+  "ideological_lean": -0.045,
+  "agreeableness": 0.655,
+  "size": 1997857,
+  "weight": 0.001427
+}

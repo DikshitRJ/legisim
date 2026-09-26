@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_rural_kirana_sh_low_mm",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.473,
+    "housing": 0.146,
+    "transport": 0.08,
+    "healthcare": 0.118,
+    "education": 0.045,
+    "other": 0.138
+  },
+  "trust_in_govt": 0.358,
+  "ideological_lean": 0.381,
+  "agreeableness": 0.585,
+  "size": 1909043,
+  "weight": 0.0013636
+}

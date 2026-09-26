@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_long_haul_truck_low_mf",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Long-haul truck driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.453,
+    "housing": 0.139,
+    "transport": 0.076,
+    "healthcare": 0.127,
+    "education": 0.057,
+    "other": 0.148
+  },
+  "trust_in_govt": 0.45,
+  "ideological_lean": -0.392,
+  "agreeableness": 0.414,
+  "size": 630343,
+  "weight": 0.0004502
+}

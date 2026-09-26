@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_poultry_farmer_mid_of",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Poultry farmer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.229,
+    "housing": 0.209,
+    "transport": 0.129,
+    "healthcare": 0.082,
+    "education": 0.101,
+    "other": 0.25
+  },
+  "trust_in_govt": 0.523,
+  "ideological_lean": 0.004,
+  "agreeableness": 0.59,
+  "size": 1085799,
+  "weight": 0.0007756
+}

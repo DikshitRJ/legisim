@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_garment_export_low_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Garment export factory worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.482,
+    "housing": 0.152,
+    "transport": 0.076,
+    "healthcare": 0.111,
+    "education": 0.045,
+    "other": 0.134
+  },
+  "trust_in_govt": 0.278,
+  "ideological_lean": 0.449,
+  "agreeableness": 0.592,
+  "size": 4751824,
+  "weight": 0.0033942
+}

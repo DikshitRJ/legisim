@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tripu_salt_pan_worker_mid_mm",
+  "demographics": {
+    "region": "Tripura",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Salt-pan worker",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.276,
+    "housing": 0.187,
+    "transport": 0.107,
+    "healthcare": 0.082,
+    "education": 0.129,
+    "other": 0.219
+  },
+  "trust_in_govt": 0.6,
+  "ideological_lean": -0.522,
+  "agreeableness": 0.852,
+  "size": 1311585,
+  "weight": 0.0009368
+}

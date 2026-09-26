@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_app_based_cab_d_low_yf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.439,
+    "housing": 0.16,
+    "transport": 0.072,
+    "healthcare": 0.116,
+    "education": 0.056,
+    "other": 0.157
+  },
+  "trust_in_govt": 0.272,
+  "ideological_lean": 0.128,
+  "agreeableness": 0.537,
+  "size": 4424375,
+  "weight": 0.0031603
+}

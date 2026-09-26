@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_horticulture_fa_hig_yf",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "High",
+    "occupation": "Horticulture farmer",
+    "urban_rural": "Rural",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.145,
+    "housing": 0.253,
+    "transport": 0.096,
+    "healthcare": 0.058,
+    "education": 0.097,
+    "other": 0.351
+  },
+  "trust_in_govt": 0.678,
+  "ideological_lean": -0.255,
+  "agreeableness": 0.737,
+  "size": 363211,
+  "weight": 0.0002594
+}

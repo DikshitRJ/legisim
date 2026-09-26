@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jammu_coffee_rubber_p_mid_mm",
+  "demographics": {
+    "region": "Jammu & Kashmir",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.234,
+    "housing": 0.215,
+    "transport": 0.115,
+    "healthcare": 0.076,
+    "education": 0.135,
+    "other": 0.225
+  },
+  "trust_in_govt": 0.417,
+  "ideological_lean": -0.167,
+  "agreeableness": 0.687,
+  "size": 2158994,
+  "weight": 0.0015421
+}

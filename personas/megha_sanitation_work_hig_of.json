@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "megha_sanitation_work_hig_of",
+  "demographics": {
+    "region": "Meghalaya",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "High",
+    "occupation": "Sanitation worker",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.124,
+    "housing": 0.257,
+    "transport": 0.088,
+    "healthcare": 0.054,
+    "education": 0.095,
+    "other": 0.382
+  },
+  "trust_in_govt": 0.738,
+  "ideological_lean": -0.438,
+  "agreeableness": 0.57,
+  "size": 209835,
+  "weight": 0.0001499
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "ladak_tailor_low_mm",
+  "demographics": {
+    "region": "Ladakh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Tailor",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.447,
+    "housing": 0.154,
+    "transport": 0.085,
+    "healthcare": 0.119,
+    "education": 0.044,
+    "other": 0.151
+  },
+  "trust_in_govt": 0.209,
+  "ideological_lean": -0.346,
+  "agreeableness": 0.438,
+  "size": 15346,
+  "weight": 1.1e-05
+}

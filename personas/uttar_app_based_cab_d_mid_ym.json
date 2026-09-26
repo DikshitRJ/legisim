@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_app_based_cab_d_mid_ym",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.259,
+    "housing": 0.192,
+    "transport": 0.11,
+    "healthcare": 0.072,
+    "education": 0.126,
+    "other": 0.241
+  },
+  "trust_in_govt": 0.495,
+  "ideological_lean": 0.186,
+  "agreeableness": 0.762,
+  "size": 1731040,
+  "weight": 0.0012365
+}

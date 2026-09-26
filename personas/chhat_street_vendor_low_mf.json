@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_street_vendor_low_mf",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Street vendor",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.395,
+    "housing": 0.16,
+    "transport": 0.088,
+    "healthcare": 0.094,
+    "education": 0.095,
+    "other": 0.168
+  },
+  "trust_in_govt": 0.25,
+  "ideological_lean": 0.305,
+  "agreeableness": 0.452,
+  "size": 136313,
+  "weight": 9.74e-05
+}

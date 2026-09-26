@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "nagal_landless_agricu_low_mf",
+  "demographics": {
+    "region": "Nagaland",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.48,
+    "housing": 0.136,
+    "transport": 0.072,
+    "healthcare": 0.128,
+    "education": 0.046,
+    "other": 0.138
+  },
+  "trust_in_govt": 0.225,
+  "ideological_lean": -0.591,
+  "agreeableness": 0.64,
+  "size": 1829981,
+  "weight": 0.0013071
+}

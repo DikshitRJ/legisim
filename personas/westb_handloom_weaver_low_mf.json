@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_handloom_weaver_low_mf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Handloom weaver",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.451,
+    "housing": 0.148,
+    "transport": 0.075,
+    "healthcare": 0.122,
+    "education": 0.053,
+    "other": 0.151
+  },
+  "trust_in_govt": 0.404,
+  "ideological_lean": -0.164,
+  "agreeableness": 0.592,
+  "size": 1536134,
+  "weight": 0.0010972
+}

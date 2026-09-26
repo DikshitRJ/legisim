@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_landless_agricu_low_yo",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "18-25",
+    "gender": "Other",
+    "income_band": "Low",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.474,
+    "housing": 0.134,
+    "transport": 0.066,
+    "healthcare": 0.125,
+    "education": 0.057,
+    "other": 0.144
+  },
+  "trust_in_govt": 0.169,
+  "ideological_lean": -0.404,
+  "agreeableness": 0.604,
+  "size": 989778,
+  "weight": 0.000707
+}

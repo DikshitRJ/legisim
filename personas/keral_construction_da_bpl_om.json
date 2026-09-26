@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_construction_da_bpl_om",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Construction daily-wage laborer",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.565,
+    "housing": 0.106,
+    "transport": 0.047,
+    "healthcare": 0.142,
+    "education": 0.036,
+    "other": 0.104
+  },
+  "trust_in_govt": 0.451,
+  "ideological_lean": -0.002,
+  "agreeableness": 0.549,
+  "size": 148239,
+  "weight": 0.0001059
+}

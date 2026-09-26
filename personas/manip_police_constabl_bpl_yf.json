@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "manip_police_constabl_bpl_yf",
+  "demographics": {
+    "region": "Manipur",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.559,
+    "housing": 0.115,
+    "transport": 0.042,
+    "healthcare": 0.123,
+    "education": 0.047,
+    "other": 0.114
+  },
+  "trust_in_govt": 0.31,
+  "ideological_lean": -0.08,
+  "agreeableness": 0.583,
+  "size": 1407603,
+  "weight": 0.0010054
+}

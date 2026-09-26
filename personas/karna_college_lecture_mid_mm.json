@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_college_lecture_mid_mm",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "College lecturer",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.248,
+    "housing": 0.193,
+    "transport": 0.132,
+    "healthcare": 0.091,
+    "education": 0.119,
+    "other": 0.217
+  },
+  "trust_in_govt": 0.504,
+  "ideological_lean": 0.364,
+  "agreeableness": 0.701,
+  "size": 4211916,
+  "weight": 0.0030085
+}

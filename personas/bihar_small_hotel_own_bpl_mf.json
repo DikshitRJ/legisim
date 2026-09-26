@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_small_hotel_own_bpl_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Small hotel owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.578,
+    "housing": 0.11,
+    "transport": 0.048,
+    "healthcare": 0.118,
+    "education": 0.038,
+    "other": 0.108
+  },
+  "trust_in_govt": 0.41,
+  "ideological_lean": -0.391,
+  "agreeableness": 0.497,
+  "size": 539554,
+  "weight": 0.0003854
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_handloom_weaver_low_mf",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Handloom weaver",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.45,
+    "housing": 0.156,
+    "transport": 0.069,
+    "healthcare": 0.116,
+    "education": 0.049,
+    "other": 0.16
+  },
+  "trust_in_govt": 0.308,
+  "ideological_lean": -0.713,
+  "agreeableness": 0.557,
+  "size": 574835,
+  "weight": 0.0004106
+}

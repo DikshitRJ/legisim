@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_startup_founder_mid_mm",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Startup founder",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.254,
+    "housing": 0.214,
+    "transport": 0.122,
+    "healthcare": 0.085,
+    "education": 0.103,
+    "other": 0.222
+  },
+  "trust_in_govt": 0.574,
+  "ideological_lean": 0.559,
+  "agreeableness": 0.808,
+  "size": 2093095,
+  "weight": 0.0014951
+}

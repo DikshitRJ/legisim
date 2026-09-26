@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_shifting_cultiv_mid_mf",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Shifting cultivator",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.238,
+    "housing": 0.225,
+    "transport": 0.105,
+    "healthcare": 0.094,
+    "education": 0.113,
+    "other": 0.225
+  },
+  "trust_in_govt": 0.479,
+  "ideological_lean": 0.115,
+  "agreeableness": 0.816,
+  "size": 4442022,
+  "weight": 0.0031729
+}

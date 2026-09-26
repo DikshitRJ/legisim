@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_cash_crop_farme_bpl_yf_1",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.555,
+    "housing": 0.126,
+    "transport": 0.051,
+    "healthcare": 0.152,
+    "education": 0.023,
+    "other": 0.093
+  },
+  "trust_in_govt": 0.129,
+  "ideological_lean": 0.154,
+  "agreeableness": 0.432,
+  "size": 825658,
+  "weight": 0.0005898
+}

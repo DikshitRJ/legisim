@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jammu_forest_produce_bpl_ym",
+  "demographics": {
+    "region": "Jammu & Kashmir",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Forest-produce gatherer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.584,
+    "housing": 0.092,
+    "transport": 0.045,
+    "healthcare": 0.137,
+    "education": 0.032,
+    "other": 0.11
+  },
+  "trust_in_govt": 0.301,
+  "ideological_lean": 0.136,
+  "agreeableness": 0.465,
+  "size": 1126160,
+  "weight": 0.0008044
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_msme_manufactur_bpl_mm",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "BPL",
+    "occupation": "MSME manufacturing worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.531,
+    "housing": 0.114,
+    "transport": 0.06,
+    "healthcare": 0.153,
+    "education": 0.028,
+    "other": 0.114
+  },
+  "trust_in_govt": 0.285,
+  "ideological_lean": -0.529,
+  "agreeableness": 0.69,
+  "size": 2894619,
+  "weight": 0.0020676
+}

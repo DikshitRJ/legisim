@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_asha_community_low_yf",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "ASHA/community health worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.169,
+    "transport": 0.094,
+    "healthcare": 0.096,
+    "education": 0.095,
+    "other": 0.167
+  },
+  "trust_in_govt": 0.583,
+  "ideological_lean": 0.099,
+  "agreeableness": 0.697,
+  "size": 4381745,
+  "weight": 0.0031298
+}

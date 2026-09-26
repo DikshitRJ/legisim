@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_government_cler_mid_mf",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Government clerk",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.264,
+    "housing": 0.196,
+    "transport": 0.111,
+    "healthcare": 0.075,
+    "education": 0.133,
+    "other": 0.221
+  },
+  "trust_in_govt": 0.785,
+  "ideological_lean": 0.229,
+  "agreeableness": 0.693,
+  "size": 155345,
+  "weight": 0.000111
+}

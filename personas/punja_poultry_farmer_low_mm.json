@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_poultry_farmer_low_mm",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Poultry farmer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.367,
+    "housing": 0.18,
+    "transport": 0.093,
+    "healthcare": 0.093,
+    "education": 0.089,
+    "other": 0.178
+  },
+  "trust_in_govt": 0.431,
+  "ideological_lean": -0.374,
+  "agreeableness": 0.466,
+  "size": 4786339,
+  "weight": 0.0034188
+}

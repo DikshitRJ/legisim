@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_landless_agricu_mid_yo",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "18-25",
+    "gender": "Other",
+    "income_band": "Middle",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.259,
+    "housing": 0.203,
+    "transport": 0.113,
+    "healthcare": 0.08,
+    "education": 0.136,
+    "other": 0.209
+  },
+  "trust_in_govt": 0.334,
+  "ideological_lean": 0.252,
+  "agreeableness": 0.827,
+  "size": 3938060,
+  "weight": 0.0028129
+}

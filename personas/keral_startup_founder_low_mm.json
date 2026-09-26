@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_startup_founder_low_mm",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Startup founder",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.169,
+    "transport": 0.094,
+    "healthcare": 0.093,
+    "education": 0.08,
+    "other": 0.185
+  },
+  "trust_in_govt": 0.431,
+  "ideological_lean": 0.55,
+  "agreeableness": 0.434,
+  "size": 4794481,
+  "weight": 0.0034246
+}

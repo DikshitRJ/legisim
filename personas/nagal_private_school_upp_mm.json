@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "nagal_private_school_upp_mm",
+  "demographics": {
+    "region": "Nagaland",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Private-school teacher",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.161,
+    "housing": 0.246,
+    "transport": 0.108,
+    "healthcare": 0.064,
+    "education": 0.153,
+    "other": 0.268
+  },
+  "trust_in_govt": 0.632,
+  "ideological_lean": 0.035,
+  "agreeableness": 0.584,
+  "size": 2392212,
+  "weight": 0.0017087
+}

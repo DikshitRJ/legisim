@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_nomadic_pastora_mid_om",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.265,
+    "housing": 0.206,
+    "transport": 0.116,
+    "healthcare": 0.08,
+    "education": 0.119,
+    "other": 0.214
+  },
+  "trust_in_govt": 0.594,
+  "ideological_lean": -0.417,
+  "agreeableness": 0.683,
+  "size": 908105,
+  "weight": 0.0006486
+}

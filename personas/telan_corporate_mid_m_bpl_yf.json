@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_corporate_mid_m_bpl_yf",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Corporate mid-manager",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.581,
+    "housing": 0.106,
+    "transport": 0.05,
+    "healthcare": 0.131,
+    "education": 0.029,
+    "other": 0.103
+  },
+  "trust_in_govt": 0.394,
+  "ideological_lean": -0.388,
+  "agreeableness": 0.461,
+  "size": 3784991,
+  "weight": 0.0027036
+}

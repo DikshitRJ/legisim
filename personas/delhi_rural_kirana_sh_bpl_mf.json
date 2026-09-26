@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_rural_kirana_sh_bpl_mf",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.565,
+    "housing": 0.092,
+    "transport": 0.066,
+    "healthcare": 0.125,
+    "education": 0.044,
+    "other": 0.108
+  },
+  "trust_in_govt": 0.257,
+  "ideological_lean": -0.672,
+  "agreeableness": 0.587,
+  "size": 1670278,
+  "weight": 0.0011931
+}

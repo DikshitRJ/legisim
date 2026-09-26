@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_railway_market_bpl_ym",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Railway/market porter",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.55,
+    "housing": 0.112,
+    "transport": 0.046,
+    "healthcare": 0.152,
+    "education": 0.025,
+    "other": 0.115
+  },
+  "trust_in_govt": 0.435,
+  "ideological_lean": -0.479,
+  "agreeableness": 0.526,
+  "size": 4464670,
+  "weight": 0.0031891
+}

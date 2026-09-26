@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andam_small_online_se_low_yf",
+  "demographics": {
+    "region": "Andaman & Nicobar Islands",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Small online seller",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.456,
+    "housing": 0.137,
+    "transport": 0.076,
+    "healthcare": 0.129,
+    "education": 0.046,
+    "other": 0.156
+  },
+  "trust_in_govt": 0.431,
+  "ideological_lean": -0.141,
+  "agreeableness": 0.576,
+  "size": 413803,
+  "weight": 0.0002956
+}

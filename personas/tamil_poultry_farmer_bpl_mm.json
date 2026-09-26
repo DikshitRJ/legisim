@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_poultry_farmer_bpl_mm",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Poultry farmer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.559,
+    "housing": 0.096,
+    "transport": 0.05,
+    "healthcare": 0.158,
+    "education": 0.023,
+    "other": 0.114
+  },
+  "trust_in_govt": 0.242,
+  "ideological_lean": -0.369,
+  "agreeableness": 0.549,
+  "size": 3069091,
+  "weight": 0.0021922
+}

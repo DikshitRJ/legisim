@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_shifting_cultiv_low_mf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Shifting cultivator",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.466,
+    "housing": 0.147,
+    "transport": 0.066,
+    "healthcare": 0.115,
+    "education": 0.05,
+    "other": 0.156
+  },
+  "trust_in_govt": 0.344,
+  "ideological_lean": -0.19,
+  "agreeableness": 0.592,
+  "size": 1755277,
+  "weight": 0.0012538
+}

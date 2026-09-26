@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_traditional_hea_low_mf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Traditional healer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.351,
+    "housing": 0.166,
+    "transport": 0.103,
+    "healthcare": 0.104,
+    "education": 0.097,
+    "other": 0.179
+  },
+  "trust_in_govt": 0.561,
+  "ideological_lean": -0.019,
+  "agreeableness": 0.479,
+  "size": 2167952,
+  "weight": 0.0015485
+}

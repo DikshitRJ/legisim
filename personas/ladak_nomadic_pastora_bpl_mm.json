@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "ladak_nomadic_pastora_bpl_mm",
+  "demographics": {
+    "region": "Ladakh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.552,
+    "housing": 0.095,
+    "transport": 0.06,
+    "healthcare": 0.149,
+    "education": 0.045,
+    "other": 0.099
+  },
+  "trust_in_govt": 0.468,
+  "ideological_lean": -0.628,
+  "agreeableness": 0.51,
+  "size": 28295,
+  "weight": 2.02e-05
+}

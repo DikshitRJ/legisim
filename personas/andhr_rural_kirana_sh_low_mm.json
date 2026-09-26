@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_rural_kirana_sh_low_mm",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "Lower-Middle",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.376,
+    "housing": 0.169,
+    "transport": 0.101,
+    "healthcare": 0.104,
+    "education": 0.085,
+    "other": 0.165
+  },
+  "trust_in_govt": 0.411,
+  "ideological_lean": -0.39,
+  "agreeableness": 0.632,
+  "size": 4247062,
+  "weight": 0.0030336
+}

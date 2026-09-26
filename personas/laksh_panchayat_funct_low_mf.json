@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "laksh_panchayat_funct_low_mf",
+  "demographics": {
+    "region": "Lakshadweep",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.354,
+    "housing": 0.175,
+    "transport": 0.088,
+    "healthcare": 0.106,
+    "education": 0.104,
+    "other": 0.173
+  },
+  "trust_in_govt": 0.484,
+  "ideological_lean": -0.054,
+  "agreeableness": 0.467,
+  "size": 8503,
+  "weight": 6.1e-06
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_railway_market_mid_mf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Railway/market porter",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.252,
+    "housing": 0.215,
+    "transport": 0.105,
+    "healthcare": 0.073,
+    "education": 0.12,
+    "other": 0.235
+  },
+  "trust_in_govt": 0.557,
+  "ideological_lean": -0.04,
+  "agreeableness": 0.585,
+  "size": 2685934,
+  "weight": 0.0019185
+}

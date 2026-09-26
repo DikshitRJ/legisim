@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_long_haul_truck_bpl_mm",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Long-haul truck driver",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.564,
+    "housing": 0.117,
+    "transport": 0.048,
+    "healthcare": 0.123,
+    "education": 0.05,
+    "other": 0.098
+  },
+  "trust_in_govt": 0.438,
+  "ideological_lean": -0.084,
+  "agreeableness": 0.508,
+  "size": 2308019,
+  "weight": 0.0016486
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_beekeeper_mid_mm",
+  "demographics": {
+    "region": "Uttarakhand",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.263,
+    "housing": 0.196,
+    "transport": 0.126,
+    "healthcare": 0.088,
+    "education": 0.116,
+    "other": 0.211
+  },
+  "trust_in_govt": 0.557,
+  "ideological_lean": -0.563,
+  "agreeableness": 0.702,
+  "size": 3834413,
+  "weight": 0.0027389
+}

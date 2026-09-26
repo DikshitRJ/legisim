@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_two_wheeler_mec_mid_yf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Two-wheeler mechanic",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.243,
+    "housing": 0.209,
+    "transport": 0.124,
+    "healthcare": 0.084,
+    "education": 0.103,
+    "other": 0.237
+  },
+  "trust_in_govt": 0.448,
+  "ideological_lean": 0.476,
+  "agreeableness": 0.789,
+  "size": 2882751,
+  "weight": 0.0020591
+}

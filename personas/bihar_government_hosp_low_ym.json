@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_government_hosp_low_ym",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Government-hospital doctor",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.161,
+    "transport": 0.091,
+    "healthcare": 0.098,
+    "education": 0.088,
+    "other": 0.183
+  },
+  "trust_in_govt": 0.806,
+  "ideological_lean": -0.456,
+  "agreeableness": 0.487,
+  "size": 4272370,
+  "weight": 0.0030517
+}

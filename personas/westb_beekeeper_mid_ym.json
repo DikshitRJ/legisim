@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_beekeeper_mid_ym",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.266,
+    "housing": 0.203,
+    "transport": 0.116,
+    "healthcare": 0.078,
+    "education": 0.126,
+    "other": 0.211
+  },
+  "trust_in_govt": 0.406,
+  "ideological_lean": -0.155,
+  "agreeableness": 0.591,
+  "size": 3824032,
+  "weight": 0.0027315
+}

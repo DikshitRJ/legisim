@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_police_constabl_low_mm",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.451,
+    "housing": 0.141,
+    "transport": 0.089,
+    "healthcare": 0.124,
+    "education": 0.061,
+    "other": 0.134
+  },
+  "trust_in_govt": 0.181,
+  "ideological_lean": -0.221,
+  "agreeableness": 0.43,
+  "size": 4559053,
+  "weight": 0.0032565
+}

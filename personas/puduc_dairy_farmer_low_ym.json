@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_dairy_farmer_low_ym",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Dairy farmer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.371,
+    "housing": 0.161,
+    "transport": 0.097,
+    "healthcare": 0.1,
+    "education": 0.095,
+    "other": 0.176
+  },
+  "trust_in_govt": 0.459,
+  "ideological_lean": 0.216,
+  "agreeableness": 0.466,
+  "size": 1336693,
+  "weight": 0.0009548
+}

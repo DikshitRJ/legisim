@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "megha_corporate_senio_mid_mf",
+  "demographics": {
+    "region": "Meghalaya",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Corporate senior executive",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.231,
+    "housing": 0.219,
+    "transport": 0.111,
+    "healthcare": 0.083,
+    "education": 0.125,
+    "other": 0.231
+  },
+  "trust_in_govt": 0.538,
+  "ideological_lean": 0.191,
+  "agreeableness": 0.649,
+  "size": 1267146,
+  "weight": 0.0009051
+}

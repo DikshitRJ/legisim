@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_tea_garden_work_bpl_mm",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Tea garden worker",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.57,
+    "housing": 0.126,
+    "transport": 0.051,
+    "healthcare": 0.111,
+    "education": 0.034,
+    "other": 0.108
+  },
+  "trust_in_govt": 0.374,
+  "ideological_lean": -0.056,
+  "agreeableness": 0.605,
+  "size": 559793,
+  "weight": 0.0003999
+}

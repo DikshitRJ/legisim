@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_app_based_cab_d_bpl_yf",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.55,
+    "housing": 0.107,
+    "transport": 0.052,
+    "healthcare": 0.125,
+    "education": 0.047,
+    "other": 0.119
+  },
+  "trust_in_govt": 0.221,
+  "ideological_lean": 0.414,
+  "agreeableness": 0.485,
+  "size": 2845599,
+  "weight": 0.0020326
+}

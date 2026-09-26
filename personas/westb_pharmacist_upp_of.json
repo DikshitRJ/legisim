@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_pharmacist_upp_of",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Pharmacist",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.173,
+    "housing": 0.246,
+    "transport": 0.115,
+    "healthcare": 0.076,
+    "education": 0.119,
+    "other": 0.271
+  },
+  "trust_in_govt": 0.676,
+  "ideological_lean": -0.155,
+  "agreeableness": 0.82,
+  "size": 1001750,
+  "weight": 0.0007155
+}

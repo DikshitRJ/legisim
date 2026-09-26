@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mizor_panchayat_funct_low_mm",
+  "demographics": {
+    "region": "Mizoram",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.451,
+    "housing": 0.165,
+    "transport": 0.084,
+    "healthcare": 0.114,
+    "education": 0.052,
+    "other": 0.134
+  },
+  "trust_in_govt": 0.212,
+  "ideological_lean": -0.375,
+  "agreeableness": 0.665,
+  "size": 3361897,
+  "weight": 0.0024014
+}

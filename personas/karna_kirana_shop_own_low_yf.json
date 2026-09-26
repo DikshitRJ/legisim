@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_kirana_shop_own_low_yf",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Kirana shop owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.465,
+    "housing": 0.143,
+    "transport": 0.077,
+    "healthcare": 0.114,
+    "education": 0.049,
+    "other": 0.152
+  },
+  "trust_in_govt": 0.271,
+  "ideological_lean": -0.491,
+  "agreeableness": 0.4,
+  "size": 2655152,
+  "weight": 0.0018965
+}

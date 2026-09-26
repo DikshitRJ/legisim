@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_rural_kirana_sh_low_mm",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.464,
+    "housing": 0.143,
+    "transport": 0.077,
+    "healthcare": 0.122,
+    "education": 0.058,
+    "other": 0.136
+  },
+  "trust_in_govt": 0.317,
+  "ideological_lean": -0.875,
+  "agreeableness": 0.54,
+  "size": 3367168,
+  "weight": 0.0024051
+}

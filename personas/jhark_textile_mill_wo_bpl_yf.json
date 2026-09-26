@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_textile_mill_wo_bpl_yf",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Textile mill worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.57,
+    "housing": 0.122,
+    "transport": 0.062,
+    "healthcare": 0.127,
+    "education": 0.025,
+    "other": 0.094
+  },
+  "trust_in_govt": 0.316,
+  "ideological_lean": -0.39,
+  "agreeableness": 0.511,
+  "size": 2081354,
+  "weight": 0.0014867
+}

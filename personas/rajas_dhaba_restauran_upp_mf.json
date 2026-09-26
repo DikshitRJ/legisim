@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_dhaba_restauran_upp_mf",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Dhaba/restaurant owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.187,
+    "housing": 0.209,
+    "transport": 0.109,
+    "healthcare": 0.065,
+    "education": 0.135,
+    "other": 0.295
+  },
+  "trust_in_govt": 0.85,
+  "ideological_lean": 0.186,
+  "agreeableness": 0.79,
+  "size": 4898478,
+  "weight": 0.0034989
+}

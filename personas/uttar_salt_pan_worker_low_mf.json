@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_salt_pan_worker_low_mf",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Salt-pan worker",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.453,
+    "housing": 0.155,
+    "transport": 0.078,
+    "healthcare": 0.108,
+    "education": 0.051,
+    "other": 0.155
+  },
+  "trust_in_govt": 0.442,
+  "ideological_lean": -0.333,
+  "agreeableness": 0.413,
+  "size": 4616862,
+  "weight": 0.0032978
+}

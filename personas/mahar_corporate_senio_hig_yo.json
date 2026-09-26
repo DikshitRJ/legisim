@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_corporate_senio_hig_yo",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "18-25",
+    "gender": "Other",
+    "income_band": "High",
+    "occupation": "Corporate senior executive",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.121,
+    "housing": 0.276,
+    "transport": 0.085,
+    "healthcare": 0.079,
+    "education": 0.101,
+    "other": 0.338
+  },
+  "trust_in_govt": 0.652,
+  "ideological_lean": -0.258,
+  "agreeableness": 0.885,
+  "size": 311366,
+  "weight": 0.0002224
+}

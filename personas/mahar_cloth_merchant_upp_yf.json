@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_cloth_merchant_upp_yf",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Cloth merchant",
+    "urban_rural": "Semi-Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.16,
+    "housing": 0.253,
+    "transport": 0.112,
+    "healthcare": 0.071,
+    "education": 0.113,
+    "other": 0.291
+  },
+  "trust_in_govt": 0.646,
+  "ideological_lean": 0.233,
+  "agreeableness": 0.806,
+  "size": 342827,
+  "weight": 0.0002449
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_panchayat_funct_bpl_mm",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.527,
+    "housing": 0.125,
+    "transport": 0.055,
+    "healthcare": 0.15,
+    "education": 0.029,
+    "other": 0.114
+  },
+  "trust_in_govt": 0.356,
+  "ideological_lean": -0.566,
+  "agreeableness": 0.578,
+  "size": 4141114,
+  "weight": 0.0029579
+}

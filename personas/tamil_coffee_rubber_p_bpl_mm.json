@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_coffee_rubber_p_bpl_mm",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.566,
+    "housing": 0.091,
+    "transport": 0.045,
+    "healthcare": 0.149,
+    "education": 0.048,
+    "other": 0.101
+  },
+  "trust_in_govt": 0.287,
+  "ideological_lean": -0.253,
+  "agreeableness": 0.634,
+  "size": 4254989,
+  "weight": 0.0030393
+}

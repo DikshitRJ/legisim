@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_laundry_worker_mid_mm",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Laundry worker",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.244,
+    "housing": 0.188,
+    "transport": 0.127,
+    "healthcare": 0.085,
+    "education": 0.112,
+    "other": 0.244
+  },
+  "trust_in_govt": 0.587,
+  "ideological_lean": 0.029,
+  "agreeableness": 0.811,
+  "size": 2794149,
+  "weight": 0.0019958
+}

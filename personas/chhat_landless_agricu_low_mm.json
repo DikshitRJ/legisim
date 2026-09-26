@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_landless_agricu_low_mm",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.346,
+    "housing": 0.192,
+    "transport": 0.093,
+    "healthcare": 0.098,
+    "education": 0.107,
+    "other": 0.164
+  },
+  "trust_in_govt": 0.262,
+  "ideological_lean": 0.51,
+  "agreeableness": 0.431,
+  "size": 1515352,
+  "weight": 0.0010824
+}

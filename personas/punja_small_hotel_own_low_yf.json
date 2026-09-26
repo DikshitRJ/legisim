@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_small_hotel_own_low_yf",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Small hotel owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.378,
+    "housing": 0.181,
+    "transport": 0.091,
+    "healthcare": 0.098,
+    "education": 0.087,
+    "other": 0.165
+  },
+  "trust_in_govt": 0.508,
+  "ideological_lean": -0.238,
+  "agreeableness": 0.449,
+  "size": 309087,
+  "weight": 0.0002208
+}

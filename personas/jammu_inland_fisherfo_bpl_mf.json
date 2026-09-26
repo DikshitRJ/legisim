@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jammu_inland_fisherfo_bpl_mf",
+  "demographics": {
+    "region": "Jammu & Kashmir",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Inland fisherfolk",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.545,
+    "housing": 0.096,
+    "transport": 0.059,
+    "healthcare": 0.143,
+    "education": 0.042,
+    "other": 0.115
+  },
+  "trust_in_govt": 0.385,
+  "ideological_lean": -0.107,
+  "agreeableness": 0.668,
+  "size": 2061574,
+  "weight": 0.0014726
+}

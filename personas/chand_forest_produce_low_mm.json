@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chand_forest_produce_low_mm",
+  "demographics": {
+    "region": "Chandigarh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Forest-produce gatherer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.457,
+    "housing": 0.149,
+    "transport": 0.082,
+    "healthcare": 0.116,
+    "education": 0.063,
+    "other": 0.133
+  },
+  "trust_in_govt": 0.219,
+  "ideological_lean": 0.019,
+  "agreeableness": 0.444,
+  "size": 3327464,
+  "weight": 0.0023768
+}

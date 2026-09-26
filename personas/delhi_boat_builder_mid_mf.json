@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_boat_builder_mid_mf",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Boat builder",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.266,
+    "housing": 0.191,
+    "transport": 0.117,
+    "healthcare": 0.093,
+    "education": 0.116,
+    "other": 0.217
+  },
+  "trust_in_govt": 0.538,
+  "ideological_lean": -0.392,
+  "agreeableness": 0.574,
+  "size": 1411257,
+  "weight": 0.001008
+}

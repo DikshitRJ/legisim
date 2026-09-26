@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andam_beekeeper_low_ym",
+  "demographics": {
+    "region": "Andaman & Nicobar Islands",
+    "age_band": "18-25",
+    "gender": "Mixed",
+    "income_band": "Low",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.458,
+    "housing": 0.148,
+    "transport": 0.086,
+    "healthcare": 0.112,
+    "education": 0.048,
+    "other": 0.148
+  },
+  "trust_in_govt": 0.164,
+  "ideological_lean": -0.0,
+  "agreeableness": 0.546,
+  "size": 2435179,
+  "weight": 0.0017394
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tripu_migrant_brick_k_low_mm",
+  "demographics": {
+    "region": "Tripura",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Migrant brick-kiln laborer",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.374,
+    "housing": 0.177,
+    "transport": 0.093,
+    "healthcare": 0.088,
+    "education": 0.085,
+    "other": 0.183
+  },
+  "trust_in_govt": 0.271,
+  "ideological_lean": 0.255,
+  "agreeableness": 0.454,
+  "size": 4508009,
+  "weight": 0.00322
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_garment_export_mid_ym",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Garment export factory worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.23,
+    "housing": 0.19,
+    "transport": 0.132,
+    "healthcare": 0.082,
+    "education": 0.11,
+    "other": 0.256
+  },
+  "trust_in_govt": 0.474,
+  "ideological_lean": 0.276,
+  "agreeableness": 0.754,
+  "size": 729038,
+  "weight": 0.0005207
+}

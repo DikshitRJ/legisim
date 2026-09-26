@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_journalist_low_mm",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Journalist",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.359,
+    "housing": 0.171,
+    "transport": 0.094,
+    "healthcare": 0.097,
+    "education": 0.087,
+    "other": 0.192
+  },
+  "trust_in_govt": 0.533,
+  "ideological_lean": -0.086,
+  "agreeableness": 0.425,
+  "size": 3973007,
+  "weight": 0.0028379
+}

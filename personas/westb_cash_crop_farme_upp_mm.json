@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_cash_crop_farme_upp_mm",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "Professional",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.154,
+    "housing": 0.234,
+    "transport": 0.105,
+    "healthcare": 0.082,
+    "education": 0.117,
+    "other": 0.308
+  },
+  "trust_in_govt": 0.678,
+  "ideological_lean": 0.511,
+  "agreeableness": 0.877,
+  "size": 414289,
+  "weight": 0.0002959
+}

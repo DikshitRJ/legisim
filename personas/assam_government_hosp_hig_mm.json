@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_government_hosp_hig_mm",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "High",
+    "occupation": "Government-hospital doctor",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.143,
+    "housing": 0.248,
+    "transport": 0.091,
+    "healthcare": 0.071,
+    "education": 0.117,
+    "other": 0.33
+  },
+  "trust_in_govt": 0.706,
+  "ideological_lean": 0.098,
+  "agreeableness": 0.773,
+  "size": 106964,
+  "weight": 7.64e-05
+}

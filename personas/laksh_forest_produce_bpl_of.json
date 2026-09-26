@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "laksh_forest_produce_bpl_of",
+  "demographics": {
+    "region": "Lakshadweep",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Forest-produce gatherer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.573,
+    "housing": 0.096,
+    "transport": 0.051,
+    "healthcare": 0.117,
+    "education": 0.052,
+    "other": 0.111
+  },
+  "trust_in_govt": 0.3,
+  "ideological_lean": 0.083,
+  "agreeableness": 0.407,
+  "size": 42660,
+  "weight": 3.05e-05
+}

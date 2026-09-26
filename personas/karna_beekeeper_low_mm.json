@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_beekeeper_low_mm",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.467,
+    "housing": 0.151,
+    "transport": 0.065,
+    "healthcare": 0.123,
+    "education": 0.052,
+    "other": 0.142
+  },
+  "trust_in_govt": 0.311,
+  "ideological_lean": -0.54,
+  "agreeableness": 0.666,
+  "size": 591961,
+  "weight": 0.0004228
+}

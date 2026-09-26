@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_forest_produce_mid_mm",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Forest-produce gatherer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.239,
+    "housing": 0.218,
+    "transport": 0.104,
+    "healthcare": 0.089,
+    "education": 0.106,
+    "other": 0.244
+  },
+  "trust_in_govt": 0.566,
+  "ideological_lean": 0.599,
+  "agreeableness": 0.755,
+  "size": 3872628,
+  "weight": 0.0027662
+}

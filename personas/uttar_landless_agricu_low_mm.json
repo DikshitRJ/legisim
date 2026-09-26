@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_landless_agricu_low_mm",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.354,
+    "housing": 0.188,
+    "transport": 0.105,
+    "healthcare": 0.09,
+    "education": 0.083,
+    "other": 0.18
+  },
+  "trust_in_govt": 0.301,
+  "ideological_lean": 0.275,
+  "agreeableness": 0.54,
+  "size": 925588,
+  "weight": 0.0006611
+}

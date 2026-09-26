@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_marginal_farmer_low_of",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Marginal farmer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.455,
+    "housing": 0.155,
+    "transport": 0.081,
+    "healthcare": 0.114,
+    "education": 0.049,
+    "other": 0.146
+  },
+  "trust_in_govt": 0.203,
+  "ideological_lean": -0.236,
+  "agreeableness": 0.42,
+  "size": 991970,
+  "weight": 0.0007085
+}

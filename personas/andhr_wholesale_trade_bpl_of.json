@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_wholesale_trade_bpl_of",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Wholesale trader",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.563,
+    "housing": 0.103,
+    "transport": 0.062,
+    "healthcare": 0.151,
+    "education": 0.029,
+    "other": 0.092
+  },
+  "trust_in_govt": 0.311,
+  "ideological_lean": 0.457,
+  "agreeableness": 0.669,
+  "size": 4919417,
+  "weight": 0.0035139
+}

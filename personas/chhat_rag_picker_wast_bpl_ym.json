@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_rag_picker_wast_bpl_ym",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Rag picker/waste worker",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.542,
+    "housing": 0.117,
+    "transport": 0.049,
+    "healthcare": 0.138,
+    "education": 0.033,
+    "other": 0.121
+  },
+  "trust_in_govt": 0.161,
+  "ideological_lean": -0.178,
+  "agreeableness": 0.455,
+  "size": 861512,
+  "weight": 0.0006154
+}

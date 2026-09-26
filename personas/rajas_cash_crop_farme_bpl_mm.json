@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_cash_crop_farme_bpl_mm",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.566,
+    "housing": 0.095,
+    "transport": 0.053,
+    "healthcare": 0.13,
+    "education": 0.052,
+    "other": 0.104
+  },
+  "trust_in_govt": 0.343,
+  "ideological_lean": 0.137,
+  "agreeableness": 0.482,
+  "size": 1139120,
+  "weight": 0.0008137
+}

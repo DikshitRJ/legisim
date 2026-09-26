@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tripu_beekeeper_mid_mf",
+  "demographics": {
+    "region": "Tripura",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Beekeeper",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.256,
+    "housing": 0.188,
+    "transport": 0.114,
+    "healthcare": 0.084,
+    "education": 0.138,
+    "other": 0.22
+  },
+  "trust_in_govt": 0.437,
+  "ideological_lean": -0.512,
+  "agreeableness": 0.833,
+  "size": 351805,
+  "weight": 0.0002513
+}

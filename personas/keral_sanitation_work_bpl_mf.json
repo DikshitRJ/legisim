@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_sanitation_work_bpl_mf",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Sanitation worker",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.582,
+    "housing": 0.102,
+    "transport": 0.049,
+    "healthcare": 0.141,
+    "education": 0.025,
+    "other": 0.101
+  },
+  "trust_in_govt": 0.271,
+  "ideological_lean": -0.119,
+  "agreeableness": 0.56,
+  "size": 3568202,
+  "weight": 0.0025487
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_construction_da_hig_mf",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "High",
+    "occupation": "Construction daily-wage laborer",
+    "urban_rural": "Semi-Urban",
+    "education": "Professional",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.114,
+    "housing": 0.262,
+    "transport": 0.09,
+    "healthcare": 0.076,
+    "education": 0.101,
+    "other": 0.357
+  },
+  "trust_in_govt": 0.608,
+  "ideological_lean": 0.548,
+  "agreeableness": 0.798,
+  "size": 96384,
+  "weight": 6.88e-05
+}

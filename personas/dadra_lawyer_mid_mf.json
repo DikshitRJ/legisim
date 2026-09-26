@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "dadra_lawyer_mid_mf",
+  "demographics": {
+    "region": "Dadra & Nagar Haveli and Daman & Diu",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Lawyer",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.266,
+    "housing": 0.184,
+    "transport": 0.13,
+    "healthcare": 0.072,
+    "education": 0.103,
+    "other": 0.245
+  },
+  "trust_in_govt": 0.502,
+  "ideological_lean": 0.14,
+  "agreeableness": 0.646,
+  "size": 3578894,
+  "weight": 0.0025564
+}

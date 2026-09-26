@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mizor_landless_agricu_low_mf",
+  "demographics": {
+    "region": "Mizoram",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Landless agricultural laborer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.466,
+    "housing": 0.152,
+    "transport": 0.075,
+    "healthcare": 0.119,
+    "education": 0.049,
+    "other": 0.139
+  },
+  "trust_in_govt": 0.364,
+  "ideological_lean": -0.181,
+  "agreeableness": 0.698,
+  "size": 2024214,
+  "weight": 0.0014459
+}

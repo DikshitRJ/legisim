@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_kirana_shop_own_upp_yf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.194,
+    "housing": 0.241,
+    "transport": 0.107,
+    "healthcare": 0.075,
+    "education": 0.101,
+    "other": 0.282
+  },
+  "trust_in_govt": 0.693,
+  "ideological_lean": 0.5,
+  "agreeableness": 0.765,
+  "size": 4647773,
+  "weight": 0.0033198
+}

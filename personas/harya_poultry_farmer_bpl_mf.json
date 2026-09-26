@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_poultry_farmer_bpl_mf",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Poultry farmer",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.565,
+    "housing": 0.123,
+    "transport": 0.046,
+    "healthcare": 0.14,
+    "education": 0.026,
+    "other": 0.1
+  },
+  "trust_in_govt": 0.353,
+  "ideological_lean": -0.84,
+  "agreeableness": 0.406,
+  "size": 2018535,
+  "weight": 0.0014418
+}

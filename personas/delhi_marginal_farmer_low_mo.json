@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_marginal_farmer_low_mo",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "26-40",
+    "gender": "Other",
+    "income_band": "Low",
+    "occupation": "Marginal farmer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.439,
+    "housing": 0.139,
+    "transport": 0.08,
+    "healthcare": 0.129,
+    "education": 0.061,
+    "other": 0.152
+  },
+  "trust_in_govt": 0.351,
+  "ideological_lean": -0.2,
+  "agreeableness": 0.381,
+  "size": 4029788,
+  "weight": 0.0028784
+}

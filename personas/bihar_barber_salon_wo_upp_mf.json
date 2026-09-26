@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_barber_salon_wo_upp_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Barber/salon worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.174,
+    "housing": 0.24,
+    "transport": 0.103,
+    "healthcare": 0.066,
+    "education": 0.135,
+    "other": 0.282
+  },
+  "trust_in_govt": 0.816,
+  "ideological_lean": 0.195,
+  "agreeableness": 0.659,
+  "size": 1181724,
+  "weight": 0.0008441
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_nomadic_pastora_low_mm",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "Low",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.456,
+    "housing": 0.145,
+    "transport": 0.072,
+    "healthcare": 0.127,
+    "education": 0.045,
+    "other": 0.155
+  },
+  "trust_in_govt": 0.295,
+  "ideological_lean": -0.062,
+  "agreeableness": 0.629,
+  "size": 786777,
+  "weight": 0.000562
+}

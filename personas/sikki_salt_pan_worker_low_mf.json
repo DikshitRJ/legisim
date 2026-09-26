@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "sikki_salt_pan_worker_low_mf",
+  "demographics": {
+    "region": "Sikkim",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Salt-pan worker",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.449,
+    "housing": 0.154,
+    "transport": 0.076,
+    "healthcare": 0.109,
+    "education": 0.057,
+    "other": 0.155
+  },
+  "trust_in_govt": 0.292,
+  "ideological_lean": -0.627,
+  "agreeableness": 0.575,
+  "size": 3689,
+  "weight": 2.6e-06
+}

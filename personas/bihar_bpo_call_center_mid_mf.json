@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_bpo_call_center_mid_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "BPO/call-center employee",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.271,
+    "housing": 0.189,
+    "transport": 0.098,
+    "healthcare": 0.086,
+    "education": 0.13,
+    "other": 0.226
+  },
+  "trust_in_govt": 0.577,
+  "ideological_lean": 0.088,
+  "agreeableness": 0.821,
+  "size": 3339396,
+  "weight": 0.0023853
+}

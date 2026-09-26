@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_bank_employee_low_mm",
+  "demographics": {
+    "region": "Uttarakhand",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Bank employee",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.384,
+    "housing": 0.186,
+    "transport": 0.096,
+    "healthcare": 0.097,
+    "education": 0.078,
+    "other": 0.159
+  },
+  "trust_in_govt": 0.485,
+  "ideological_lean": -0.058,
+  "agreeableness": 0.673,
+  "size": 108397,
+  "weight": 7.74e-05
+}

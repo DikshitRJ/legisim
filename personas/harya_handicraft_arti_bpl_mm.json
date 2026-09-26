@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_handicraft_arti_bpl_mm",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Handicraft artisan",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.546,
+    "housing": 0.094,
+    "transport": 0.063,
+    "healthcare": 0.15,
+    "education": 0.03,
+    "other": 0.117
+  },
+  "trust_in_govt": 0.357,
+  "ideological_lean": -0.358,
+  "agreeableness": 0.676,
+  "size": 1094153,
+  "weight": 0.0007815
+}

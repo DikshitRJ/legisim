@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_migrant_brick_k_low_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Migrant brick-kiln laborer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.358,
+    "housing": 0.177,
+    "transport": 0.098,
+    "healthcare": 0.098,
+    "education": 0.088,
+    "other": 0.181
+  },
+  "trust_in_govt": 0.275,
+  "ideological_lean": 0.461,
+  "agreeableness": 0.408,
+  "size": 4809426,
+  "weight": 0.0034353
+}

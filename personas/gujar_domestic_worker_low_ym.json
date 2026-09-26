@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_domestic_worker_low_ym",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "18-25",
+    "gender": "Mixed",
+    "income_band": "Lower-Middle",
+    "occupation": "Domestic worker",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.347,
+    "housing": 0.183,
+    "transport": 0.102,
+    "healthcare": 0.099,
+    "education": 0.087,
+    "other": 0.182
+  },
+  "trust_in_govt": 0.526,
+  "ideological_lean": 0.222,
+  "agreeableness": 0.464,
+  "size": 971801,
+  "weight": 0.0006941
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "manip_mason_low_mm",
+  "demographics": {
+    "region": "Manipur",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Mason",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.374,
+    "housing": 0.18,
+    "transport": 0.088,
+    "healthcare": 0.107,
+    "education": 0.079,
+    "other": 0.172
+  },
+  "trust_in_govt": 0.539,
+  "ideological_lean": 0.447,
+  "agreeableness": 0.467,
+  "size": 4474423,
+  "weight": 0.003196
+}

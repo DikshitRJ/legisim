@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_private_practic_low_mf",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Private-practice doctor",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.466,
+    "housing": 0.141,
+    "transport": 0.08,
+    "healthcare": 0.12,
+    "education": 0.058,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.269,
+  "ideological_lean": -0.286,
+  "agreeableness": 0.508,
+  "size": 4401816,
+  "weight": 0.0031442
+}

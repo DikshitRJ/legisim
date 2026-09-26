@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "punja_marginal_farmer_bpl_yf",
+  "demographics": {
+    "region": "Punjab",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Marginal farmer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.569,
+    "housing": 0.103,
+    "transport": 0.061,
+    "healthcare": 0.119,
+    "education": 0.027,
+    "other": 0.121
+  },
+  "trust_in_govt": 0.29,
+  "ideological_lean": -0.212,
+  "agreeableness": 0.456,
+  "size": 2969282,
+  "weight": 0.0021209
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_startup_founder_low_om",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Startup founder",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.376,
+    "housing": 0.164,
+    "transport": 0.09,
+    "healthcare": 0.096,
+    "education": 0.094,
+    "other": 0.18
+  },
+  "trust_in_govt": 0.441,
+  "ideological_lean": -0.491,
+  "agreeableness": 0.575,
+  "size": 4381338,
+  "weight": 0.0031295
+}

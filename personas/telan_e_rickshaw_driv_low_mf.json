@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_e_rickshaw_driv_low_mf",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "E-rickshaw driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.386,
+    "housing": 0.171,
+    "transport": 0.103,
+    "healthcare": 0.095,
+    "education": 0.079,
+    "other": 0.166
+  },
+  "trust_in_govt": 0.538,
+  "ideological_lean": 0.003,
+  "agreeableness": 0.543,
+  "size": 4032273,
+  "weight": 0.0028802
+}

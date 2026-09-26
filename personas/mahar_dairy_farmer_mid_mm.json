@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_dairy_farmer_mid_mm",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Dairy farmer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.267,
+    "housing": 0.199,
+    "transport": 0.125,
+    "healthcare": 0.082,
+    "education": 0.113,
+    "other": 0.214
+  },
+  "trust_in_govt": 0.547,
+  "ideological_lean": 0.37,
+  "agreeableness": 0.817,
+  "size": 4614521,
+  "weight": 0.0032961
+}

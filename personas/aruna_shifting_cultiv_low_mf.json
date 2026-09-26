@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "aruna_shifting_cultiv_low_mf",
+  "demographics": {
+    "region": "Arunachal Pradesh",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Shifting cultivator",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.453,
+    "housing": 0.159,
+    "transport": 0.086,
+    "healthcare": 0.118,
+    "education": 0.05,
+    "other": 0.134
+  },
+  "trust_in_govt": 0.359,
+  "ideological_lean": -0.469,
+  "agreeableness": 0.483,
+  "size": 2019012,
+  "weight": 0.0014422
+}

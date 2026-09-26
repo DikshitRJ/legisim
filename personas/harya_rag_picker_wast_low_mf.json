@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_rag_picker_wast_low_mf",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Rag picker/waste worker",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.4,
+    "housing": 0.167,
+    "transport": 0.087,
+    "healthcare": 0.09,
+    "education": 0.083,
+    "other": 0.173
+  },
+  "trust_in_govt": 0.463,
+  "ideological_lean": 0.285,
+  "agreeableness": 0.65,
+  "size": 2079192,
+  "weight": 0.0014851
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "delhi_lawyer_bpl_mm",
+  "demographics": {
+    "region": "Delhi (NCT)",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Lawyer",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.558,
+    "housing": 0.104,
+    "transport": 0.062,
+    "healthcare": 0.117,
+    "education": 0.029,
+    "other": 0.13
+  },
+  "trust_in_govt": 0.27,
+  "ideological_lean": 0.279,
+  "agreeableness": 0.552,
+  "size": 932940,
+  "weight": 0.0006664
+}

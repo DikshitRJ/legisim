@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_two_wheeler_mec_upp_ym",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Two-wheeler mechanic",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.16,
+    "housing": 0.226,
+    "transport": 0.114,
+    "healthcare": 0.071,
+    "education": 0.131,
+    "other": 0.298
+  },
+  "trust_in_govt": 0.661,
+  "ideological_lean": -0.349,
+  "agreeableness": 0.637,
+  "size": 4613116,
+  "weight": 0.0032951
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_coffee_rubber_p_low_of",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.453,
+    "housing": 0.149,
+    "transport": 0.079,
+    "healthcare": 0.109,
+    "education": 0.061,
+    "other": 0.149
+  },
+  "trust_in_govt": 0.259,
+  "ideological_lean": -0.702,
+  "agreeableness": 0.628,
+  "size": 4736395,
+  "weight": 0.0033831
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "telan_long_haul_truck_low_mf",
+  "demographics": {
+    "region": "Telangana",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Long-haul truck driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.176,
+    "transport": 0.088,
+    "healthcare": 0.086,
+    "education": 0.091,
+    "other": 0.18
+  },
+  "trust_in_govt": 0.541,
+  "ideological_lean": -0.438,
+  "agreeableness": 0.557,
+  "size": 1317626,
+  "weight": 0.0009412
+}

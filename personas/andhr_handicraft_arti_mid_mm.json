@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_handicraft_arti_mid_mm",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "41-60",
+    "gender": "Mixed",
+    "income_band": "Middle",
+    "occupation": "Handicraft artisan",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.284,
+    "housing": 0.203,
+    "transport": 0.116,
+    "healthcare": 0.084,
+    "education": 0.103,
+    "other": 0.21
+  },
+  "trust_in_govt": 0.489,
+  "ideological_lean": -0.308,
+  "agreeableness": 0.661,
+  "size": 2949280,
+  "weight": 0.0021066
+}

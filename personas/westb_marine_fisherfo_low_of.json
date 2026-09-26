@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_marine_fisherfo_low_of",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Marine fisherfolk",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.457,
+    "housing": 0.154,
+    "transport": 0.071,
+    "healthcare": 0.125,
+    "education": 0.052,
+    "other": 0.141
+  },
+  "trust_in_govt": 0.178,
+  "ideological_lean": 0.128,
+  "agreeableness": 0.482,
+  "size": 3455625,
+  "weight": 0.0024683
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_cash_crop_farme_low_mo",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "41-60",
+    "gender": "Other",
+    "income_band": "Lower-Middle",
+    "occupation": "Cash-crop farmer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.375,
+    "housing": 0.182,
+    "transport": 0.085,
+    "healthcare": 0.095,
+    "education": 0.099,
+    "other": 0.164
+  },
+  "trust_in_govt": 0.575,
+  "ideological_lean": -0.596,
+  "agreeableness": 0.642,
+  "size": 3470612,
+  "weight": 0.002479
+}

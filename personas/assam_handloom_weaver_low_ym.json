@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_handloom_weaver_low_ym",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Handloom weaver",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.364,
+    "housing": 0.174,
+    "transport": 0.096,
+    "healthcare": 0.099,
+    "education": 0.092,
+    "other": 0.175
+  },
+  "trust_in_govt": 0.441,
+  "ideological_lean": -0.314,
+  "agreeableness": 0.694,
+  "size": 1052590,
+  "weight": 0.0007518
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_sericulture_far_low_ym",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Sericulture farmer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.353,
+    "housing": 0.183,
+    "transport": 0.107,
+    "healthcare": 0.092,
+    "education": 0.096,
+    "other": 0.169
+  },
+  "trust_in_govt": 0.457,
+  "ideological_lean": -0.572,
+  "agreeableness": 0.458,
+  "size": 871259,
+  "weight": 0.0006223
+}

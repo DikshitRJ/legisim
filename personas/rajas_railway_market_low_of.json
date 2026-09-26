@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_railway_market_low_of",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Railway/market porter",
+    "urban_rural": "Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.46,
+    "housing": 0.139,
+    "transport": 0.071,
+    "healthcare": 0.128,
+    "education": 0.059,
+    "other": 0.143
+  },
+  "trust_in_govt": 0.297,
+  "ideological_lean": -0.152,
+  "agreeableness": 0.688,
+  "size": 3418496,
+  "weight": 0.0024418
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "odish_rural_kirana_sh_bpl_of",
+  "demographics": {
+    "region": "Odisha",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.589,
+    "housing": 0.089,
+    "transport": 0.052,
+    "healthcare": 0.15,
+    "education": 0.03,
+    "other": 0.09
+  },
+  "trust_in_govt": 0.334,
+  "ideological_lean": -0.031,
+  "agreeableness": 0.568,
+  "size": 3780240,
+  "weight": 0.0027002
+}

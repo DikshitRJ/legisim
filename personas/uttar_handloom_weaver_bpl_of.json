@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_handloom_weaver_bpl_of",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Handloom weaver",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.552,
+    "housing": 0.113,
+    "transport": 0.05,
+    "healthcare": 0.154,
+    "education": 0.036,
+    "other": 0.095
+  },
+  "trust_in_govt": 0.228,
+  "ideological_lean": -0.001,
+  "agreeableness": 0.679,
+  "size": 2714865,
+  "weight": 0.0019392
+}

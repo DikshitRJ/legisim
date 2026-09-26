@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mizor_job_seeking_une_low_mm",
+  "demographics": {
+    "region": "Mizoram",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Job-seeking unemployed youth",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.454,
+    "housing": 0.146,
+    "transport": 0.073,
+    "healthcare": 0.12,
+    "education": 0.048,
+    "other": 0.159
+  },
+  "trust_in_govt": 0.2,
+  "ideological_lean": 0.323,
+  "agreeableness": 0.402,
+  "size": 2198282,
+  "weight": 0.0015702
+}

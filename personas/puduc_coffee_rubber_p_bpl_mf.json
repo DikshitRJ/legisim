@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_coffee_rubber_p_bpl_mf",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.574,
+    "housing": 0.097,
+    "transport": 0.048,
+    "healthcare": 0.148,
+    "education": 0.043,
+    "other": 0.09
+  },
+  "trust_in_govt": 0.302,
+  "ideological_lean": 0.089,
+  "agreeableness": 0.54,
+  "size": 4144722,
+  "weight": 0.0029605
+}

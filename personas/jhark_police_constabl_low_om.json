@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_police_constabl_low_om",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.356,
+    "housing": 0.174,
+    "transport": 0.106,
+    "healthcare": 0.089,
+    "education": 0.093,
+    "other": 0.182
+  },
+  "trust_in_govt": 0.488,
+  "ideological_lean": -0.347,
+  "agreeableness": 0.591,
+  "size": 2994704,
+  "weight": 0.0021391
+}

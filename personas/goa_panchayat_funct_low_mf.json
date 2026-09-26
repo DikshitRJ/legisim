@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_panchayat_funct_low_mf",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.451,
+    "housing": 0.147,
+    "transport": 0.069,
+    "healthcare": 0.131,
+    "education": 0.052,
+    "other": 0.15
+  },
+  "trust_in_govt": 0.271,
+  "ideological_lean": -0.217,
+  "agreeableness": 0.401,
+  "size": 2802671,
+  "weight": 0.0020019
+}

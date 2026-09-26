@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_migrant_brick_k_low_mm",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Migrant brick-kiln laborer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.477,
+    "housing": 0.137,
+    "transport": 0.079,
+    "healthcare": 0.117,
+    "education": 0.055,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.263,
+  "ideological_lean": -0.553,
+  "agreeableness": 0.684,
+  "size": 3440675,
+  "weight": 0.0024576
+}

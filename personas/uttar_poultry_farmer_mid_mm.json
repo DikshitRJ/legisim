@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_poultry_farmer_mid_mm",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Poultry farmer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.256,
+    "housing": 0.205,
+    "transport": 0.116,
+    "healthcare": 0.079,
+    "education": 0.107,
+    "other": 0.237
+  },
+  "trust_in_govt": 0.468,
+  "ideological_lean": -0.196,
+  "agreeableness": 0.642,
+  "size": 878008,
+  "weight": 0.0006271
+}

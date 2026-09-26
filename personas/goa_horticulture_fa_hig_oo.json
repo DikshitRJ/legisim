@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_horticulture_fa_hig_oo",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "60+",
+    "gender": "Other",
+    "income_band": "High",
+    "occupation": "Horticulture farmer",
+    "urban_rural": "Rural",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.112,
+    "housing": 0.252,
+    "transport": 0.087,
+    "healthcare": 0.079,
+    "education": 0.111,
+    "other": 0.359
+  },
+  "trust_in_govt": 0.699,
+  "ideological_lean": -0.138,
+  "agreeableness": 0.604,
+  "size": 95124,
+  "weight": 6.79e-05
+}

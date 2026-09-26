@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_sericulture_far_low_om",
+  "demographics": {
+    "region": "Uttarakhand",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Sericulture farmer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.465,
+    "housing": 0.148,
+    "transport": 0.07,
+    "healthcare": 0.115,
+    "education": 0.057,
+    "other": 0.145
+  },
+  "trust_in_govt": 0.174,
+  "ideological_lean": -0.667,
+  "agreeableness": 0.484,
+  "size": 686659,
+  "weight": 0.0004905
+}

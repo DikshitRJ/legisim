@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "himac_tea_garden_work_mid_of",
+  "demographics": {
+    "region": "Himachal Pradesh",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Tea garden worker",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.257,
+    "housing": 0.212,
+    "transport": 0.099,
+    "healthcare": 0.077,
+    "education": 0.125,
+    "other": 0.23
+  },
+  "trust_in_govt": 0.536,
+  "ideological_lean": 0.04,
+  "agreeableness": 0.867,
+  "size": 2221655,
+  "weight": 0.0015869
+}

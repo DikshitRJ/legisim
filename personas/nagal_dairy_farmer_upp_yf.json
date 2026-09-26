@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "nagal_dairy_farmer_upp_yf",
+  "demographics": {
+    "region": "Nagaland",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Dairy farmer",
+    "urban_rural": "Rural",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.18,
+    "housing": 0.235,
+    "transport": 0.111,
+    "healthcare": 0.064,
+    "education": 0.142,
+    "other": 0.268
+  },
+  "trust_in_govt": 0.661,
+  "ideological_lean": -0.369,
+  "agreeableness": 0.868,
+  "size": 3221755,
+  "weight": 0.0023013
+}

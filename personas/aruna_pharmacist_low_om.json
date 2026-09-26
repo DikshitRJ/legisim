@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "aruna_pharmacist_low_om",
+  "demographics": {
+    "region": "Arunachal Pradesh",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Pharmacist",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.466,
+    "housing": 0.154,
+    "transport": 0.081,
+    "healthcare": 0.112,
+    "education": 0.052,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.309,
+  "ideological_lean": -0.464,
+  "agreeableness": 0.512,
+  "size": 2195182,
+  "weight": 0.001568
+}

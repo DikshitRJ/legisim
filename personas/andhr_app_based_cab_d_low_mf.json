@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_app_based_cab_d_low_mf",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "App-based cab driver",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.46,
+    "housing": 0.145,
+    "transport": 0.079,
+    "healthcare": 0.121,
+    "education": 0.06,
+    "other": 0.135
+  },
+  "trust_in_govt": 0.236,
+  "ideological_lean": -0.269,
+  "agreeableness": 0.426,
+  "size": 3450692,
+  "weight": 0.0024648
+}

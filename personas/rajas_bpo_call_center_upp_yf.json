@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_bpo_call_center_upp_yf",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "BPO/call-center employee",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.184,
+    "housing": 0.227,
+    "transport": 0.114,
+    "healthcare": 0.058,
+    "education": 0.13,
+    "other": 0.287
+  },
+  "trust_in_govt": 0.774,
+  "ideological_lean": -0.221,
+  "agreeableness": 0.88,
+  "size": 2767613,
+  "weight": 0.0019769
+}

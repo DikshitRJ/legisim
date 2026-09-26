@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_nomadic_pastora_bpl_yf",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Nomadic pastoralist",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.574,
+    "housing": 0.104,
+    "transport": 0.061,
+    "healthcare": 0.113,
+    "education": 0.036,
+    "other": 0.112
+  },
+  "trust_in_govt": 0.217,
+  "ideological_lean": 0.449,
+  "agreeableness": 0.472,
+  "size": 1968197,
+  "weight": 0.0014059
+}

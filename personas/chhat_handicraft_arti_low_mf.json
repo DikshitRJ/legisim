@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_handicraft_arti_low_mf",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Handicraft artisan",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.474,
+    "housing": 0.139,
+    "transport": 0.077,
+    "healthcare": 0.114,
+    "education": 0.055,
+    "other": 0.141
+  },
+  "trust_in_govt": 0.272,
+  "ideological_lean": -0.185,
+  "agreeableness": 0.507,
+  "size": 4164556,
+  "weight": 0.0029747
+}

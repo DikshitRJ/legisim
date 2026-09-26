@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_corporate_senio_low_mm",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Corporate senior executive",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.379,
+    "housing": 0.171,
+    "transport": 0.085,
+    "healthcare": 0.096,
+    "education": 0.099,
+    "other": 0.17
+  },
+  "trust_in_govt": 0.401,
+  "ideological_lean": 0.264,
+  "agreeableness": 0.617,
+  "size": 4299220,
+  "weight": 0.0030709
+}

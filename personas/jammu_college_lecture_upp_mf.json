@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jammu_college_lecture_upp_mf",
+  "demographics": {
+    "region": "Jammu & Kashmir",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "College lecturer",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.191,
+    "housing": 0.225,
+    "transport": 0.101,
+    "healthcare": 0.067,
+    "education": 0.129,
+    "other": 0.287
+  },
+  "trust_in_govt": 0.817,
+  "ideological_lean": -0.02,
+  "agreeableness": 0.834,
+  "size": 2446970,
+  "weight": 0.0017478
+}

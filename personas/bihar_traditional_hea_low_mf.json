@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "bihar_traditional_hea_low_mf",
+  "demographics": {
+    "region": "Bihar",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Traditional healer",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.467,
+    "housing": 0.14,
+    "transport": 0.066,
+    "healthcare": 0.121,
+    "education": 0.052,
+    "other": 0.154
+  },
+  "trust_in_govt": 0.369,
+  "ideological_lean": 0.439,
+  "agreeableness": 0.537,
+  "size": 4117991,
+  "weight": 0.0029414
+}

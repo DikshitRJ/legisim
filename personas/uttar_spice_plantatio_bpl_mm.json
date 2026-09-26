@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_spice_plantatio_bpl_mm",
+  "demographics": {
+    "region": "Uttarakhand",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Spice plantation farmer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.569,
+    "housing": 0.109,
+    "transport": 0.053,
+    "healthcare": 0.146,
+    "education": 0.033,
+    "other": 0.09
+  },
+  "trust_in_govt": 0.427,
+  "ideological_lean": 0.364,
+  "agreeableness": 0.682,
+  "size": 2110103,
+  "weight": 0.0015072
+}

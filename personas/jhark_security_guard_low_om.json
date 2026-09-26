@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_security_guard_low_om",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Security guard",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.475,
+    "housing": 0.138,
+    "transport": 0.067,
+    "healthcare": 0.118,
+    "education": 0.048,
+    "other": 0.154
+  },
+  "trust_in_govt": 0.403,
+  "ideological_lean": 0.313,
+  "agreeableness": 0.652,
+  "size": 2532349,
+  "weight": 0.0018088
+}

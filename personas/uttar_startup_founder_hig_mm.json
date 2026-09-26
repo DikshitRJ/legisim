@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "uttar_startup_founder_hig_mm",
+  "demographics": {
+    "region": "Uttar Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "High",
+    "occupation": "Startup founder",
+    "urban_rural": "Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.126,
+    "housing": 0.243,
+    "transport": 0.08,
+    "healthcare": 0.06,
+    "education": 0.116,
+    "other": 0.375
+  },
+  "trust_in_govt": 0.587,
+  "ideological_lean": 0.748,
+  "agreeableness": 0.611,
+  "size": 315402,
+  "weight": 0.0002253
+}

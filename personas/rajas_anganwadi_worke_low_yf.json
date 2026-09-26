@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "rajas_anganwadi_worke_low_yf",
+  "demographics": {
+    "region": "Rajasthan",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Anganwadi worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.391,
+    "housing": 0.163,
+    "transport": 0.096,
+    "healthcare": 0.095,
+    "education": 0.081,
+    "other": 0.174
+  },
+  "trust_in_govt": 0.442,
+  "ideological_lean": -0.179,
+  "agreeableness": 0.608,
+  "size": 1006259,
+  "weight": 0.0007188
+}

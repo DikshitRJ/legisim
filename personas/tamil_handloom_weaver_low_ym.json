@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_handloom_weaver_low_ym",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Handloom weaver",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.352,
+    "housing": 0.188,
+    "transport": 0.093,
+    "healthcare": 0.102,
+    "education": 0.095,
+    "other": 0.17
+  },
+  "trust_in_govt": 0.554,
+  "ideological_lean": -0.044,
+  "agreeableness": 0.536,
+  "size": 1105907,
+  "weight": 0.0007899
+}

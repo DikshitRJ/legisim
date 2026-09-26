@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_sanitation_work_low_of",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Sanitation worker",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.467,
+    "housing": 0.154,
+    "transport": 0.087,
+    "healthcare": 0.116,
+    "education": 0.044,
+    "other": 0.132
+  },
+  "trust_in_govt": 0.325,
+  "ideological_lean": -0.31,
+  "agreeableness": 0.603,
+  "size": 1735155,
+  "weight": 0.0012394
+}

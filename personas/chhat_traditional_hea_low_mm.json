@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chhat_traditional_hea_low_mm",
+  "demographics": {
+    "region": "Chhattisgarh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Traditional healer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.394,
+    "housing": 0.18,
+    "transport": 0.085,
+    "healthcare": 0.088,
+    "education": 0.088,
+    "other": 0.165
+  },
+  "trust_in_govt": 0.454,
+  "ideological_lean": 0.371,
+  "agreeableness": 0.591,
+  "size": 3738344,
+  "weight": 0.0026702
+}

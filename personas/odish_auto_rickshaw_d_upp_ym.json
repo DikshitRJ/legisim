@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "odish_auto_rickshaw_d_upp_ym",
+  "demographics": {
+    "region": "Odisha",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Upper-Middle",
+    "occupation": "Auto-rickshaw driver",
+    "urban_rural": "Semi-Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.177,
+    "housing": 0.214,
+    "transport": 0.12,
+    "healthcare": 0.084,
+    "education": 0.118,
+    "other": 0.287
+  },
+  "trust_in_govt": 0.696,
+  "ideological_lean": 0.166,
+  "agreeableness": 0.682,
+  "size": 1767014,
+  "weight": 0.0012622
+}

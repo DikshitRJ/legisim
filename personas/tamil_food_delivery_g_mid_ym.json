@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_food_delivery_g_mid_ym",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Food-delivery gig worker",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.247,
+    "housing": 0.197,
+    "transport": 0.106,
+    "healthcare": 0.077,
+    "education": 0.136,
+    "other": 0.237
+  },
+  "trust_in_govt": 0.593,
+  "ideological_lean": 0.118,
+  "agreeableness": 0.597,
+  "size": 2836796,
+  "weight": 0.0020263
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_police_constabl_low_mm",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.361,
+    "housing": 0.181,
+    "transport": 0.093,
+    "healthcare": 0.092,
+    "education": 0.104,
+    "other": 0.169
+  },
+  "trust_in_govt": 0.464,
+  "ideological_lean": -0.421,
+  "agreeableness": 0.525,
+  "size": 3257976,
+  "weight": 0.0023271
+}

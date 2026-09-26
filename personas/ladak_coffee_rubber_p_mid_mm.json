@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "ladak_coffee_rubber_p_mid_mm",
+  "demographics": {
+    "region": "Ladakh",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Coffee/rubber plantation worker",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.246,
+    "housing": 0.199,
+    "transport": 0.13,
+    "healthcare": 0.08,
+    "education": 0.13,
+    "other": 0.215
+  },
+  "trust_in_govt": 0.412,
+  "ideological_lean": -0.392,
+  "agreeableness": 0.753,
+  "size": 1712,
+  "weight": 1.2e-06
+}

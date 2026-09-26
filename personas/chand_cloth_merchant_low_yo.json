@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chand_cloth_merchant_low_yo",
+  "demographics": {
+    "region": "Chandigarh",
+    "age_band": "18-25",
+    "gender": "Other",
+    "income_band": "Lower-Middle",
+    "occupation": "Cloth merchant",
+    "urban_rural": "Semi-Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.366,
+    "housing": 0.174,
+    "transport": 0.102,
+    "healthcare": 0.103,
+    "education": 0.091,
+    "other": 0.164
+  },
+  "trust_in_govt": 0.572,
+  "ideological_lean": 0.333,
+  "agreeableness": 0.693,
+  "size": 1329678,
+  "weight": 0.0009498
+}

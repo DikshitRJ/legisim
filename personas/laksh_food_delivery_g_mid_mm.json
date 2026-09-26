@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "laksh_food_delivery_g_mid_mm",
+  "demographics": {
+    "region": "Lakshadweep",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Food-delivery gig worker",
+    "urban_rural": "Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.25,
+    "housing": 0.209,
+    "transport": 0.105,
+    "healthcare": 0.084,
+    "education": 0.115,
+    "other": 0.237
+  },
+  "trust_in_govt": 0.58,
+  "ideological_lean": -0.198,
+  "agreeableness": 0.678,
+  "size": 32563,
+  "weight": 2.33e-05
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_panchayat_funct_low_mf",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Panchayat functionary",
+    "urban_rural": "Rural",
+    "education": "None",
+    "literacy": "Illiterate"
+  },
+  "spend_mix": {
+    "food": 0.458,
+    "housing": 0.139,
+    "transport": 0.078,
+    "healthcare": 0.118,
+    "education": 0.048,
+    "other": 0.159
+  },
+  "trust_in_govt": 0.212,
+  "ideological_lean": 0.045,
+  "agreeableness": 0.626,
+  "size": 1351718,
+  "weight": 0.0009655
+}

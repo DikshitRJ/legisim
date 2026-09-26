@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_migrant_brick_k_low_ym",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "Lower-Middle",
+    "occupation": "Migrant brick-kiln laborer",
+    "urban_rural": "Rural",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.359,
+    "housing": 0.194,
+    "transport": 0.097,
+    "healthcare": 0.104,
+    "education": 0.082,
+    "other": 0.164
+  },
+  "trust_in_govt": 0.351,
+  "ideological_lean": -0.439,
+  "agreeableness": 0.456,
+  "size": 4180816,
+  "weight": 0.0029863
+}

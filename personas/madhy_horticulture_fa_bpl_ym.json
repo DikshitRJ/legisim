@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_horticulture_fa_bpl_ym",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Horticulture farmer",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.583,
+    "housing": 0.088,
+    "transport": 0.055,
+    "healthcare": 0.132,
+    "education": 0.022,
+    "other": 0.12
+  },
+  "trust_in_govt": 0.201,
+  "ideological_lean": -0.159,
+  "agreeableness": 0.512,
+  "size": 4153410,
+  "weight": 0.0029667
+}

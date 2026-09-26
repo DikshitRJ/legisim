@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "tamil_construction_da_hig_ym",
+  "demographics": {
+    "region": "Tamil Nadu",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "High",
+    "occupation": "Construction daily-wage laborer",
+    "urban_rural": "Semi-Urban",
+    "education": "Post-Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.134,
+    "housing": 0.265,
+    "transport": 0.081,
+    "healthcare": 0.061,
+    "education": 0.112,
+    "other": 0.347
+  },
+  "trust_in_govt": 0.769,
+  "ideological_lean": -0.571,
+  "agreeableness": 0.638,
+  "size": 191625,
+  "weight": 0.0001369
+}

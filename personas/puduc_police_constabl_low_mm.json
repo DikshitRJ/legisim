@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_police_constabl_low_mm",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "41-60",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.45,
+    "housing": 0.142,
+    "transport": 0.08,
+    "healthcare": 0.125,
+    "education": 0.054,
+    "other": 0.149
+  },
+  "trust_in_govt": 0.288,
+  "ideological_lean": 0.417,
+  "agreeableness": 0.561,
+  "size": 3654240,
+  "weight": 0.0026102
+}

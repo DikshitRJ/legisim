@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "dadra_sericulture_far_bpl_mf",
+  "demographics": {
+    "region": "Dadra & Nagar Haveli and Daman & Diu",
+    "age_band": "26-40",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Sericulture farmer",
+    "urban_rural": "Rural",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.563,
+    "housing": 0.108,
+    "transport": 0.054,
+    "healthcare": 0.147,
+    "education": 0.028,
+    "other": 0.1
+  },
+  "trust_in_govt": 0.314,
+  "ideological_lean": -0.088,
+  "agreeableness": 0.448,
+  "size": 1717703,
+  "weight": 0.0012269
+}

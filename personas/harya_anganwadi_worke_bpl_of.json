@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "harya_anganwadi_worke_bpl_of",
+  "demographics": {
+    "region": "Haryana",
+    "age_band": "60+",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Anganwadi worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.554,
+    "housing": 0.127,
+    "transport": 0.062,
+    "healthcare": 0.108,
+    "education": 0.033,
+    "other": 0.116
+  },
+  "trust_in_govt": 0.284,
+  "ideological_lean": -0.288,
+  "agreeableness": 0.411,
+  "size": 4018594,
+  "weight": 0.0028704
+}

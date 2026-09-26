@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "jhark_small_hotel_own_low_mm",
+  "demographics": {
+    "region": "Jharkhand",
+    "age_band": "26-40",
+    "gender": "Male",
+    "income_band": "Low",
+    "occupation": "Small hotel owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.47,
+    "housing": 0.13,
+    "transport": 0.066,
+    "healthcare": 0.122,
+    "education": 0.06,
+    "other": 0.152
+  },
+  "trust_in_govt": 0.311,
+  "ideological_lean": -0.016,
+  "agreeableness": 0.616,
+  "size": 3763599,
+  "weight": 0.0026883
+}

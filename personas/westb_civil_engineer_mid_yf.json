@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_civil_engineer_mid_yf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Civil engineer/architect",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.248,
+    "housing": 0.189,
+    "transport": 0.11,
+    "healthcare": 0.074,
+    "education": 0.143,
+    "other": 0.236
+  },
+  "trust_in_govt": 0.496,
+  "ideological_lean": 0.642,
+  "agreeableness": 0.568,
+  "size": 410242,
+  "weight": 0.000293
+}

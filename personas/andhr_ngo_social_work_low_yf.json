@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andhr_ngo_social_work_low_yf",
+  "demographics": {
+    "region": "Andhra Pradesh",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "NGO/social worker",
+    "urban_rural": "Urban",
+    "education": "Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.382,
+    "housing": 0.175,
+    "transport": 0.098,
+    "healthcare": 0.092,
+    "education": 0.094,
+    "other": 0.159
+  },
+  "trust_in_govt": 0.461,
+  "ideological_lean": 0.247,
+  "agreeableness": 0.503,
+  "size": 1258202,
+  "weight": 0.0008987
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_asha_community_low_yf",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "ASHA/community health worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.458,
+    "housing": 0.14,
+    "transport": 0.073,
+    "healthcare": 0.122,
+    "education": 0.054,
+    "other": 0.153
+  },
+  "trust_in_govt": 0.461,
+  "ideological_lean": -0.504,
+  "agreeableness": 0.591,
+  "size": 818962,
+  "weight": 0.000585
+}

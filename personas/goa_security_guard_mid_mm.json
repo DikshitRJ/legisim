@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "goa_security_guard_mid_mm",
+  "demographics": {
+    "region": "Goa",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "Middle",
+    "occupation": "Security guard",
+    "urban_rural": "Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.272,
+    "housing": 0.186,
+    "transport": 0.113,
+    "healthcare": 0.084,
+    "education": 0.12,
+    "other": 0.225
+  },
+  "trust_in_govt": 0.583,
+  "ideological_lean": 0.737,
+  "agreeableness": 0.678,
+  "size": 1683964,
+  "weight": 0.0012028
+}

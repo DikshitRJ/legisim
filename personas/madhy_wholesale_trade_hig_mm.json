@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "madhy_wholesale_trade_hig_mm",
+  "demographics": {
+    "region": "Madhya Pradesh",
+    "age_band": "26-40",
+    "gender": "Mixed",
+    "income_band": "High",
+    "occupation": "Wholesale trader",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.133,
+    "housing": 0.271,
+    "transport": 0.087,
+    "healthcare": 0.079,
+    "education": 0.084,
+    "other": 0.346
+  },
+  "trust_in_govt": 0.819,
+  "ideological_lean": 0.509,
+  "agreeableness": 0.697,
+  "size": 481498,
+  "weight": 0.0003439
+}

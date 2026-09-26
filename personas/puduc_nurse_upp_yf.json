@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "puduc_nurse_upp_yf",
+  "demographics": {
+    "region": "Puducherry",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Upper-Middle",
+    "occupation": "Nurse",
+    "urban_rural": "Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.167,
+    "housing": 0.213,
+    "transport": 0.106,
+    "healthcare": 0.064,
+    "education": 0.142,
+    "other": 0.308
+  },
+  "trust_in_govt": 0.791,
+  "ideological_lean": 0.431,
+  "agreeableness": 0.679,
+  "size": 2057628,
+  "weight": 0.0014697
+}

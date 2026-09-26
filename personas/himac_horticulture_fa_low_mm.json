@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "himac_horticulture_fa_low_mm",
+  "demographics": {
+    "region": "Himachal Pradesh",
+    "age_band": "41-60",
+    "gender": "Mixed",
+    "income_band": "Low",
+    "occupation": "Horticulture farmer",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.476,
+    "housing": 0.149,
+    "transport": 0.078,
+    "healthcare": 0.115,
+    "education": 0.049,
+    "other": 0.133
+  },
+  "trust_in_govt": 0.274,
+  "ideological_lean": 0.042,
+  "agreeableness": 0.419,
+  "size": 3723450,
+  "weight": 0.0026596
+}

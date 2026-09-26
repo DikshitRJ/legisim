@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "odish_government_scho_mid_mf",
+  "demographics": {
+    "region": "Odisha",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Middle",
+    "occupation": "Government-school teacher",
+    "urban_rural": "Semi-Urban",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.265,
+    "housing": 0.214,
+    "transport": 0.106,
+    "healthcare": 0.077,
+    "education": 0.118,
+    "other": 0.22
+  },
+  "trust_in_govt": 0.692,
+  "ideological_lean": -0.135,
+  "agreeableness": 0.751,
+  "size": 4496215,
+  "weight": 0.0032116
+}

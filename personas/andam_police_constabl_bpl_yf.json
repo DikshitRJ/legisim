@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "andam_police_constabl_bpl_yf",
+  "demographics": {
+    "region": "Andaman & Nicobar Islands",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "BPL",
+    "occupation": "Police constable",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.55,
+    "housing": 0.114,
+    "transport": 0.053,
+    "healthcare": 0.12,
+    "education": 0.049,
+    "other": 0.114
+  },
+  "trust_in_govt": 0.288,
+  "ideological_lean": 0.015,
+  "agreeableness": 0.532,
+  "size": 2731048,
+  "weight": 0.0019507
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "gujar_two_wheeler_mec_bpl_ym",
+  "demographics": {
+    "region": "Gujarat",
+    "age_band": "18-25",
+    "gender": "Male",
+    "income_band": "BPL",
+    "occupation": "Two-wheeler mechanic",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.58,
+    "housing": 0.107,
+    "transport": 0.059,
+    "healthcare": 0.114,
+    "education": 0.038,
+    "other": 0.102
+  },
+  "trust_in_govt": 0.343,
+  "ideological_lean": -0.219,
+  "agreeableness": 0.635,
+  "size": 1945175,
+  "weight": 0.0013894
+}

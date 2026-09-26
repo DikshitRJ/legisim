@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "assam_msme_manufactur_low_yf",
+  "demographics": {
+    "region": "Assam",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "MSME manufacturing worker",
+    "urban_rural": "Semi-Urban",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.35,
+    "housing": 0.17,
+    "transport": 0.088,
+    "healthcare": 0.103,
+    "education": 0.103,
+    "other": 0.186
+  },
+  "trust_in_govt": 0.456,
+  "ideological_lean": 0.283,
+  "agreeableness": 0.619,
+  "size": 2169085,
+  "weight": 0.0015493
+}

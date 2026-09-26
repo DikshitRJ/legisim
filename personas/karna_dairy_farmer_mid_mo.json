@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "karna_dairy_farmer_mid_mo",
+  "demographics": {
+    "region": "Karnataka",
+    "age_band": "41-60",
+    "gender": "Other",
+    "income_band": "Middle",
+    "occupation": "Dairy farmer",
+    "urban_rural": "Rural",
+    "education": "Graduate",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.242,
+    "housing": 0.214,
+    "transport": 0.106,
+    "healthcare": 0.069,
+    "education": 0.13,
+    "other": 0.239
+  },
+  "trust_in_govt": 0.556,
+  "ideological_lean": 0.486,
+  "agreeableness": 0.595,
+  "size": 2039113,
+  "weight": 0.0014565
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "keral_shifting_cultiv_low_mf",
+  "demographics": {
+    "region": "Kerala",
+    "age_band": "41-60",
+    "gender": "Female",
+    "income_band": "Lower-Middle",
+    "occupation": "Shifting cultivator",
+    "urban_rural": "Rural",
+    "education": "Vocational/Diploma",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.372,
+    "housing": 0.176,
+    "transport": 0.089,
+    "healthcare": 0.096,
+    "education": 0.094,
+    "other": 0.173
+  },
+  "trust_in_govt": 0.472,
+  "ideological_lean": 0.322,
+  "agreeableness": 0.411,
+  "size": 2808025,
+  "weight": 0.0020057
+}

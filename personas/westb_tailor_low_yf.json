@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "westb_tailor_low_yf",
+  "demographics": {
+    "region": "West Bengal",
+    "age_band": "18-25",
+    "gender": "Female",
+    "income_band": "Low",
+    "occupation": "Tailor",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.459,
+    "housing": 0.147,
+    "transport": 0.083,
+    "healthcare": 0.107,
+    "education": 0.054,
+    "other": 0.15
+  },
+  "trust_in_govt": 0.447,
+  "ideological_lean": -0.113,
+  "agreeableness": 0.601,
+  "size": 4404077,
+  "weight": 0.0031458
+}

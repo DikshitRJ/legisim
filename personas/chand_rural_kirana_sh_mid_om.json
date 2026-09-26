@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "chand_rural_kirana_sh_mid_om",
+  "demographics": {
+    "region": "Chandigarh",
+    "age_band": "60+",
+    "gender": "Male",
+    "income_band": "Middle",
+    "occupation": "Rural kirana shop owner",
+    "urban_rural": "Rural",
+    "education": "Primary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.254,
+    "housing": 0.197,
+    "transport": 0.108,
+    "healthcare": 0.089,
+    "education": 0.133,
+    "other": 0.219
+  },
+  "trust_in_govt": 0.428,
+  "ideological_lean": 0.379,
+  "agreeableness": 0.817,
+  "size": 2678532,
+  "weight": 0.0019132
+}

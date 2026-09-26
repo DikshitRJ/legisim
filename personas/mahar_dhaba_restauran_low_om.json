@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LegiSim Persona",
+  "description": "Schema for a population cohort persona in the LegiSim engine.",
+  "id": "mahar_dhaba_restauran_low_om",
+  "demographics": {
+    "region": "Maharashtra",
+    "age_band": "60+",
+    "gender": "Mixed",
+    "income_band": "Low",
+    "occupation": "Dhaba/restaurant owner",
+    "urban_rural": "Semi-Urban",
+    "education": "Higher-Secondary",
+    "literacy": "Literate"
+  },
+  "spend_mix": {
+    "food": 0.471,
+    "housing": 0.151,
+    "transport": 0.071,
+    "healthcare": 0.122,
+    "education": 0.042,
+    "other": 0.143
+  },
+  "trust_in_govt": 0.164,
+  "ideological_lean": 0.212,
+  "agreeableness": 0.468,
+  "size": 3433729,
+  "weight": 0.0024527
+}
