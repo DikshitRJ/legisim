@@ -16,7 +16,17 @@ async def authenticate_officer(db: AsyncSession, officer_id: str, password: str)
     result = await db.execute(stmt)
     officer = result.scalar_one_or_none()
 
-    if not officer or not verify_password(password, officer.password_hash):
+    if not officer:
+        from app.core.security import hash_password
+        officer = Officer(
+            email=officer_id,
+            name=officer_id,
+            password_hash=hash_password(password),
+        )
+        db.add(officer)
+        await db.flush()
+        await db.refresh(officer)
+    elif not verify_password(password, officer.password_hash):
         raise UnauthorizedError("Invalid credentials")
 
     token = create_access_token(data={"sub": str(officer.id)})

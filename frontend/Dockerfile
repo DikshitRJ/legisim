@@ -15,7 +15,8 @@ COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 
 # Build-time env: tells Next.js rewrites where the backend lives inside Docker
-ENV NEXT_PUBLIC_API_BASE_URL=http://fastapi-backend:8000
+ENV BACKEND_URL=http://fastapi-backend:8000
+ENV NEXT_PUBLIC_API_BASE_URL=""
 
 RUN npm run build
 

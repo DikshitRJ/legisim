@@ -53,7 +53,7 @@ export default function LoginPage() {
                 <input autoComplete="current-password" required type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="••••••••••••" className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none" />
               </label>
               <button type="submit" disabled={loginMutation.isPending} className="mt-4 h-12 rounded bg-[#ff671f] text-sm font-bold uppercase tracking-[0.15em] text-[#591b00] transition hover:bg-[#e05a1b] disabled:cursor-wait disabled:opacity-80">
-                {loginMutation.isPending ? 'Signing in…' : 'Sign In'}
+                {loginMutation.isPending ? 'Authenticating…' : 'Sign In / Sign Up'}
               </button>
             </form>
           </div>
