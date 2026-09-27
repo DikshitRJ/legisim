@@ -50,8 +50,8 @@ class TargetingProfile(Base, UUIDMixin):
     geographic_focus: Mapped[str | None] = mapped_column(Text)
     economic_channels: Mapped[Any | None] = mapped_column(JSONB)
 
-class JEVSelectionResult(Base, UUIDMixin):
-    __tablename__ = 'jev_selection_results'
+class LAYASelectionResult(Base, UUIDMixin):
+    __tablename__ = 'laya_selection_results'
 
     targeting_profile_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey('targeting_profiles.id', ondelete='CASCADE'))
     policy_id: Mapped[str] = mapped_column(String(255))

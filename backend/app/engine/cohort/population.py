@@ -26,8 +26,8 @@ def build_population() -> List[Dict[str, Any]]:
                 persona_data = json.load(f)
                 
                 # Transform to flat structure expected by the engine if needed,
-                # or keep the nested structure. We flatten key variables for JEV/LangGraph convenience.
-                # E.g., JEV uses region and occupation for targeting.
+                # or keep the nested structure. We flatten key variables for LAYA/LangGraph convenience.
+                # E.g., LAYA uses region and occupation for targeting.
                 
                 # Normalize keys for the pipeline
                 cohort = {

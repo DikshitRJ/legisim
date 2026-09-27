@@ -1,0 +1,10 @@
+[botdetection.LogDB]
+# No limits for internal network
+[botdetection.ip_limit]
+# unlimited
+pass_ip = [
+  '127.0.0.1',
+  '10.0.0.0/8',
+  '172.16.0.0/12',
+  '192.168.0.0/16'
+]

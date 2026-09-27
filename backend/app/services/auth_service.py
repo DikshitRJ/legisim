@@ -10,24 +10,39 @@ from app.core.security import create_access_token, decode_access_token, verify_p
 from app.models.officer import Officer, OfficerSession
 
 
-async def authenticate_officer(db: AsyncSession, officer_id: str, password: str) -> tuple[Officer, str]:
-    """Authenticate an officer and create a session."""
+async def authenticate_officer(
+    db: AsyncSession,
+    officer_id: str,
+    password: str,
+    name: str | None = None,
+    designation: str | None = None,
+) -> tuple[Officer, str]:
+    """Authenticate an officer and create a session.
+
+    If no officer exists with the given email, a new officer account is created
+    using the provided name and designation (sign-up path). If the officer
+    already exists, the password is verified (login path).
+    """
     stmt = select(Officer).where(Officer.email == officer_id)
     result = await db.execute(stmt)
     officer = result.scalar_one_or_none()
 
     if not officer:
         from app.core.security import hash_password
+        # Use the provided name or fall back to the email prefix
+        display_name = name or officer_id.split("@")[0].replace(".", " ").title()
         officer = Officer(
             email=officer_id,
-            name=officer_id,
+            name=display_name,
             password_hash=hash_password(password),
+            designation=designation,
         )
         db.add(officer)
         await db.flush()
         await db.refresh(officer)
-    elif not verify_password(password, officer.password_hash):
-        raise UnauthorizedError("Invalid credentials")
+    else:
+        if not verify_password(password, officer.password_hash):
+            raise UnauthorizedError("Invalid credentials")
 
     token = create_access_token(data={"sub": str(officer.id)})
     payload = decode_access_token(token)

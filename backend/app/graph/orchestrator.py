@@ -6,7 +6,7 @@ from langchain_core.runnables.config import RunnableConfig
 from app.graph.state import SimState
 from app.graph.edges import continue_to_react, check_loop, route_critic
 from app.graph.nodes.initial import intake, review
-from app.graph.nodes.jev_filter import jev_select, prompt_hydrate
+from app.graph.nodes.laya_filter import laya_select, prompt_hydrate
 from app.graph.nodes.loop import start_step, aggregate, economic_step, ripple_expand
 from app.engine.research.subgraph import build_research_subgraph
 from app.engine.cohort.react_node import react_batch_node as react_batch
@@ -22,7 +22,7 @@ def build_simulation_graph():
     builder.add_node("intake", intake)
     builder.add_node("research", build_research_subgraph())
     builder.add_node("review", review)
-    builder.add_node("jev_select", jev_select)
+    builder.add_node("laya_select", laya_select)
     builder.add_node("prompt_hydrate", prompt_hydrate)
     builder.add_node("start_step", start_step)
     builder.add_node("react_batch", react_batch)
@@ -38,9 +38,9 @@ def build_simulation_graph():
     builder.add_edge("intake", "research")
     builder.add_edge("research", "review")
     
-    # review is connected via Command(goto="jev_select")
+    # review is connected via Command(goto="laya_select")
     
-    builder.add_edge("jev_select", "prompt_hydrate")
+    builder.add_edge("laya_select", "prompt_hydrate")
     builder.add_edge("prompt_hydrate", "start_step")
     
     builder.add_conditional_edges("start_step", continue_to_react, ["react_batch"])

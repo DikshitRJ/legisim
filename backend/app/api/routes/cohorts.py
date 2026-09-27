@@ -8,7 +8,7 @@ from app.schemas.cohort import (
     CohortCategory,
     CohortReactionCreate,
     HydratedPrompt,
-    JEVSelectionResult,
+    LAYASelectionResult,
     PersonaSchema,
     PolicyInput,
     TargetingProfile,
@@ -43,7 +43,7 @@ async def list_personas(db: AsyncSession = Depends(get_db)) -> list[PersonaSchem
 
 
 @router.post(
-    "/jev/targeting-profile",
+    "/laya/targeting-profile",
     response_model=TargetingProfile,
     summary="Generate targeting profile",
     operation_id="generateTargetingProfile"
@@ -53,21 +53,21 @@ async def generate_targeting_profile(policy_input: PolicyInput) -> TargetingProf
     return await cohort_service.generate_targeting_profile(policy_input)
 
 
-class JevSelectRequest(CamelModel):
+class LayaSelectRequest(CamelModel):
     policy_id: str
     targeting_profile: TargetingProfile
     threshold: float = 0.65
 
 
 @router.post(
-    "/jev/select",
-    response_model=JEVSelectionResult,
-    summary="Run JEV Selection",
-    operation_id="runJevSelection"
+    "/laya/select",
+    response_model=LAYASelectionResult,
+    summary="Run LAYA Selection",
+    operation_id="runLayaSelection"
 )
-async def run_jev_selection(request: JevSelectRequest) -> JEVSelectionResult:
-    """Run JEV selection to find relevant personas."""
-    return await cohort_service.run_jev_selection(
+async def run_laya_selection(request: LayaSelectRequest) -> LAYASelectionResult:
+    """Run LAYA selection to find relevant personas."""
+    return await cohort_service.run_laya_selection(
         policy_id=request.policy_id,
         targeting_profile=request.targeting_profile,
         threshold=request.threshold

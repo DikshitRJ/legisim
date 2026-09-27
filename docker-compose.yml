@@ -129,7 +129,7 @@ services:
       S3_BUCKET_NAME: ${S3_BUCKET_NAME:-legisim-data}
       S3_USE_SSL: "false"
       SEARXNG_URL: http://searxng:8080
-      JEV_SERVICE_URL: http://localhost:8001/predict
+      LAYA_SERVICE_URL: http://laya:8001/v1/score
       MAIL_SERVER: mailpit
       MAIL_PORT: 1025
       LANGFUSE_PUBLIC_KEY: pk-lf-1234567890
@@ -177,11 +177,24 @@ services:
       - "traefik.http.routers.searxng.rule=Host(`search.${DOMAIN:-localhost}`)"
       - "traefik.http.routers.searxng.entrypoints=web"
       - "traefik.http.services.searxng.loadbalancer.server.port=8080"
+    volumes:
+      - ./docker/searxng/settings.yml:/etc/searxng/settings.yml:ro
+      - ./docker/searxng/limiter.toml:/etc/searxng/limiter.toml:ro
     networks:
       - legisim-network
     restart: unless-stopped
 
   # ============================================================================
+  laya:
+    build:
+      context: ./docker/laya
+    container_name: legisim-laya
+    ports:
+      - "8001:8001"
+    networks:
+      - legisim-network
+    restart: unless-stopped
+
   # 8. Web Client: Next.js Frontend
   # ============================================================================
   frontend:

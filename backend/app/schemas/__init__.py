@@ -15,8 +15,8 @@ from app.schemas.cohort import (
     CohortCategory,
     CohortReactionCreate,
     HydratedPrompt,
-    JEVPersonaScore,
-    JEVSelectionResult,
+    LAYAPersonaScore,
+    LAYASelectionResult,
     PersonaDemographics,
     PersonaSchema,
     PolicyInput,
@@ -75,7 +75,7 @@ from app.schemas.run import (
 )
 
 from app.schemas.sim_state import Policy, Cohort, Reaction, Metric, SimState
-from app.schemas.jev import PersonaInput, EvalRequest, JEVEvalResponse
+from app.schemas.laya import PersonaInput, EvalRequest, LAYAEvalResponse
 from app.schemas.viz import DataBinding, ChartSpec, VizPlannerOutput
 
 __all__: list[str] = [
@@ -101,8 +101,8 @@ __all__: list[str] = [
     "PersonaSchema",
     "PolicyInput",
     "TargetingProfile",
-    "JEVPersonaScore",
-    "JEVSelectionResult",
+    "LAYAPersonaScore",
+    "LAYASelectionResult",
     "HydratedPrompt",
     "CohortReactionCreate",
     # Runs
@@ -145,10 +145,10 @@ __all__: list[str] = [
     "Reaction",
     "Metric",
     "SimState",
-    # JEV (exclusive of duplicates)
+    # LAYA (exclusive of duplicates)
     "PersonaInput",
     "EvalRequest",
-    "JEVEvalResponse",
+    "LAYAEvalResponse",
     # Viz
     "DataBinding",
     "ChartSpec",

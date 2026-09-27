@@ -1,5 +1,5 @@
 """
-JEV (Just Enough Verification) system schemas.
+LAYA (Just Enough Verification) system schemas.
 """
 
 from pydantic import BaseModel, Field
@@ -14,13 +14,13 @@ class EvalRequest(BaseModel):
     personas: List[PersonaInput]
     threshold: float = 0.5
 
-class JEVPersonaScore(BaseModel):
+class LAYAPersonaScore(BaseModel):
     id: str
     score: float
     relevant: bool
 
-class JEVEvalResponse(BaseModel):
-    results: List[JEVPersonaScore]
+class LAYAEvalResponse(BaseModel):
+    results: List[LAYAPersonaScore]
     execution_time_ms: int
 
 class TargetingProfile(BaseModel):
@@ -34,7 +34,7 @@ class TargetingProfile(BaseModel):
 __all__ = [
     "PersonaInput",
     "EvalRequest",
-    "JEVPersonaScore",
-    "JEVEvalResponse",
+    "LAYAPersonaScore",
+    "LAYAEvalResponse",
     "TargetingProfile",
 ]

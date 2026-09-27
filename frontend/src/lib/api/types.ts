@@ -31,12 +31,16 @@ export interface SuccessResponse {
 export interface LoginRequest {
   officerId: string;
   password: string;
+  /** Provided only on first-time registration (sign-up). */
+  name?: string;
+  designation?: string;
 }
 
 export interface OfficerProfile {
   id: string;
   name: string;
   role: string;
+  designation?: string;
 }
 
 export interface LoginResponse {
@@ -86,23 +90,24 @@ export interface TargetingProfile {
   economic_channels?: string[];
 }
 
-export interface JEVPersonaScore {
+export interface LAYAPersonaScore {
   id: string;
   score: number;
   relevant: boolean;
 }
 
-export interface JEVSelectionResult {
+export interface LAYASelectionResult {
   policy_id: string;
   threshold: number;
   total_evaluated: number;
   total_selected: number;
-  results: JEVPersonaScore[];
+  results: LAYAPersonaScore[];
   execution_time_ms: number;
 }
 
 export interface RunStartRequest {
   policyText?: string;
+  notebookId?: string;
   cohorts?: Record<string, string[]>;
 }
 

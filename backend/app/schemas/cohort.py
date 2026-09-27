@@ -47,18 +47,18 @@ class TargetingProfile(CamelModel):
     economic_channels: list[str] | None = None
 
 
-class JEVPersonaScore(CamelModel):
+class LAYAPersonaScore(CamelModel):
     id: str
     score: float
     relevant: bool
 
 
-class JEVSelectionResult(CamelModel):
+class LAYASelectionResult(CamelModel):
     policy_id: str
     threshold: float
     total_evaluated: int
     total_selected: int
-    results: list[JEVPersonaScore]
+    results: list[LAYAPersonaScore]
     execution_time_ms: int
 
 

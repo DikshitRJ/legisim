@@ -24,6 +24,7 @@ class Officer(Base, UUIDMixin, TimestampMixin):
     email: Mapped[str] = mapped_column(String(255), unique=True)
     password_hash: Mapped[str] = mapped_column(String(255))
     role: Mapped[str] = mapped_column(String(50), server_default=text("'officer'"))
+    designation: Mapped[str | None] = mapped_column(String(255), nullable=True)
 
     sessions: Mapped[list[OfficerSession]] = relationship(
         "OfficerSession", back_populates="officer", cascade="all, delete-orphan"

@@ -4,6 +4,7 @@ import React, { useState, useMemo } from 'react';
 import { useParams } from 'next/navigation';
 import { MessageSquare, Send, UserCheck, ArrowDownRight, ArrowUpRight, Filter } from 'lucide-react';
 import { useRunGroups } from '@/hooks/useQueries';
+import { useSendRunChat } from '@/hooks/useMutations';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Confidence } from '@/lib/api/types';
 
@@ -12,23 +13,26 @@ export default function GroupsPage() {
   const runId = params.runId as string;
   
   const { data: groups, isLoading, error } = useRunGroups(runId);
+  const sendChat = useSendRunChat(runId);
   
   const [chatInput, setChatInput] = useState('');
   const [messages, setMessages] = useState<{role: 'user'|'ai', text: string}[]>([]);
   const [confidenceFilter, setConfidenceFilter] = useState<Confidence | 'All'>('All');
   
   const handleSend = () => {
-    if (!chatInput.trim()) return;
+    if (!chatInput.trim() || sendChat.isPending) return;
     
-    setMessages([...messages, { role: 'user', text: chatInput }]);
+    setMessages(prev => [...prev, { role: 'user', text: chatInput }]);
     setChatInput('');
     
-    setTimeout(() => {
-      setMessages(prev => [...prev, { 
-        role: 'ai', 
-        text: "Based on the simulation, this group will struggle to absorb the immediate changes. The AI models predict a high likelihood of them demanding interventions to offset the impact." 
-      }]);
-    }, 1000);
+    sendChat.mutate(chatInput, {
+      onSuccess: (data) => {
+        setMessages(prev => [...prev, { role: 'ai', text: data.reply ?? "Received an empty response." }]);
+      },
+      onError: () => {
+        setMessages(prev => [...prev, { role: 'ai', text: "Failed to connect to the simulation engine." }]);
+      }
+    });
   };
 
   const filteredAndSortedGroups = useMemo(() => {

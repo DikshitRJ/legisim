@@ -8,13 +8,20 @@ export default function LoginPage() {
   const router = useRouter();
   const [officerId, setOfficerId] = useState('');
   const [password, setPassword] = useState('');
-  
+  const [name, setName] = useState('');
+  const [designation, setDesignation] = useState('');
+  const [isSignUp, setIsSignUp] = useState(false);
+
   const loginMutation = useLogin();
 
-  async function handleSignIn(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     loginMutation.mutate(
-      { officerId, password },
+      {
+        officerId,
+        password,
+        ...(isSignUp ? { name: name.trim() || undefined, designation: designation.trim() || undefined } : {}),
+      },
       {
         onSuccess: () => {
           router.push('/notebooks');
@@ -37,23 +44,73 @@ export default function LoginPage() {
         <section aria-labelledby="login-title" className="mx-auto w-full max-w-[420px] overflow-hidden rounded-lg border border-[#252525] bg-[#1c1b1b] shadow-[0_24px_60px_rgba(0,0,0,0.65)]">
           <div aria-hidden="true" className="flex h-[3px] w-full"><span className="flex-1 bg-[#ff671f]" /><span className="flex-1 bg-[#e5e2e1]" /><span className="flex-1 bg-[#006836]" /></div>
           <div className="p-8 sm:p-10">
-            <h1 id="login-title" className="mb-8 text-center text-[30px] font-bold tracking-[0.22em] text-[#e5e2e1] sm:text-[32px]">LEGISIM</h1>
+            <div className="flex justify-center mb-6">
+              <img src="/logo_big.png" alt="Legisim Logo" className="h-20 object-contain" />
+            </div>
+            <h1 id="login-title" className="mb-2 text-center text-[30px] font-bold tracking-[0.22em] text-[#e5e2e1] sm:text-[32px]">LEGISIM</h1>
+            <p className="mb-6 text-center text-xs text-[#71717a] uppercase tracking-widest">Legislative Simulation Portal</p>
+
+            {/* Toggle between Sign In and Sign Up */}
+            <div className="mb-6 flex rounded-lg bg-[#111111] p-1">
+              <button
+                type="button"
+                onClick={() => setIsSignUp(false)}
+                className={`flex-1 rounded-md py-1.5 text-xs font-semibold uppercase tracking-widest transition ${!isSignUp ? 'bg-[#ff671f] text-[#591b00]' : 'text-[#94a3b8] hover:text-[#e5e2e1]'}`}
+              >
+                Sign In
+              </button>
+              <button
+                type="button"
+                onClick={() => setIsSignUp(true)}
+                className={`flex-1 rounded-md py-1.5 text-xs font-semibold uppercase tracking-widest transition ${isSignUp ? 'bg-[#ff671f] text-[#591b00]' : 'text-[#94a3b8] hover:text-[#e5e2e1]'}`}
+              >
+                Register
+              </button>
+            </div>
+
             {loginMutation.isError && (
               <div className="mb-4 rounded border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-400">
                 {loginMutation.error instanceof Error ? loginMutation.error.message : 'Invalid credentials. Please try again.'}
               </div>
             )}
-            <form className="flex flex-col gap-5" onSubmit={handleSignIn}>
+            <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
+              {/* Sign-up only fields */}
+              {isSignUp && (
+                <>
+                  <label className="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.055em] text-[#e5e2e1]">
+                    Full Name
+                    <input
+                      autoComplete="name"
+                      required={isSignUp}
+                      value={name}
+                      onChange={(e) => setName(e.target.value)}
+                      placeholder="e.g. Priya Sharma"
+                      className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none"
+                    />
+                  </label>
+                  <label className="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.055em] text-[#e5e2e1]">
+                    Designation / Title
+                    <input
+                      autoComplete="organization-title"
+                      value={designation}
+                      onChange={(e) => setDesignation(e.target.value)}
+                      placeholder="e.g. Joint Secretary, MEITY"
+                      className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none"
+                    />
+                  </label>
+                </>
+              )}
+
               <label className="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.055em] text-[#e5e2e1]">
-                Officer ID / Login ID
-                <input autoComplete="username" required value={officerId} onChange={(event) => setOfficerId(event.target.value)} placeholder="GOI-XXXX-XXXX" className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none" />
+                Officer ID / Email
+                <input autoComplete="username" required value={officerId} onChange={(event) => setOfficerId(event.target.value)} placeholder="officer@gov.in" className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none" />
               </label>
               <label className="flex flex-col gap-1.5 text-xs font-semibold uppercase tracking-[0.055em] text-[#e5e2e1]">
                 Password
                 <input autoComplete="current-password" required type="password" value={password} onChange={(event) => setPassword(event.target.value)} placeholder="••••••••••••" className="h-11 rounded border border-[#252525] bg-[#0e0e0e] px-3.5 text-sm font-normal normal-case tracking-normal text-[#e5e2e1] placeholder:text-[#71717a] transition focus:border-[#ff671f] focus:bg-[#2a2a2a] focus:shadow-[0_0_0_1px_#ff671f,0_0_12px_rgba(255,103,31,0.25)] focus:outline-none" />
               </label>
               <button type="submit" disabled={loginMutation.isPending} className="mt-4 h-12 rounded bg-[#ff671f] text-sm font-bold uppercase tracking-[0.15em] text-[#591b00] transition hover:bg-[#e05a1b] disabled:cursor-wait disabled:opacity-80">
-                {loginMutation.isPending ? 'Authenticating…' : 'Sign In / Sign Up'}
+                {loginMutation.isPending ? 'Authenticating…' : isSignUp ? 'Register & Sign In' : 'Sign In'}
               </button>
             </form>
           </div>
