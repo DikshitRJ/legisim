@@ -10,9 +10,7 @@ Built by team **neuro-cooked** at NIT Karnataka, Surathkal, for Build for Billio
 
 ## Demo
 
-<video src="./docs/demo.mp4" controls width="100%">
-  Your browser does not support the video tag. <a href="./docs/demo.mp4">Download the demo video</a> instead.
-</video>
+
 
 ## Table of contents
 
@@ -212,6 +210,6 @@ National Institute of Technology Karnataka, Surathkal. Agentic AI for Billions t
 
 ## Pitch deck
 
-<embed src="./docs/pitchdeck.pdf" type="application/pdf" width="100%" height="600px" />
+<embed src="./docs/pithdeck.pdf" type="application/pdf" width="100%" height="600px" />
 
-[View the pitch deck (PDF)](./docs/pitchdeck.pdf)
+[View the pitch deck (PDF)](./docs/pithdeck.pdf)
