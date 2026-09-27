@@ -7,7 +7,7 @@ import type {
   CompareRequest,
   CompareResponse,
   ExportFormat,
-  JEVSelectionResult,
+  LAYASelectionResult,
   LoginRequest,
   LoginResponse,
   Notebook,
@@ -50,9 +50,9 @@ export const api = {
   cohorts: {
     categories: () => request<CohortCategory[]>("/api/cohort-categories"),
     personas: () => request<Persona[]>("/api/cohorts/personas"),
-    targetingProfile: (payload: PolicyInput) => request<TargetingProfile>("/api/cohorts/jev/targeting-profile", { method: "POST", body: payload }),
+    targetingProfile: (payload: PolicyInput) => request<TargetingProfile>("/api/cohorts/laya/targeting-profile", { method: "POST", body: payload }),
     select: (payload: { policy_id?: string; targeting_profile?: TargetingProfile; threshold?: number }) =>
-      request<JEVSelectionResult>("/api/cohorts/jev/select", { method: "POST", body: payload }),
+      request<LAYASelectionResult>("/api/cohorts/laya/select", { method: "POST", body: payload }),
   },
   runs: {
     create: (payload: RunStartRequest) => {

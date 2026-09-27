@@ -37,5 +37,5 @@ async def review(state: SimState, config: RunnableConfig = None) -> Command:
     # When resumed, process the feedback
     return Command(
         update={"review_feedback": interrupt_value},
-        goto="jev_select"
+        goto="laya_select"
     )

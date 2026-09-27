@@ -11,8 +11,8 @@ from app.schemas.cohort import (
     CohortCategory,
     CohortReactionCreate,
     HydratedPrompt,
-    JEVPersonaScore,
-    JEVSelectionResult,
+    LAYAPersonaScore,
+    LAYASelectionResult,
     PersonaDemographics,
     PersonaSchema,
     PolicyInput,
@@ -164,16 +164,16 @@ async def generate_targeting_profile(policy_input: PolicyInput) -> TargetingProf
         economic_channels=["Taxation", "Subsidies"]
     )
 
-async def run_jev_selection(policy_id: str, targeting_profile: TargetingProfile, threshold: float) -> JEVSelectionResult:
+async def run_laya_selection(policy_id: str, targeting_profile: TargetingProfile, threshold: float) -> LAYASelectionResult:
     """STUB: return mock selection result."""
-    return JEVSelectionResult(
+    return LAYASelectionResult(
         policy_id=policy_id,
         threshold=threshold,
         total_evaluated=100,
         total_selected=2,
         results=[
-            JEVPersonaScore(id="persona-1", score=0.85, relevant=True),
-            JEVPersonaScore(id="persona-2", score=0.72, relevant=True)
+            LAYAPersonaScore(id="persona-1", score=0.85, relevant=True),
+            LAYAPersonaScore(id="persona-2", score=0.72, relevant=True)
         ],
         execution_time_ms=1250
     )

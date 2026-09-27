@@ -71,9 +71,10 @@ async def get_run_events(db: AsyncSession, run_id: uuid.UUID) -> list[RunEventRe
     return [
         RunEventResponse(
             id=str(e.id),
-            eventType=e.event_type,
+            run_id=str(e.run_id),
+            event_type=e.event_type,
             payload=e.payload,
-            createdAt=e.created_at
+            created_at=e.created_at
         ) for e in events
     ]
 
@@ -101,16 +102,13 @@ async def get_run_dashboard(db: AsyncSession, run_id: uuid.UUID) -> RunDashboard
     # We need to construct RunDashboard
     # A proper implementation would map RunChartData properly based on type or content
     dashboard = RunDashboard(
-        metrics=[],
-        incomeChart=[],
-        costOfLiving=[],
+        income=[],
+        cost_of_living=[],
         jobs=[]
     )
     for chart in charts:
-        if chart.chart_type == 'metric':
-            dashboard.metrics.append(DashboardMetric.model_validate(chart.data_payload))
-        elif chart.chart_type == 'income':
-            dashboard.income_chart.append(IncomeChartDataPoint.model_validate(chart.data_payload))
+        if chart.chart_type == 'income':
+            dashboard.income.append(IncomeChartDataPoint.model_validate(chart.data_payload))
         elif chart.chart_type == 'costOfLiving':
             dashboard.cost_of_living.append(CostOfLivingDataPoint.model_validate(chart.data_payload))
         elif chart.chart_type == 'jobs':
@@ -125,17 +123,19 @@ async def get_run_groups(db: AsyncSession, run_id: uuid.UUID) -> list[CohortGrou
     cohort_groups = []
     for g in groups:
         stance = StanceBreakdown(
-            for_=g.stance_for,
-            against=g.stance_against,
-            neutral=g.stance_neutral
+            support=g.stance_for,
+            neutral=g.stance_neutral,
+            oppose=g.stance_against
         )
         group = CohortGroup(
+            id=str(g.id),
             name=g.name,
-            population=g.population,
-            incomeChange=g.income_change,
+            population=str(g.population),
+            description=g.details or "",
             stance=stance,
-            topConcern=g.top_concern,
-            details=g.details
+            income_change=g.income_change,
+            behaviors=g.behaviors or [],
+            confidence="Medium"
         )
         cohort_groups.append(group)
     return cohort_groups
@@ -144,7 +144,16 @@ async def get_run_groups(db: AsyncSession, run_id: uuid.UUID) -> list[CohortGrou
 async def get_run_map(db: AsyncSession, run_id: uuid.UUID) -> list[StateData]:
     result = await db.execute(select(RunStateData).where(RunStateData.run_id == run_id))
     states = result.scalars().all()
-    return [StateData.model_validate(s) for s in states]
+    return [
+        StateData(
+            code=s.state_code,
+            name=s.state_name,
+            income_change=s.income_change,
+            inflation_impact=s.inflation_impact,
+            acceptance=s.acceptance,
+            employment=s.employment
+        ) for s in states
+    ]
 
 
 async def get_run_ripple(db: AsyncSession, run_id: uuid.UUID) -> RippleGraph:
@@ -152,7 +161,16 @@ async def get_run_ripple(db: AsyncSession, run_id: uuid.UUID) -> RippleGraph:
     edges_res = await db.execute(select(RunRippleEdge).where(RunRippleEdge.run_id == run_id))
 
     nodes = [RippleNode.model_validate(n) for n in nodes_res.scalars().all()]
-    edges = [RippleEdge.model_validate(e) for e in edges_res.scalars().all()]
+    edges = [
+        RippleEdge(
+            id=str(e.id),
+            source=e.source_node,
+            target=e.target_node,
+            strength=e.strength,
+            lag_months=e.lag_months,
+            mechanism=e.mechanism
+        ) for e in edges_res.scalars().all()
+    ]
 
     return RippleGraph(nodes=nodes, edges=edges)
 
@@ -190,5 +208,5 @@ async def compare_runs(db: AsyncSession, run_ids: list[uuid.UUID]) -> CompareRes
 
     return CompareResponse(
         runs=runs,
-        metricsComparison=[]
+        comparison={}
     )

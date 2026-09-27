@@ -44,6 +44,9 @@ export default function LoginPage() {
         <section aria-labelledby="login-title" className="mx-auto w-full max-w-[420px] overflow-hidden rounded-lg border border-[#252525] bg-[#1c1b1b] shadow-[0_24px_60px_rgba(0,0,0,0.65)]">
           <div aria-hidden="true" className="flex h-[3px] w-full"><span className="flex-1 bg-[#ff671f]" /><span className="flex-1 bg-[#e5e2e1]" /><span className="flex-1 bg-[#006836]" /></div>
           <div className="p-8 sm:p-10">
+            <div className="flex justify-center mb-6">
+              <img src="/logo_big.png" alt="Legisim Logo" className="h-20 object-contain" />
+            </div>
             <h1 id="login-title" className="mb-2 text-center text-[30px] font-bold tracking-[0.22em] text-[#e5e2e1] sm:text-[32px]">LEGISIM</h1>
             <p className="mb-6 text-center text-xs text-[#71717a] uppercase tracking-widest">Legislative Simulation Portal</p>
 

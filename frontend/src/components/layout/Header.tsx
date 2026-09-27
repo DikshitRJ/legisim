@@ -57,7 +57,8 @@ export default function Header({ showNav = false }: HeaderProps) {
             <span className="truncate text-label-mono-security text-on-surface sm:text-[11px] uppercase">
               भारत सरकार <span className="text-text-secondary">|</span> GOVERNMENT OF INDIA
             </span>
-            <span className="mt-1 flex items-baseline gap-1.5 whitespace-nowrap text-[17px] font-bold tracking-tight text-on-surface uppercase">
+            <span className="mt-1 flex items-center gap-2 whitespace-nowrap text-[17px] font-bold tracking-tight text-on-surface uppercase">
+              <img src="/logo.png" alt="Legisim" className="h-6 object-contain" />
               LEGISIM {showNav && <em className="hidden text-[11px] not-italic tracking-[0.06em] text-saffron sm:inline bg-surface-2 px-1.5 py-0.5 rounded border border-surface-3">LEGISLATIVE SIMULATION PORTAL</em>}
             </span>
           </span>

@@ -1,0 +1,38 @@
+use_default_settings: true
+server:
+  port: 8080
+  bind_address: "0.0.0.0"
+  secret_key: "legisim-secret-key"
+  base_url: false
+  image_proxy: true
+
+search:
+  safe_search: 0
+  autocomplete: ""
+  default_lang: ""
+  formats:
+    - html
+    - json
+
+botdetection:
+  ip_lists:
+    pass_ip:
+      - 127.0.0.1
+      - 172.16.0.0/12
+      - 192.168.0.0/16
+      - 10.0.0.0/8
+
+engines:
+  - name: duckduckgo
+    engine: duckduckgo
+    shortcut: ddg
+  - name: google
+    engine: google
+    shortcut: g
+  # disable engines that are failing
+  - name: ahmia
+    engine: ahmia
+    disabled: true
+  - name: torch
+    engine: torch
+    disabled: true

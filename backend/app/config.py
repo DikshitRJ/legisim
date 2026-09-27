@@ -40,7 +40,7 @@ class Settings(BaseSettings):
     # AI Services
     ZAI_API_KEY: str = ""
     SEARXNG_URL: str = "http://localhost:8083"
-    JEV_SERVICE_URL: str = "http://localhost:8001/predict"
+    LAYA_SERVICE_URL: str = "http://laya:8001/predict"
 
     # Observability
     LANGFUSE_PUBLIC_KEY: str = ""

@@ -90,18 +90,18 @@ export interface TargetingProfile {
   economic_channels?: string[];
 }
 
-export interface JEVPersonaScore {
+export interface LAYAPersonaScore {
   id: string;
   score: number;
   relevant: boolean;
 }
 
-export interface JEVSelectionResult {
+export interface LAYASelectionResult {
   policy_id: string;
   threshold: number;
   total_evaluated: number;
   total_selected: number;
-  results: JEVPersonaScore[];
+  results: LAYAPersonaScore[];
   execution_time_ms: number;
 }
 

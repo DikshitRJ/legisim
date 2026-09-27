@@ -8,7 +8,7 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import PromptTemplate
 
 from app.engine.research.state import ResearchState
-from app.schemas.jev import TargetingProfile
+from app.schemas.laya import TargetingProfile
 from app.engine.research.prompts import (
     SEARCH_PLANNING_PROMPT,
     FACT_EXTRACTION_PROMPT,

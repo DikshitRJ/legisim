@@ -42,11 +42,11 @@ async def test_list_personas():
             assert data[0]["demographics"]["age"] == "30"
 
 @pytest.mark.asyncio
-async def test_run_jev_selection():
+async def test_run_laya_selection():
     transport = ASGITransport(app=app)
     async with AsyncClient(transport=transport, base_url="http://testserver") as client:
-        with patch("app.api.routes.cohorts.cohort_service.run_jev_selection", new_callable=AsyncMock) as mock_jev:
-            mock_jev.return_value = {
+        with patch("app.api.routes.cohorts.cohort_service.run_laya_selection", new_callable=AsyncMock) as mock_laya:
+            mock_laya.return_value = {
                 "policyId": "pol1",
                 "threshold": 0.65,
                 "totalEvaluated": 1,
@@ -65,7 +65,7 @@ async def test_run_jev_selection():
                 },
                 "threshold": 0.65
             }
-            resp = await client.post("/api/cohorts/jev/select", json=payload)
+            resp = await client.post("/api/cohorts/laya/select", json=payload)
             assert resp.status_code == 200
             data = resp.json()
             assert data["results"][0]["id"] == "p1"

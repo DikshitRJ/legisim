@@ -1,17 +1,17 @@
-"""JEV filtering and prompt hydration nodes."""
+"""LAYA filtering and prompt hydration nodes."""
 from typing import Dict, Any
 import httpx
 import os
 from langchain_core.runnables.config import RunnableConfig
 from app.graph.state import SimState
 
-async def jev_select(state: SimState, config: RunnableConfig = None) -> Dict[str, Any]:
-    """JEV select node: Filters cohorts using TypeSafeAI's API."""
+async def laya_select(state: SimState, config: RunnableConfig = None) -> Dict[str, Any]:
+    """LAYA select node: Filters cohorts using TypeSafeAI's API."""
     cohorts = state.get("cohorts", [])
     policy = state.get("policy", {})
     targeting_profile = policy.get("target_group", "General Population")
     
-    api_url = os.getenv("TYPESAFEAI_JEV_URL", "https://api.typesafeai.com/v1/jev")
+    api_url = os.getenv("TYPESAFEAI_LAYA_URL", "https://api.typesafeai.com/v1/laya")
     api_key = os.getenv("TYPESAFEAI_API_KEY", "")
     
     active_cohorts = []
@@ -22,7 +22,7 @@ async def jev_select(state: SimState, config: RunnableConfig = None) -> Dict[str
             headers = {"Authorization": f"Bearer {api_key}"} if api_key else {}
             
             for cohort in cohorts:
-                # TypeSafeAI JEV model just returns true or false for relevance
+                # TypeSafeAI LAYA model just returns true or false for relevance
                 payload = {
                     "profile": targeting_profile,
                     "persona": f"{cohort.get('region')} {cohort.get('occupation')}"
