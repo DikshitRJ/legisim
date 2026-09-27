@@ -10,7 +10,7 @@ Built by team **neurocooked** at NIT Karnataka, Surathkal, for Build for Billion
 
 ## Demo
 
-https://github.com/user-attachments/assets/77995092-ac02-4a65-b0f2-aa0260fdcf93
+[![Watch the video](https://youtu.be/PcW6NcqxglI)](https://youtu.be/PcW6NcqxglI)
 
 
 
