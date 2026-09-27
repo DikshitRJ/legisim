@@ -1,8 +1,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { ArrowRight, Check, FileText, RotateCcw } from 'lucide-react';
+import { useParams, useRouter } from 'next/navigation';
+import { ArrowRight, Check, FileText, RotateCcw, Upload } from 'lucide-react';
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 import { useCohortCategories } from '@/hooks/useQueries';
@@ -10,6 +10,8 @@ import { useStartRun } from '@/hooks/useMutations';
 
 export default function SetupWizardPage() {
   const router = useRouter();
+  const params = useParams();
+  const notebookId = params.id as string;
   
   // Fetch categories
   const { data: categories, isLoading, isError } = useCohortCategories();
@@ -18,6 +20,8 @@ export default function SetupWizardPage() {
   // Map categoryId to an array of selected options
   const [selected, setSelected] = useState<Record<string, string[]>>({});
   const [notes, setNotes] = useState('');
+  const [fileContents, setFileContents] = useState<string>('');
+  const [files, setFiles] = useState<File[]>([]);
 
   const count = Object.values(selected).reduce((acc, curr) => acc + curr.length, 0);
 
@@ -38,9 +42,27 @@ export default function SetupWizardPage() {
     });
   }
 
+  async function handleFileUpload(e: React.ChangeEvent<HTMLInputElement>) {
+    if (!e.target.files) return;
+    const newFiles = Array.from(e.target.files);
+    setFiles((prev) => [...prev, ...newFiles]);
+
+    let combinedText = '';
+    for (const file of newFiles) {
+      if (file.name.endsWith('.pdf')) {
+        combinedText += `\n\n--- [File: ${file.name}] ---\n(PDF content extraction requires backend processing. Filename registered.)\n`;
+      } else {
+        const text = await file.text();
+        combinedText += `\n\n--- [File: ${file.name}] ---\n${text}\n`;
+      }
+    }
+    setFileContents((prev) => prev + combinedText);
+  }
+
   async function proceed() {
+    const fullPolicyText = `${notes}\n\n${fileContents}`.trim();
     startRun.mutate(
-      { policyText: notes, cohorts: selected },
+      { policyText: fullPolicyText, cohorts: selected, notebookId },
       {
         onSuccess: (data) => {
           router.push(`/runs/${data.runId}/loading`);
@@ -52,6 +74,8 @@ export default function SetupWizardPage() {
   function resetSelections() {
     setSelected({});
     setNotes('');
+    setFileContents('');
+    setFiles([]);
   }
 
   // Handle loading and error
@@ -106,8 +130,24 @@ export default function SetupWizardPage() {
 
           <section className="rounded-xl bg-[#161616] p-5 shadow-[0_12px_28px_rgba(0,0,0,0.2)] sm:p-7">
             <label htmlFor="policy-notes" className="flex items-center gap-2 text-sm font-semibold text-white"><FileText className="h-4 w-4 text-[#3b82f6]" />Policy Notes &amp; Additional Constraints</label>
-            <p className="mt-3 text-xs text-[#94a3b8]">Specify custom exclusions, temporal conditions, or micro-targeting provisions</p>
+            <p className="mt-3 text-xs text-[#94a3b8]">Specify custom exclusions, temporal conditions, or micro-targeting provisions.</p>
             <textarea id="policy-notes" value={notes} onChange={(event) => setNotes(event.target.value)} placeholder="add details here" rows={5} className="mt-3 w-full resize-y rounded-lg bg-[#111111] p-4 text-sm text-[#f8fafc] placeholder:text-[#64748b] focus:bg-[#151515] focus:outline-none" />
+            
+            <div className="mt-6">
+              <label className="flex items-center gap-2 text-sm font-semibold text-white mb-2"><Upload className="h-4 w-4 text-[#3b82f6]" />Upload Policy Documents</label>
+              <p className="text-xs text-[#94a3b8] mb-3">Upload markdown, text, or pdf files to provide full context to the agents.</p>
+              
+              <input type="file" multiple accept=".md,.txt,.pdf,.csv" onChange={handleFileUpload} className="block w-full text-sm text-[#94a3b8] file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[#1e293b] file:text-[#60a5fa] hover:file:bg-[#253755] transition" />
+              
+              {files.length > 0 && (
+                <div className="mt-4 flex flex-col gap-2">
+                  <h4 className="text-xs font-semibold text-[#cbd5e1]">Attached Files:</h4>
+                  <ul className="text-xs text-[#94a3b8] list-disc list-inside">
+                    {files.map((f, i) => <li key={i}>{f.name} ({(f.size / 1024).toFixed(1)} KB)</li>)}
+                  </ul>
+                </div>
+              )}
+            </div>
           </section>
 
           <section className="flex flex-col-reverse items-center justify-between gap-4 rounded-xl bg-[#161616] p-4 shadow-[0_12px_28px_rgba(0,0,0,0.24)] sm:flex-row sm:p-6">
@@ -123,3 +163,4 @@ export default function SetupWizardPage() {
     </div>
   );
 }
+

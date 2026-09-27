@@ -107,6 +107,7 @@ export interface JEVSelectionResult {
 
 export interface RunStartRequest {
   policyText?: string;
+  notebookId?: string;
   cohorts?: Record<string, string[]>;
 }
 

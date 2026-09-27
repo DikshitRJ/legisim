@@ -55,7 +55,10 @@ export const api = {
       request<JEVSelectionResult>("/api/cohorts/jev/select", { method: "POST", body: payload }),
   },
   runs: {
-    create: (payload: RunStartRequest) => request<RunStartResponse>("/api/runs", { method: "POST", body: payload }),
+    create: (payload: RunStartRequest) => {
+      const url = payload.notebookId ? `/api/runs?notebook_id=${encoded(payload.notebookId)}` : "/api/runs";
+      return request<RunStartResponse>(url, { method: "POST", body: payload });
+    },
     status: (runId: string) => request<RunStatus>(`/api/runs/${encoded(runId)}/status`),
     resume: (runId: string, payload: ResumeRunRequest) => request<void>(`/api/runs/${encoded(runId)}/resume`, { method: "POST", body: payload }),
     summary: (runId: string) => request<RunSummary>(`/api/runs/${encoded(runId)}/summary`),

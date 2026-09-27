@@ -15,7 +15,7 @@ from pydantic import Field, field_validator
 from app.schemas.common import CamelModel
 
 # Type aliases for domain enumerations
-RunStage = Literal["research", "simulation", "analysis", "complete"]
+RunStage = Literal["loading", "research", "simulation", "analysis", "complete", "paused", "failed"]
 RunStatusLiteral = Literal["loading"]
 ConfidenceTier = Literal["High", "Medium", "Low"]
 EvidenceKind = Literal["measured", "modelled", "judged"]

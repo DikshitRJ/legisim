@@ -25,11 +25,15 @@ from app.models.base import Base, TimestampMixin, UUIDMixin
 class SimulationRun(Base, UUIDMixin, TimestampMixin):
     __tablename__ = 'simulation_runs'
 
-    notebook_id: Mapped[uuid.UUID] = mapped_column(UUID(as_uuid=True), ForeignKey('notebooks.id', ondelete='CASCADE'))
+    # notebook_id is optional – a run can be started ad-hoc without a notebook
+    notebook_id: Mapped[uuid.UUID | None] = mapped_column(
+        UUID(as_uuid=True), ForeignKey('notebooks.id', ondelete='SET NULL'), nullable=True
+    )
     policy_text: Mapped[str | None] = mapped_column(Text)
     cohort_config: Mapped[Any | None] = mapped_column(JSONB)
     status: Mapped[str] = mapped_column(String(50))
     progress: Mapped[int | None] = mapped_column(Integer, server_default=text("0"))
+
 
     # Relationships
     events: Mapped[list[RunEvent]] = relationship(back_populates="run", cascade="all, delete-orphan")
@@ -43,7 +47,7 @@ class SimulationRun(Base, UUIDMixin, TimestampMixin):
     report: Mapped[RunReport | None] = relationship(back_populates="run", cascade="all, delete-orphan", uselist=False)
 
     __table_args__ = (
-        CheckConstraint("status IN ('loading', 'research', 'simulation', 'analysis', 'complete')", name='check_run_status'),
+        CheckConstraint("status IN ('loading', 'research', 'simulation', 'analysis', 'complete', 'failed', 'paused')", name='check_run_status'),
     )
 
 class RunEvent(Base, UUIDMixin):

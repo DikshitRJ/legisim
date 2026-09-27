@@ -38,7 +38,7 @@ async def start_simulation(run_id: str) -> None:
             progress = min(90, 10 + int((node_count / total_nodes) * 80))
             await publish_run_event(redis, run_id, {"status": "running", "progress": progress})
         
-        await publish_run_event(redis, run_id, {"status": "completed", "progress": 100})
+        await publish_run_event(redis, run_id, {"status": "complete", "progress": 100})
         
         # Update db status and save results
         async with async_session_maker() as session:
@@ -46,7 +46,7 @@ async def start_simulation(run_id: str) -> None:
             
             run = await session.get(SimulationRun, uuid.UUID(run_id))
             if run:
-                run.status = "completed"
+                run.status = "complete"
                 run.progress = 100
                 
                 # Save Summary

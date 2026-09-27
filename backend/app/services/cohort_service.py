@@ -46,20 +46,111 @@ async def list_personas(db: AsyncSession) -> list[PersonaSchema]:
     return personas_schema
 
 async def get_cohort_categories() -> list[CohortCategory]:
-    """Return hardcoded categories for the simulation wizard."""
+    """Return comprehensive categories for the simulation questionnaire wizard.
+
+    These categories capture the key socio-economic dimensions needed to
+    define the population cohorts that will react to the simulated policy.
+    """
     return [
         CohortCategory(
-            id="cat-1",
+            id="cat-income",
             number="01",
-            title="Income Group",
-            options=["Low Income", "Middle Income", "High Income"]
+            title="Household Income (Annual)",
+            options=[
+                "Below ₹1 lakh",
+                "₹1–3 lakh",
+                "₹3–6 lakh",
+                "₹6–10 lakh",
+                "₹10–25 lakh",
+                "Above ₹25 lakh",
+            ],
         ),
         CohortCategory(
-            id="cat-2",
+            id="cat-occupation",
             number="02",
-            title="Region",
-            options=["North", "South", "East", "West"]
-        )
+            title="Occupation / Sector",
+            options=[
+                "Agriculture & Farming",
+                "Daily Wage / Informal Labour",
+                "Manufacturing & Factory Worker",
+                "Small Business / Self-Employed",
+                "Private Sector Employee",
+                "Government / PSU Employee",
+                "Healthcare Worker",
+                "Student",
+                "Homemaker",
+                "Retired / Senior Citizen",
+            ],
+        ),
+        CohortCategory(
+            id="cat-region",
+            number="03",
+            title="Region / State",
+            options=[
+                "North India (Delhi, UP, Haryana, Punjab, Himachal, J&K)",
+                "South India (TN, Karnataka, Kerala, AP, Telangana)",
+                "East India (WB, Bihar, Jharkhand, Odisha, NE States)",
+                "West India (Maharashtra, Gujarat, Rajasthan, Goa)",
+                "Central India (MP, Chhattisgarh)",
+                "North-East (Assam, Meghalaya, Manipur, Tripura, etc.)",
+            ],
+        ),
+        CohortCategory(
+            id="cat-family",
+            number="04",
+            title="Family Size",
+            options=[
+                "Single / No dependants",
+                "Nuclear family (2–4 members)",
+                "Medium family (5–6 members)",
+                "Large / Joint family (7+ members)",
+            ],
+        ),
+        CohortCategory(
+            id="cat-age",
+            number="05",
+            title="Age Group",
+            options=[
+                "18–25 (Youth)",
+                "26–35 (Young Adult)",
+                "36–50 (Middle-Aged)",
+                "51–60 (Pre-Retirement)",
+                "60+ (Senior Citizen)",
+            ],
+        ),
+        CohortCategory(
+            id="cat-education",
+            number="06",
+            title="Education Level",
+            options=[
+                "No formal schooling",
+                "Primary (up to Class 8)",
+                "Secondary (Class 9–12)",
+                "Graduate (BA / BSc / BCom / etc.)",
+                "Post-Graduate / Professional Degree",
+            ],
+        ),
+        CohortCategory(
+            id="cat-location",
+            number="07",
+            title="Urban / Rural",
+            options=[
+                "Metro city (population > 10 lakh)",
+                "Tier-2 / Tier-3 city",
+                "Semi-urban / Town",
+                "Rural / Village",
+            ],
+        ),
+        CohortCategory(
+            id="cat-gender",
+            number="08",
+            title="Gender",
+            options=[
+                "Male",
+                "Female",
+                "Non-binary / Third gender",
+            ],
+        ),
     ]
 
 async def generate_targeting_profile(policy_input: PolicyInput) -> TargetingProfile:
