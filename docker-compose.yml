@@ -129,7 +129,7 @@ services:
       S3_BUCKET_NAME: ${S3_BUCKET_NAME:-legisim-data}
       S3_USE_SSL: "false"
       SEARXNG_URL: http://searxng:8080
-      LAYA_SERVICE_URL: http://laya:8001/predict
+      LAYA_SERVICE_URL: http://laya:8001/v1/score
       MAIL_SERVER: mailpit
       MAIL_PORT: 1025
       LANGFUSE_PUBLIC_KEY: pk-lf-1234567890
@@ -186,7 +186,8 @@ services:
 
   # ============================================================================
   laya:
-    image: dummy-laya:latest # TODO real image
+    build:
+      context: ./docker/laya
     container_name: legisim-laya
     ports:
       - "8001:8001"

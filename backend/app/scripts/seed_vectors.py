@@ -11,8 +11,8 @@ async def generate_embedding(text: str) -> list[float]:
     """Generate dummy embeddings for demonstration if API fails/missing."""
     try:
         from langchain_openai import OpenAIEmbeddings
-        from app.config import settings
-        embeddings = OpenAIEmbeddings(api_key=settings.ZAI_API_KEY)
+        # Dummy key for OpenAIEmbeddings since it's just a fallback
+        embeddings = OpenAIEmbeddings(api_key="sk-dummy")
         return await embeddings.aembed_query(text)
     except Exception:
         # Return a dummy vector of 1536 dims (OpenAI ada-002 size)
