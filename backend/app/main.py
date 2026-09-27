@@ -53,12 +53,12 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         logger.warning("Redis initialization failed: %s. Continuing without Redis cache.", exc)
         app.state.redis = None
 
-    # Initialize S3 / MinIO client session
+    # Initialize S3 / LocalStack client session
     try:
         import aioboto3
 
         app.state.s3_session = aioboto3.Session()
-        logger.info("S3/MinIO session initialized for endpoint %s.", settings.S3_ENDPOINT)
+        logger.info("S3/LocalStack session initialized for endpoint %s.", settings.S3_ENDPOINT)
     except Exception as exc:
         logger.warning("S3 session initialization failed: %s.", exc)
         app.state.s3_session = None

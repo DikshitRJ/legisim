@@ -19,16 +19,16 @@ class Settings(BaseSettings):
 
     # Database
     DATABASE_URL: str = (
-        "postgresql+asyncpg://legisim:legisim_db_pass@localhost:5432/legisim"
+        "postgresql+asyncpg://legisim:legisim_db_pass@localhost:5433/legisim"
     )
 
     # Redis
     REDIS_URL: str = "redis://localhost:6379/0"
 
-    # MinIO/S3
-    S3_ENDPOINT: str = "localhost:9000"
-    S3_ACCESS_KEY: str = "admin"
-    S3_SECRET_KEY: str = "minio_admin_pass"
+    # LocalStack/S3
+    S3_ENDPOINT: str = "localhost:4566"
+    S3_ACCESS_KEY: str = "test"
+    S3_SECRET_KEY: str = "test"
     S3_BUCKET_NAME: str = "legisim-data"
     S3_USE_SSL: bool = False
 
@@ -39,7 +39,7 @@ class Settings(BaseSettings):
 
     # AI Services
     ZAI_API_KEY: str = ""
-    SEARXNG_URL: str = "http://localhost:8080"
+    SEARXNG_URL: str = "http://localhost:8083"
     JEV_SERVICE_URL: str = "http://localhost:8001/predict"
 
     # Observability

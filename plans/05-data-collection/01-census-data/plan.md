@@ -20,7 +20,7 @@ Since `censusindia.gov.in` has dynamic portals and sometimes requires captchas, 
 2. Go to Data -> Census Tables.
 3. Select "2011 Census Data".
 4. Download the specific C-Series (Age, Education) and B-Series (Economic Activity) tables in Excel/CSV format.
-5. Place the downloaded files in a standardized `raw_data/census_2011/` directory in the MinIO/S3 bucket.
+5. Place the downloaded files in a standardized `raw_data/census_2011/` directory in the localstack/S3 bucket.
 
 ## Data Cleaning and Normalization
 

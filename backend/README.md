@@ -13,7 +13,7 @@ Asynchronous FastAPI backend service for the **LegiSim** multi-agent policy simu
 - **Migrations:** Alembic (async configuration)
 - **Data Validation & Settings:** Pydantic V2 & `pydantic-settings`
 - **Cache & Pub/Sub:** Redis
-- **Object Storage:** MinIO / AWS S3 (via `aioboto3`)
+- **Object Storage:** LocalStack / AWS S3 (via `aioboto3`)
 - **Linting & Formatting:** Ruff
 - **Type Checking:** Mypy (strict mode)
 - **Testing:** Pytest & `pytest-asyncio`
@@ -62,7 +62,7 @@ backend/
 - Python 3.12 or newer
 - PostgreSQL 16 with the `vector` extension enabled
 - Redis 7+
-- MinIO (or AWS S3)
+- LocalStack (or AWS S3)
 - `uv` (recommended) or `pip`
 
 ### 2. Environment Setup

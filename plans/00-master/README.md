@@ -89,7 +89,7 @@ flowchart TD
     subgraph Infrastructure ["Infrastructure (Docker Compose)"]
         DB[("PostgreSQL + pgvector")]
         CACHE[("Redis (Queue/State)")]
-        BLOB[("MinIO (Artifacts)")]
+        BLOB[("localstack (Artifacts)")]
         AUTH["Keycloak (IAM)"]
         SEARCH["SearXNG (Web Context)"]
         JEV["JEV BERT Model (System 1)"]
@@ -193,7 +193,7 @@ Goal: Get the infrastructure running and the database seeded.
 
 | Task | Owner Agent | Deliverable |
 |------|-------------|-------------|
-| Docker Compose Setup | Infra Agent | Working `docker-compose.yml` with Traefik, Keycloak, Postgres, Redis, MinIO, Langfuse. |
+| Docker Compose Setup | Infra Agent | Working `docker-compose.yml` with Traefik, Keycloak, Postgres, Redis, localstack, Langfuse. |
 | JEV Docker Setup | Infra Agent / JEV Agent | Standalone container for the JEV BERT model running via FastAPI/ONNX. |
 | DB Schema & Migrations | Data Agent | Alembic migrations for `users`, `policies`, `runs`, `cohorts`. |
 | Persona Database Seeding | Data Agent | Script to insert 2,000 baseline Indian demographic cohorts into Postgres. |

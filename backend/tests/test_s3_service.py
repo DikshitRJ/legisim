@@ -77,13 +77,13 @@ def test_s3_service_endpoint_url_resolution() -> None:
     # Default settings has no protocol prefix
     assert service.endpoint_url.startswith("http://") or service.endpoint_url.startswith("https://")
 
-    with patch.object(settings, "S3_ENDPOINT", "http://custom-minio:9000"):
-        assert service.endpoint_url == "http://custom-minio:9000"
+    with patch.object(settings, "S3_ENDPOINT", "http://custom-localstack:9000"):
+        assert service.endpoint_url == "http://custom-localstack:9000"
 
-    with patch.object(settings, "S3_ENDPOINT", "custom-minio:9000"), patch.object(
+    with patch.object(settings, "S3_ENDPOINT", "custom-localstack:9000"), patch.object(
         settings, "S3_USE_SSL", True
     ):
-        assert service.endpoint_url == "https://custom-minio:9000"
+        assert service.endpoint_url == "https://custom-localstack:9000"
 
 
 @pytest.mark.asyncio

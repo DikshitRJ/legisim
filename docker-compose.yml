@@ -10,8 +10,11 @@ services:
   # 1. Reverse Proxy: Traefik
   # ============================================================================
   traefik:
-    image: traefik:v2.10
+    image: traefik:v3.6
+    environment:
+      - DOCKER_API_VERSION=1.41
     container_name: legisim-traefik
+    user: "root"
     command:
       - "--api.insecure=true"
       - "--api.dashboard=true"
@@ -23,6 +26,8 @@ services:
       - "${TRAEFIK_DASHBOARD_PORT:-8088}:8080"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+    security_opt:
+      - label:disable
     networks:
       - legisim-network
     restart: unless-stopped
@@ -41,7 +46,7 @@ services:
       - "${POSTGRES_PORT:-5432}:5432"
     volumes:
       - "pg-data:/var/lib/postgresql/data"
-      - "./docker/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro"
+      - "./docker/postgres/init-db.sh:/docker-entrypoint-initdb.d/init-db.sh:ro,Z"
     networks:
       - legisim-network
     healthcheck:
@@ -72,55 +77,34 @@ services:
     restart: unless-stopped
 
   # ============================================================================
-  # 4. Object Storage: MinIO
+  # 4. Object Storage: LocalStack (S3)
   # ============================================================================
-  minio:
-    image: minio/minio:RELEASE.2023-11-20T22-40-07Z
-    container_name: legisim-minio
-    command: server /data --console-address ":9001"
+  localstack:
+    image: localstack/localstack:3.0.0
+    container_name: legisim-localstack
     environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER:-admin}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD:-minio_admin_pass}
+      - SERVICES=s3
+      - AWS_DEFAULT_REGION=us-east-1
+      - AWS_ACCESS_KEY_ID=${S3_ACCESS_KEY:-test}
+      - AWS_SECRET_ACCESS_KEY=${S3_SECRET_KEY:-test}
     ports:
-      - "9000:9000"
-      - "9001:9001"
+      - "4566:4566"
     volumes:
-      - "minio-data:/data"
+      - "localstack-data:/var/lib/localstack"
+      - "./docker/localstack/init-s3.sh:/etc/localstack/init/ready.d/init-s3.sh:ro,z"
     networks:
       - legisim-network
     healthcheck:
-      test: ["CMD-SHELL", "curl -f http://localhost:9000/minio/health/live || exit 1"]
+      test: ["CMD", "curl", "-f", "http://localhost:4566/_localstack/health"]
       interval: 5s
       timeout: 5s
       retries: 10
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.minio.rule=Host(`s3.${DOMAIN:-localhost}`)"
-      - "traefik.http.routers.minio.entrypoints=web"
-      - "traefik.http.services.minio.loadbalancer.server.port=9000"
-      - "traefik.http.routers.minio-console.rule=Host(`minio.${DOMAIN:-localhost}`)"
-      - "traefik.http.routers.minio-console.entrypoints=web"
-      - "traefik.http.services.minio-console.loadbalancer.server.port=9001"
+      - "traefik.http.routers.s3.rule=Host(`s3.${DOMAIN:-localhost}`)"
+      - "traefik.http.routers.s3.entrypoints=web"
+      - "traefik.http.services.s3.loadbalancer.server.port=4566"
     restart: unless-stopped
-
-  # ============================================================================
-  # 5. MinIO Bucket Initialization (one-shot init container)
-  # ============================================================================
-  minio-create-bucket:
-    image: minio/mc:RELEASE.2023-11-20T16-30-59Z
-    container_name: legisim-minio-create-bucket
-    depends_on:
-      minio:
-        condition: service_healthy
-    entrypoint: >
-      /bin/sh -c "
-      /usr/bin/mc alias set myminio http://minio:9000 ${MINIO_ROOT_USER:-admin} ${MINIO_ROOT_PASSWORD:-minio_admin_pass};
-      /usr/bin/mc mb --ignore-existing myminio/${S3_BUCKET_NAME:-legisim-data};
-      /usr/bin/mc anonymous set download myminio/${S3_BUCKET_NAME:-legisim-data} || true;
-      exit 0;
-      "
-    networks:
-      - legisim-network
 
   # ============================================================================
   # 6. Core Application: FastAPI Backend (+ LangGraph engine in-process)
@@ -139,9 +123,9 @@ services:
       DOMAIN: ${DOMAIN:-localhost}
       DATABASE_URL: postgresql+asyncpg://${POSTGRES_USER:-legisim}:${POSTGRES_PASSWORD:-legisim_db_pass}@postgres:5432/${POSTGRES_DB:-legisim}
       REDIS_URL: redis://:${REDIS_PASSWORD:-redis_secure_pass}@redis:6379/0
-      S3_ENDPOINT: minio:9000
-      S3_ACCESS_KEY: ${MINIO_ROOT_USER:-admin}
-      S3_SECRET_KEY: ${MINIO_ROOT_PASSWORD:-minio_admin_pass}
+      S3_ENDPOINT: localstack:4566
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY:-test}
+      S3_SECRET_KEY: ${S3_SECRET_KEY:-test}
       S3_BUCKET_NAME: ${S3_BUCKET_NAME:-legisim-data}
       S3_USE_SSL: "false"
       SEARXNG_URL: http://searxng:8080
@@ -153,14 +137,14 @@ services:
       LANGFUSE_HOST: http://langfuse:3000
     volumes:
       # Mount personas data so the engine population loader can find them
-      - "./personas:/app/personas:ro"
-      - "./data:/app/data:ro"
+      - "./personas:/app/personas:ro,z"
+      - "./data:/app/data:ro,z"
     depends_on:
       postgres:
         condition: service_healthy
       redis:
         condition: service_healthy
-      minio:
+      localstack:
         condition: service_healthy
     networks:
       - legisim-network
@@ -289,5 +273,5 @@ volumes:
     name: legisim-pg-data
   redis-data:
     name: legisim-redis-data
-  minio-data:
-    name: legisim-minio-data
+  localstack-data:
+    name: legisim-localstack-data

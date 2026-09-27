@@ -97,7 +97,7 @@ flowchart TD
      - `frontend` (Next.js)
      - `db` (PostgreSQL with pgvector)
      - `redis` (Cache & Celery broker)
-     - `minio` (S3 compatible object storage for artifacts)
+     - `localstack` (S3 compatible object storage for artifacts)
      - `jev` (Self-hosted model service)
      - `searxng` (Search)
      - `traefik` (Reverse proxy)
@@ -240,7 +240,7 @@ flowchart TD
   2. Develop `/backend/graph/nodes/write_report.py` to call the GLM API and generate a narrative markdown report of the simulation.
   3. Develop `/backend/graph/nodes/critic.py` as an evaluation loop to ensure report accuracy against JEV raw numbers.
   4. Compile the full workflow in `/backend/graph/workflow.py` and run a comprehensive test script.
-  5. Store resulting artifacts to MinIO.
+  5. Store resulting artifacts to localstack.
 
 ### Agent 4B: Visualization
 - **Agent Name**: `ui-builder`

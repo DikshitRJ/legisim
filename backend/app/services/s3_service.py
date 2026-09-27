@@ -26,7 +26,7 @@ logger = get_logger(__name__)
 
 
 class S3Service:
-    """Asynchronous S3 and MinIO service wrapper for LegiSim artifact storage."""
+    """Asynchronous S3 and LocalStack service wrapper for LegiSim artifact storage."""
 
     def __init__(
         self,

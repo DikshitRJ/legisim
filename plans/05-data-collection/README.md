@@ -20,7 +20,7 @@ LegiSim relies on the following primary data sources:
 The overall data pipeline architecture follows a standardized ETL process:
 
 1. **Extraction**:
-   - **Manual Downloads**: Some government portals require manual navigation and captcha solving. For these, detailed download instructions are provided, and data will be stored in a centralized raw storage layer (MinIO or S3-compatible).
+   - **Manual Downloads**: Some government portals require manual navigation and captcha solving. For these, detailed download instructions are provided, and data will be stored in a centralized raw storage layer (localstack or S3-compatible).
    - **Automated Scraping**: Where possible, Python-based scrapers (using `requests`, `BeautifulSoup`, `playwright`) will automatically fetch data on a schedule.
    - **API Integration**: Direct connections to official APIs (like RBI DBIE API) where available.
 

@@ -13,9 +13,9 @@ The data cube contains base values and delta multipliers. When the user moves a 
 ### Format
 Due to the large size of tabular map/demographic data, JSON may be too bulky.
 - **Delivery format:** Parquet or JSON (if small enough).
-- **Storage:** Saved as artifacts in MinIO (S3) bucket. DB stores the URL pointer.
+- **Storage:** Saved as artifacts in localstack (S3) bucket. DB stores the URL pointer.
 
-## MinIO Storage
+## localstack Storage
 ```python
 # pseudo-code
 def save_cube_to_s3(run_id: str, cube_dict: dict) -> str:

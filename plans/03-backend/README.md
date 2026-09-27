@@ -9,7 +9,7 @@ LegiSim is built on a modern, asynchronous Python stack:
 - **Language:** Python 3.12+ (Pydantic V2)
 - **Database:** PostgreSQL 16 + pgvector (via SQLAlchemy 2.0 async + Alembic)
 - **Cache & Pub/Sub:** Redis
-- **File Storage:** MinIO (S3-compatible)
+- **File Storage:** localstack (S3-compatible)
 - **Authentication:** Keycloak (OIDC) / Auth.js
 - **Orchestration/LLM:** LangGraph + Langchain
 - **Observability:** Langfuse (LLM Tracing)

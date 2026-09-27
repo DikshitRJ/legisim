@@ -5,7 +5,7 @@ This component defines the complete containerized infrastructure for LegiSim. Th
 
 The architecture comprises 12 distinct services across four categories:
 - **Core Application**: `api`, `worker`, `frontend`
-- **Data Services**: `db`, `redis`, `minio`
+- **Data Services**: `db`, `redis`, `localstack`
 - **AI/ML Services**: `jev`, `searxng`
 - **Infrastructure**: `traefik`, `keycloak`, `langfuse`, ``
 
@@ -26,13 +26,13 @@ DATABASE_URL=postgresql://legisim:legisim_db_pass@db:5432/legisim
 REDIS_PASSWORD=redis_secure_pass
 REDIS_URL=redis://:redis_secure_pass@redis:6379/0
 
-# ====== MinIO ======
-MINIO_ROOT_USER=admin
-MINIO_ROOT_PASSWORD=minio_admin_pass
-MINIO_SERVER_URL=https://s3.${DOMAIN}
-S3_ENDPOINT=minio:9000
+# ====== localstack ======
+localstack_ROOT_USER=admin
+localstack_ROOT_PASSWORD=localstack_admin_pass
+localstack_SERVER_URL=https://s3.${DOMAIN}
+S3_ENDPOINT=localstack:9000
 S3_ACCESS_KEY=admin
-S3_SECRET_KEY=minio_admin_pass
+S3_SECRET_KEY=localstack_admin_pass
 S3_BUCKET_NAME=legisim-data
 
 # ====== Authentication (Keycloak) ======
@@ -149,27 +149,27 @@ services:
       retries: 5
     restart: unless-stopped
 
-  minio:
-    image: minio/minio:RELEASE.2023-11-20T22-40-07Z
+  localstack:
+    image: localstack/localstack:RELEASE.2023-11-20T22-40-07Z
     command: server /data --console-address ":9001"
     environment:
-      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
-      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
-      MINIO_SERVER_URL: ${MINIO_SERVER_URL}
+      localstack_ROOT_USER: ${localstack_ROOT_USER}
+      localstack_ROOT_PASSWORD: ${localstack_ROOT_PASSWORD}
+      localstack_SERVER_URL: ${localstack_SERVER_URL}
     volumes:
-      - minio-data:/data
+      - localstack-data:/data
     networks:
       - legisim-network
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.minio.rule=Host(`s3.${DOMAIN}`)"
-      - "traefik.http.routers.minio.entrypoints=websecure"
-      - "traefik.http.routers.minio.tls.certresolver=myresolver"
-      - "traefik.http.services.minio.loadbalancer.server.port=9000"
-      - "traefik.http.routers.minio-console.rule=Host(`s3-console.${DOMAIN}`)"
-      - "traefik.http.routers.minio-console.entrypoints=websecure"
-      - "traefik.http.routers.minio-console.tls.certresolver=myresolver"
-      - "traefik.http.services.minio-console.loadbalancer.server.port=9001"
+      - "traefik.http.routers.localstack.rule=Host(`s3.${DOMAIN}`)"
+      - "traefik.http.routers.localstack.entrypoints=websecure"
+      - "traefik.http.routers.localstack.tls.certresolver=myresolver"
+      - "traefik.http.services.localstack.loadbalancer.server.port=9000"
+      - "traefik.http.routers.localstack-console.rule=Host(`s3-console.${DOMAIN}`)"
+      - "traefik.http.routers.localstack-console.entrypoints=websecure"
+      - "traefik.http.routers.localstack-console.tls.certresolver=myresolver"
+      - "traefik.http.services.localstack-console.loadbalancer.server.port=9001"
     restart: unless-stopped
 
   # ==========================================
@@ -286,7 +286,7 @@ volumes:
   traefik-certs:
   pg-data:
   redis-data:
-  minio-data:
+  localstack-data:
 ```
 
 ## 4. `docker-compose.dev.yml` (Development Overrides)
@@ -410,7 +410,7 @@ EOSQL
 ```
 
 ## 7. Configuration Details
-- **MinIO**: Initialize buckets via entrypoint script or MinIO MC client.
+- **localstack**: Initialize buckets via entrypoint script or localstack MC client.
 - **Keycloak**: Export realm from dev, mount `realm-export.json` to `/opt/keycloak/data/import` and set `KC_IMPORT=true`.
 - **SearXNG**: Mount `settings.yml` to disable unwanted engines and restrict access.
 - **GPU Passthrough**: Ensure Docker has the `nvidia-container-toolkit` installed on the host to pass the GPU to the JEV container.
@@ -445,6 +445,6 @@ bash-frontend:
 - **VPS Requirements**: Minimum 16GB RAM, 4+ CPU Cores, NVMe storage. For JEV GPU support, an instance with a T4 or better is recommended.
 - **Backup Strategy**: 
   - DB: Scheduled `pg_dump` via cron container pushing to external S3.
-  - MinIO: Mirror command or external volume backup.
+  - localstack: Mirror command or external volume backup.
   - Redis: Mount `/data` to an EBS volume with snapshots.
 - **Monitoring**: Host metrics via Node Exporter and Prometheus/Grafana (optional additions) tracking container health and resource limits.
