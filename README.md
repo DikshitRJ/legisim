@@ -106,7 +106,7 @@ The stack is fully self-hosted. Every layer runs in its own Docker container on 
 
 ```mermaid
 flowchart TB
-    subgraph Docker Compose, self-hosted, behind Traefik
+    subgraph SYS["Docker Compose, self-hosted, behind Traefik"]
     UI["Next.js web app (own container)"] -->|"REST and live stream"| API["FastAPI backend (own container)"]
     API --> Q["Job queue: Redis (own container)"]
     Q --> W["Worker: LangGraph pipeline (own container)"]
