@@ -6,9 +6,21 @@ import Image from 'next/image';
 import { usePathname, useRouter } from 'next/navigation';
 import { ChevronDown, Settings, LogOut } from 'lucide-react';
 import { useLogout } from '@/hooks/useMutations';
+import { useCurrentUser } from '@/hooks/useQueries';
 
 export interface HeaderProps {
   showNav?: boolean;
+}
+
+/** Derive initials from a display name (e.g. "Priya Sharma" → "PS"). */
+function getInitials(name: string | undefined): string {
+  if (!name) return '??';
+  return name
+    .split(' ')
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((part) => part[0].toUpperCase())
+    .join('');
 }
 
 export default function Header({ showNav = false }: HeaderProps) {
@@ -16,6 +28,11 @@ export default function Header({ showNav = false }: HeaderProps) {
   const pathname = usePathname();
   const router = useRouter();
   const logoutMutation = useLogout();
+  const { data: user } = useCurrentUser();
+
+  const displayName = user?.name ?? 'Loading…';
+  const displayRole = user?.role ?? '';
+  const initials = getInitials(user?.name);
 
   const handleLogout = () => {
     logoutMutation.mutate(undefined, {
@@ -56,9 +73,9 @@ export default function Header({ showNav = false }: HeaderProps) {
 
         <div className="relative flex items-center gap-2 sm:gap-3">
           <div className="hidden flex-col items-end sm:flex">
-            <span className="text-xs font-semibold text-on-surface">Dir. Rajesh Verma</span>
+            <span className="text-xs font-semibold text-on-surface">{displayName}</span>
             <span className="text-[9px] font-medium uppercase tracking-[0.1em] text-accent-blue-light">
-              JOINT SECRETARY, MEITY
+              {displayRole || 'OFFICER'}
             </span>
           </div>
           <button
@@ -69,7 +86,7 @@ export default function Header({ showNav = false }: HeaderProps) {
             onClick={() => setDropdownOpen(!dropdownOpen)}
           >
             <div className="flex h-8 w-8 items-center justify-center rounded bg-navy text-xs font-bold text-accent-blue-light">
-              DR
+              {initials}
             </div>
             <ChevronDown className="h-4 w-4 text-on-surface-variant" />
           </button>

@@ -31,12 +31,16 @@ export interface SuccessResponse {
 export interface LoginRequest {
   officerId: string;
   password: string;
+  /** Provided only on first-time registration (sign-up). */
+  name?: string;
+  designation?: string;
 }
 
 export interface OfficerProfile {
   id: string;
   name: string;
   role: string;
+  designation?: string;
 }
 
 export interface LoginResponse {

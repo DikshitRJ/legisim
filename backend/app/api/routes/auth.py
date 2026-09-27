@@ -17,8 +17,14 @@ async def login(
     request: LoginRequest,
     db: AsyncSession = Depends(get_db),
 ) -> LoginResponse:
-    """Authenticate an officer."""
-    officer, token = await authenticate_officer(db, request.officer_id, request.password)
+    """Authenticate an officer. Creates a new account on first login."""
+    officer, token = await authenticate_officer(
+        db,
+        request.officer_id,
+        request.password,
+        name=request.name,
+        designation=request.designation,
+    )
     return LoginResponse(
         token=token,
         user=OfficerProfile.model_validate(officer),
