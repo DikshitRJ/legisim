@@ -6,10 +6,12 @@
 
 LEGISIM turns a country into a few thousand weighted cohorts, drops a policy on them, and shows you how the effects actually spread, from the first price change to the household budgets three steps downstream.
 
-Built by team **neuro-cooked** at NIT Karnataka, Surathkal, for Build for Billions, under the Agentic AI for Billions track (autonomous workflows for public and social services).
+Built by team **neurocooked** at NIT Karnataka, Surathkal, for Build for Billions, under the Agentic AI for Billions track (autonomous workflows for public and social services).
 
 ## Demo
-
+<video src="docs/demo.mp4" controls width="100%">
+  Your browser does not support the video tag.
+</video>
 
 
 ## Table of contents
