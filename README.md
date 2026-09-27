@@ -9,9 +9,9 @@ LEGISIM turns a country into a few thousand weighted cohorts, drops a policy on 
 Built by team **neurocooked** at NIT Karnataka, Surathkal, for Build for Billions, under the Agentic AI for Billions track (autonomous workflows for public and social services).
 
 ## Demo
-<video src="docs/demo.mp4" controls width="100%">
-  Your browser does not support the video tag.
-</video>
+
+https://github.com/user-attachments/assets/77995092-ac02-4a65-b0f2-aa0260fdcf93
+
 
 
 ## Table of contents
